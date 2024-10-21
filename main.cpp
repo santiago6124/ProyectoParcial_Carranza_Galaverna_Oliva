@@ -185,6 +185,147 @@ void mostrarPromedioGolesPorEquipoYCompeticion() {
         std::cout << "Promedio goles en contra: " << promedio_contra << "\n";
     }
 }
+void mostrarTriunfosYDerrotasPorEquipoYCompeticion() {
+    std::string equipo;
+    std::cout << "Ingrese el nombre del equipo: ";
+    std::getline(std::cin, equipo);
+
+    if (estadisticas.find(equipo) == estadisticas.end()) {
+        std::cout << "No hay datos para el equipo: " << equipo << "\n";
+        return;
+    }
+
+    std::cout << "Triunfos y derrotas para el equipo: " << equipo << "\n";
+    for (const auto& [competicion, stats] : estadisticas[equipo]) {
+        std::cout << "Competición: " << competicion << "\n";
+        std::cout << "Triunfos: " << stats.triunfos << "\n";
+        std::cout << "Derrotas: " << stats.derrotas << "\n";
+        std::cout << "Empates: " << stats.empates << "\n";
+    }
+}
+void mostrarFechasConMasYMenosGolesPorEquipoYCompeticion() {
+    std::string equipo;
+    std::cout << "Ingrese el nombre del equipo: ";
+    std::getline(std::cin, equipo);
+
+    if (estadisticas.find(equipo) == estadisticas.end()) {
+        std::cout << "No hay datos para el equipo: " << equipo << "\n";
+        return;
+    }
+
+    std::cout << "Fechas con más y menos goles para el equipo: " << equipo << "\n";
+
+    for (const auto& [competicion, stats] : estadisticas[equipo]) {
+        const Partido* partido_mas_goles = nullptr;
+        const Partido* partido_menos_goles = nullptr;
+        int max_goles = -1;
+        int min_goles = INT_MAX;
+
+        for (const auto& partido_ptr : partidos) {
+            const Partido* partido = partido_ptr.get();
+            if ((partido->equipo_local == equipo || partido->equipo_visitante == equipo) &&
+                partido->competicion == competicion) {
+                int total_goles = partido->goles_local + partido->goles_visitante;
+
+                if (total_goles > max_goles) {
+                    max_goles = total_goles;
+                    partido_mas_goles = partido;
+                }
+                if (total_goles < min_goles) {
+                    min_goles = total_goles;
+                    partido_menos_goles = partido;
+                }
+            }
+        }
+
+        std::cout << "Competición: " << competicion << "\n";
+        if (partido_mas_goles) {
+            std::cout << "Fecha con más goles: " << partido_mas_goles->fecha << " - "
+                      << max_goles << " goles\n";
+        }
+        if (partido_menos_goles) {
+            std::cout << "Fecha con menos goles: " << partido_menos_goles->fecha << " - "
+                      << min_goles << " goles\n";
+        }
+    }
+}
+void mostrarCompeticionConMasGoles() {
+    if (goles_totales_por_competicion.empty()) {
+        std::cout << "No hay competiciones registradas.\n";
+        return;
+    }
+
+    auto max_goles_it = std::max_element(
+        goles_totales_por_competicion.begin(), goles_totales_por_competicion.end(),
+        [](const auto& a, const auto& b) {
+            return a.second < b.second;
+        });
+
+    std::cout << "La competición con más goles es: " << max_goles_it->first
+              << " con " << max_goles_it->second << " goles.\n";
+}
+void mostrarEquipoConMasYMenosGoles() {
+    // Variables para almacenar los equipos con más y menos goles a nivel global.
+    std::string equipo_max_global, equipo_min_global;
+    int max_goles_global = -1, min_goles_global = INT_MAX;
+
+    // Mapas para almacenar los equipos con más y menos goles por competición.
+    std::unordered_map<std::string, std::pair<std::string, std::string>> equipos_por_competicion;
+    std::unordered_map<std::string, std::pair<int, int>> goles_por_competicion;
+
+    // Recorrer cada equipo y sus estadísticas.
+    for (const auto& [equipo, competiciones] : estadisticas) {
+        int goles_total_equipo = 0;
+
+        for (const auto& [competicion, stats] : competiciones) {
+            // Sumar los goles del equipo en esta competición.
+            goles_total_equipo += stats.goles_a_favor;
+
+            // Inicializar los valores de comparación si es la primera vez.
+            if (goles_por_competicion[competicion].first == 0) {
+                goles_por_competicion[competicion] = {stats.goles_a_favor, stats.goles_a_favor};
+                equipos_por_competicion[competicion] = {equipo, equipo};
+            }
+
+            // Comparar para más y menos goles por competición.
+            if (stats.goles_a_favor > goles_por_competicion[competicion].first) {
+                goles_por_competicion[competicion].first = stats.goles_a_favor;
+                equipos_por_competicion[competicion].first = equipo;
+            }
+            if (stats.goles_a_favor < goles_por_competicion[competicion].second) {
+                goles_por_competicion[competicion].second = stats.goles_a_favor;
+                equipos_por_competicion[competicion].second = equipo;
+            }
+        }
+
+        // Comparar para más y menos goles a nivel global.
+        if (goles_total_equipo > max_goles_global) {
+            max_goles_global = goles_total_equipo;
+            equipo_max_global = equipo;
+        }
+        if (goles_total_equipo < min_goles_global) {
+            min_goles_global = goles_total_equipo;
+            equipo_min_global = equipo;
+        }
+    }
+
+    // Mostrar los equipos con más y menos goles por competición.
+    std::cout << "Equipos con más y menos goles por competición:\n";
+    for (const auto& [competicion, equipos] : equipos_por_competicion) {
+        std::cout << "Competición: " << competicion << "\n";
+        std::cout << "Equipo con más goles: " << equipos.first
+                  << " con " << goles_por_competicion[competicion].first << " goles\n";
+        std::cout << "Equipo con menos goles: " << equipos.second
+                  << " con " << goles_por_competicion[competicion].second << " goles\n";
+    }
+
+    // Mostrar los equipos con más y menos goles en total.
+    std::cout << "\nEquipos con más y menos goles en total:\n";
+    std::cout << "Equipo con más goles: " << equipo_max_global
+              << " con " << max_goles_global << " goles\n";
+    std::cout << "Equipo con menos goles: " << equipo_min_global
+              << " con " << min_goles_global << " goles\n";
+}
 
 
 int main() {
@@ -199,6 +340,10 @@ int main() {
         std::cout << "1. Top 5 partidos con más goles por competición\n";
         std::cout << "2. Goles a favor y en contra por equipo\n";
         std::cout << "3. Promedio de goles por equipo\n";
+        std::cout << "4. Triunfos y derrotas por equipo\n";
+        std::cout << "5. Fecha con más y menos goles por equipo\n";
+        std::cout << "6. Competición con más goles\n";
+         std::cout << "7. Equipos con más y menos goles\n";
         std::cout << "0. Salir\n";
         std::cout << "Opción: ";
         std::cin >> opcion;
@@ -214,6 +359,18 @@ int main() {
             case 3:
                 mostrarPromedioGolesPorEquipoYCompeticion();
                 break;
+            case 4:
+                mostrarTriunfosYDerrotasPorEquipoYCompeticion();
+                break;
+            case 5:
+                mostrarFechasConMasYMenosGolesPorEquipoYCompeticion();
+                break;
+            case 6:
+                mostrarCompeticionConMasGoles();
+                break;
+            case 7:
+    mostrarEquipoConMasYMenosGoles();
+    break;
             case 0:
                 std::cout << "Saliendo...\n";
                 break;
@@ -224,4 +381,5 @@ int main() {
 
     return 0;
 }
+
 
