@@ -5,6 +5,7 @@
 #include <sstream>
 #include <algorithm>
 #include <map>
+#include <set>
 #define NOMBRE_ARCHIVO "Base_Datos_COMA.csv"
 
 using namespace std;
@@ -122,26 +123,32 @@ void mostrarGolesTotalesEquipo(const vector<Partido> &partidos, const string &eq
 }
 
 // 3. Mostrar promedio de goles de un equipo
-void mostrarPromedioGolesEquipo(const vector<Partido> &partidos, const string &equipo) {
-    map<string, pair<int, int>> golesYPartidos;  // <competición, <goles, partidos>>
+// Mostrar promedio de goles a favor y en contra de un equipo por competición
+void mostrarPromedioGolesAFavorYEnContra(const vector<Partido> &partidos, const string &equipo) {
+    map<string, pair<int, int>> golesAFavorYEnContra;  // <competición, <goles a favor, goles en contra>>
+    map<string, int> partidosJugados;  // <competición, cantidad de partidos>
 
     for (const Partido &p : partidos) {
         if (p.equipoLocal == equipo) {
-            golesYPartidos[p.competicion].first += p.golesLocal;
-            golesYPartidos[p.competicion].second++;
-        }
-        if (p.equipoVisitante == equipo) {
-            golesYPartidos[p.competicion].first += p.golesVisitante;
-            golesYPartidos[p.competicion].second++;
+            golesAFavorYEnContra[p.competicion].first += p.golesLocal;
+            golesAFavorYEnContra[p.competicion].second += p.golesVisitante;
+            partidosJugados[p.competicion]++;
+        } else if (p.equipoVisitante == equipo) {
+            golesAFavorYEnContra[p.competicion].first += p.golesVisitante;
+            golesAFavorYEnContra[p.competicion].second += p.golesLocal;
+            partidosJugados[p.competicion]++;
         }
     }
 
-    cout << "Promedio de goles de " << equipo << ":\n";
-    for (const auto &entry : golesYPartidos) {
-        double promedio = (double)entry.second.first / entry.second.second;
-        cout << entry.first << ": " << promedio << " goles por partido\n";
+    cout << "Promedio de goles a favor y en contra de " << equipo << ":\n";
+    for (const auto &entry : golesAFavorYEnContra) {
+        double promedioAFavor = (double)entry.second.first / partidosJugados[entry.first];
+        double promedioEnContra = (double)entry.second.second / partidosJugados[entry.first];
+        cout << entry.first << ": " << promedioAFavor << " goles a favor por partido, "
+             << promedioEnContra << " goles en contra por partido\n";
     }
 }
+
 
 // 4. Mostrar victorias y derrotas de un equipo
 void mostrarVictoriasYDerrotas(const vector<Partido> &partidos, const string &equipo) {
@@ -172,17 +179,35 @@ void mostrarVictoriasYDerrotas(const vector<Partido> &partidos, const string &eq
 }
 
 // 5. Mostrar fechas con más y menos goles
-void mostrarFechasConMasMenosGoles(const vector<Partido> &partidos) {
-    if (partidos.empty()) return;
+// Mostrar la fecha con más y menos goles de un equipo por competición
+void mostrarFechasConMasYMenosGolesPorCompeticion(const vector<Partido> &partidos, const string &equipo) {
+    map<string, pair<Partido, Partido>> maxMinGoles;  // <competición, <partido con más goles, partido con menos goles>>
 
-    auto maxGoles = max_element(partidos.begin(), partidos.end(), compararPorGoles);
-    auto minGoles = min_element(partidos.begin(), partidos.end(), compararPorGoles);
+    for (const Partido &p : partidos) {
+        if (p.equipoLocal == equipo || p.equipoVisitante == equipo) {
+            int goles = p.golesLocal + p.golesVisitante;
 
-    cout << "Fecha con más goles: " << maxGoles->fecha 
-         << " (" << golesTotales(*maxGoles) << " goles)\n";
-    cout << "Fecha con menos goles: " << minGoles->fecha 
-         << " (" << golesTotales(*minGoles) << " goles)\n";
+            if (maxMinGoles.find(p.competicion) == maxMinGoles.end()) {
+                maxMinGoles[p.competicion] = make_pair(p, p);
+            } else {
+                if (goles > maxMinGoles[p.competicion].first.golesLocal + maxMinGoles[p.competicion].first.golesVisitante) {
+                    maxMinGoles[p.competicion].first = p;
+                }
+                if (goles < maxMinGoles[p.competicion].second.golesLocal + maxMinGoles[p.competicion].second.golesVisitante) {
+                    maxMinGoles[p.competicion].second = p;
+                }
+            }
+        }
+    }
+
+    cout << "Fechas con más y menos goles de " << equipo << " por competición:\n";
+    for (const auto &entry : maxMinGoles) {
+        cout << entry.first << ":\n";
+        cout << "  Fecha con más goles: " << entry.second.first.fecha << " (" << entry.second.first.golesLocal + entry.second.first.golesVisitante << " goles)\n";
+        cout << "  Fecha con menos goles: " << entry.second.second.fecha << " (" << entry.second.second.golesLocal + entry.second.second.golesVisitante << " goles)\n";
+    }
 }
+
 
 // 6. Competición con más goles
 void mostrarCompeticionConMasGoles(const vector<Partido> &partidos) {
@@ -201,27 +226,47 @@ void mostrarCompeticionConMasGoles(const vector<Partido> &partidos) {
 }
 
 // 7. Equipo con más y menos goles
-void mostrarEquipoConMasYMenosGoles(const vector<Partido> &partidos) {
-    map<string, int> golesPorEquipo;
+// Mostrar equipo con más y menos goles convertidos (por competición y global)
+void mostrarEquipoConMasYMenosGolesPorCompeticion(const vector<Partido> &partidos) {
+    map<string, map<string, int>> golesPorEquipoYCompeticion;  // <competición, <equipo, goles>>
+    map<string, int> golesTotalesPorEquipo;  // Goles totales por equipo (en todas las competiciones)
 
     for (const Partido &p : partidos) {
-        golesPorEquipo[p.equipoLocal] += p.golesLocal;
-        golesPorEquipo[p.equipoVisitante] += p.golesVisitante;
+        golesPorEquipoYCompeticion[p.competicion][p.equipoLocal] += p.golesLocal;
+        golesPorEquipoYCompeticion[p.competicion][p.equipoVisitante] += p.golesVisitante;
+
+        golesTotalesPorEquipo[p.equipoLocal] += p.golesLocal;
+        golesTotalesPorEquipo[p.equipoVisitante] += p.golesVisitante;
     }
 
-    auto maxEquipo = max_element(golesPorEquipo.begin(), golesPorEquipo.end(),
-                                 [](const pair<string, int> &a, const pair<string, int> &b) {
-                                     return a.second < b.second;
-                                 });
-    auto minEquipo = min_element(golesPorEquipo.begin(), golesPorEquipo.end(),
-                                 [](const pair<string, int> &a, const pair<string, int> &b) {
-                                     return a.second < b.second;
-                                 });
+    // Mostrar por competición
+    for (const auto &entry : golesPorEquipoYCompeticion) {
+        auto maxEquipo = max_element(entry.second.begin(), entry.second.end(),
+                                     [](const pair<string, int> &a, const pair<string, int> &b) {
+                                         return a.second < b.second;
+                                     });
+        auto minEquipo = min_element(entry.second.begin(), entry.second.end(),
+                                     [](const pair<string, int> &a, const pair<string, int> &b) {
+                                         return a.second < b.second;
+                                     });
+        cout << "Competición: " << entry.first << "\n";
+        cout << "  Equipo con más goles: " << maxEquipo->first << " (" << maxEquipo->second << " goles)\n";
+        cout << "  Equipo con menos goles: " << minEquipo->first << " (" << minEquipo->second << " goles)\n";
+    }
 
-    cout << "Equipo con más goles: " << maxEquipo->first 
-         << " (" << maxEquipo->second << " goles)\n";
-    cout << "Equipo con menos goles: " << minEquipo->first 
-         << " (" << minEquipo->second << " goles)\n";
+    // Mostrar globalmente
+    auto maxEquipoGlobal = max_element(golesTotalesPorEquipo.begin(), golesTotalesPorEquipo.end(),
+                                       [](const pair<string, int> &a, const pair<string, int> &b) {
+                                           return a.second < b.second;
+                                       });
+    auto minEquipoGlobal = min_element(golesTotalesPorEquipo.begin(), golesTotalesPorEquipo.end(),
+                                       [](const pair<string, int> &a, const pair<string, int> &b) {
+                                           return a.second < b.second;
+                                       });
+
+    cout << "\nGlobalmente:\n";
+    cout << "  Equipo con más goles: " << maxEquipoGlobal->first << " (" << maxEquipoGlobal->second << " goles)\n";
+    cout << "  Equipo con menos goles: " << minEquipoGlobal->first << " (" << minEquipoGlobal->second << " goles)\n";
 }
 
 // Función del menú
@@ -262,7 +307,7 @@ void menu(vector<Partido> &partidos) {
                 cout << "Ingrese el nombre del equipo: ";
                 cin.ignore();
                 getline(cin, equipo);
-                mostrarPromedioGolesEquipo(partidos, equipo);
+                mostrarPromedioGolesAFavorYEnContra(partidos, equipo);
                 break;
             }
             case 4: {
@@ -276,7 +321,11 @@ void menu(vector<Partido> &partidos) {
             }
             case 5: {
                 // Opción 5: Mostrar fechas con más y menos goles
-                mostrarFechasConMasMenosGoles(partidos);
+                    string equipo;
+    cout << "Ingrese el nombre del equipo: ";
+    cin.ignore();
+    getline(cin, equipo);
+    mostrarFechasConMasYMenosGolesPorCompeticion(partidos, equipo);
                 break;
             }
             case 6: {
@@ -286,7 +335,7 @@ void menu(vector<Partido> &partidos) {
             }
             case 7: {
                 // Opción 7: Mostrar equipo con más y menos goles
-                mostrarEquipoConMasYMenosGoles(partidos);
+                mostrarEquipoConMasYMenosGolesPorCompeticion(partidos);
                 break;
             }
             case 0:
