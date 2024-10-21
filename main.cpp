@@ -8,6 +8,8 @@
 #include <memory>
 #include <map>
 #include <algorithm>
+#include <sstream>  // Para std::istringstream
+
 
 // Estructura de un partido
 struct Partido {
@@ -326,25 +328,279 @@ void mostrarEquipoConMasYMenosGoles() {
     std::cout << "Equipo con menos goles: " << equipo_min_global
               << " con " << min_goles_global << " goles\n";
 }
+// Funciones para agregar un partido
+bool validarFecha(const std::string& fecha) {
+    if (fecha.size() != 10 || fecha[2] != '/' || fecha[5] != '/') return false;
+    std::string dia = fecha.substr(0, 2);
+    std::string mes = fecha.substr(3, 2);
+    std::string anio = fecha.substr(6, 4);
+    return esNumerico(dia) && esNumerico(mes) && esNumerico(anio);
+}
+
+int ingresarEnteroPositivo(const std::string& mensaje) {
+    int valor;
+    do {
+        std::cout << mensaje;
+        std::cin >> valor;
+        std::cin.ignore();  // Limpiar el buffer de entrada
+        if (valor < 0) std::cout << "Por favor, ingrese un número positivo.\n";
+    } while (valor < 0);
+    return valor;
+}
+
+void agregarPartido() {
+    std::string fecha, equipo_local, equipo_visitante, competicion;
+    int goles_local, goles_visitante;
+
+    // Pedir datos al usuario con validación
+    do {
+        std::cout << "Ingrese la fecha (DD/MM/YYYY): ";
+        std::getline(std::cin, fecha);
+        if (!validarFecha(fecha)) {
+            std::cout << "Fecha inválida. Intente nuevamente.\n";
+        }
+    } while (!validarFecha(fecha));
+
+    std::cout << "Ingrese el equipo local: ";
+    std::getline(std::cin, equipo_local);
+
+    goles_local = ingresarEnteroPositivo("Ingrese los goles del equipo local: ");
+
+    std::cout << "Ingrese el equipo visitante: ";
+    std::getline(std::cin, equipo_visitante);
+
+    goles_visitante = ingresarEnteroPositivo("Ingrese los goles del equipo visitante: ");
+
+    std::cout << "Ingrese la competición: ";
+    std::getline(std::cin, competicion);
+
+    // Crear y almacenar el nuevo partido
+    auto nuevo_partido = std::make_unique<Partido>(
+        "Nueva Jornada", fecha, equipo_local, goles_local, goles_visitante, equipo_visitante, competicion);
+    Partido* ptr = nuevo_partido.get();
+    partidos.push_back(std::move(nuevo_partido));
+
+    // Actualizar estadísticas y mapas
+    actualizarEstadisticas(equipo_local, competicion, goles_local, goles_visitante,
+                           goles_local > goles_visitante, goles_local == goles_visitante);
+    actualizarEstadisticas(equipo_visitante, competicion, goles_visitante, goles_local,
+                           goles_visitante > goles_local, goles_local == goles_visitante);
+
+    goles_por_competicion[competicion].emplace(goles_local + goles_visitante, ptr);
+    goles_totales_por_competicion[competicion] += (goles_local + goles_visitante);
+
+    std::cout << "Partido agregado exitosamente.\n";
+}
+#include <algorithm> // para std::transform
+
+// Función auxiliar: Convertir una cadena a minúsculas
+std::string toLower(const std::string& str) {
+    std::string result = str;
+    std::transform(result.begin(), result.end(), result.begin(), ::tolower);
+    return result;
+}
+
+// Función auxiliar: Extraer el año de una fecha en formato DD/MM/YYYY
+int extraerAnio(const std::string& fecha) {
+    return std::stoi(fecha.substr(6, 4));  // Extraer los últimos 4 caracteres (el año)
+}
+
+// Función de filtrado por año
+std::vector<Partido*> filtrarPartidosPorAnio() {
+    std::string competicion, equipo;
+    int anio;
+
+    // Pedir la competición
+    std::cout << "Ingrese la competición: ";
+    std::getline(std::cin, competicion);
+    competicion = toLower(competicion);  // Convertir a minúsculas
+
+    // Pedir el equipo
+    std::cout << "Ingrese el equipo (local o visitante): ";
+    std::getline(std::cin, equipo);
+    equipo = toLower(equipo);  // Convertir a minúsculas
+
+    // Pedir el año del partido
+    std::cout << "Ingrese el año del partido (YYYY): ";
+    std::cin >> anio;
+    std::cin.ignore();  // Limpiar el buffer de entrada
+
+    // Filtrar los partidos según los criterios proporcionados
+    std::vector<Partido*> resultados;
+    for (const auto& partido_ptr : partidos) {
+        Partido* partido = partido_ptr.get();
+
+        // Convertir datos del partido a minúsculas para comparación
+        std::string competicion_partido = toLower(partido->competicion);
+        std::string local = toLower(partido->equipo_local);
+        std::string visitante = toLower(partido->equipo_visitante);
+
+        // Extraer el año del partido
+        int anio_partido = extraerAnio(partido->fecha);
+
+        // Verificar coincidencias
+        if (competicion_partido == competicion &&
+            (local == equipo || visitante == equipo) &&
+            anio_partido == anio) {
+            resultados.push_back(partido);
+        }
+    }
+
+    return resultados;
+}
 
 
-int main() {
-    std::string archivo = "Base_Datos_COMA.csv";
-    cargarDatosDesdeCSV(archivo);
+void eliminarPartido() {
+    std::vector<Partido*> resultados = filtrarPartidosPorAnio();
 
-    std::cout << "Total de partidos cargados: " << partidos.size() << "\n";
+    if (resultados.empty()) {
+        std::cout << "No se encontraron partidos que coincidan con los criterios.\n";
+        return;
+    }
 
+    // Mostrar los partidos filtrados
+    std::cout << "Partidos encontrados:\n";
+    for (size_t i = 0; i < resultados.size(); ++i) {
+        Partido* partido = resultados[i];
+        std::cout << i + 1 << ". " << partido->equipo_local << " vs "
+                  << partido->equipo_visitante << " - " << partido->fecha
+                  << " (" << partido->competicion << ")\n";
+    }
+
+    // Seleccionar un partido para eliminar
+    int opcion;
+    do {
+        std::cout << "Seleccione el número del partido que desea eliminar: ";
+        std::cin >> opcion;
+        if (opcion < 1 || opcion > static_cast<int>(resultados.size())) {
+            std::cout << "Opción inválida. Intente nuevamente.\n";
+        }
+    } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
+
+    // Eliminar el partido seleccionado
+    Partido* partido_eliminado = resultados[opcion - 1];
+    std::string competicion = partido_eliminado->competicion;
+    int total_goles = partido_eliminado->goles_local + partido_eliminado->goles_visitante;
+
+    auto& partidos_competicion = goles_por_competicion[competicion];
+    for (auto it = partidos_competicion.begin(); it != partidos_competicion.end(); ++it) {
+        if (it->second == partido_eliminado) {
+            partidos_competicion.erase(it);
+            break;
+        }
+    }
+
+    goles_totales_por_competicion[competicion] -= total_goles;
+
+    // Eliminar de la lista principal
+    partidos.erase(std::remove_if(partidos.begin(), partidos.end(),
+                                  [&](const std::unique_ptr<Partido>& p) {
+                                      return p.get() == partido_eliminado;
+                                  }),
+                   partidos.end());
+
+    std::cout << "Partido eliminado correctamente.\n";
+}
+
+
+void modificarPartido() {
+    std::vector<Partido*> resultados = filtrarPartidosPorAnio();
+
+    if (resultados.empty()) {
+        std::cout << "No se encontraron partidos que coincidan con los criterios.\n";
+        return;
+    }
+
+    // Mostrar los partidos filtrados
+    std::cout << "Partidos encontrados:\n";
+    for (size_t i = 0; i < resultados.size(); ++i) {
+        Partido* partido = resultados[i];
+        std::cout << i + 1 << ". " << partido->equipo_local << " vs "
+                  << partido->equipo_visitante << " - " << partido->fecha
+                  << " (" << partido->competicion << ")\n";
+    }
+
+    // Seleccionar un partido para modificar
+    int opcion;
+    do {
+        std::cout << "Seleccione el número del partido que desea modificar: ";
+        std::cin >> opcion;
+        if (opcion < 1 || opcion > static_cast<int>(resultados.size())) {
+            std::cout << "Opción inválida. Intente nuevamente.\n";
+        }
+    } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
+
+    Partido* partido = resultados[opcion - 1];
+
+    // Menú para modificar campos
+    int campo;
+    do {
+        std::cout << "\nSeleccione el campo a modificar:\n";
+        std::cout << "1. Fecha (" << partido->fecha << ")\n";
+        std::cout << "2. Equipo local (" << partido->equipo_local << ")\n";
+        std::cout << "3. Goles equipo local (" << partido->goles_local << ")\n";
+        std::cout << "4. Equipo visitante (" << partido->equipo_visitante << ")\n";
+        std::cout << "5. Goles equipo visitante (" << partido->goles_visitante << ")\n";
+        std::cout << "6. Competición (" << partido->competicion << ")\n";
+        std::cout << "0. Guardar y salir\n";
+        std::cout << "Opción: ";
+        std::cin >> campo;
+        std::cin.ignore();
+
+        switch (campo) {
+            case 1: {
+                std::string nueva_fecha;
+                do {
+                    std::cout << "Ingrese la nueva fecha (DD/MM/YYYY): ";
+                    std::getline(std::cin, nueva_fecha);
+                    if (!validarFecha(nueva_fecha)) {
+                        std::cout << "Fecha inválida. Intente nuevamente.\n";
+                    }
+                } while (!validarFecha(nueva_fecha));
+                partido->fecha = nueva_fecha;
+                break;
+            }
+            case 2:
+                std::cout << "Ingrese el nuevo equipo local: ";
+                std::getline(std::cin, partido->equipo_local);
+                break;
+            case 3:
+                partido->goles_local = ingresarEnteroPositivo("Ingrese los nuevos goles del equipo local: ");
+                break;
+            case 4:
+                std::cout << "Ingrese el nuevo equipo visitante: ";
+                std::getline(std::cin, partido->equipo_visitante);
+                break;
+            case 5:
+                partido->goles_visitante = ingresarEnteroPositivo("Ingrese los nuevos goles del equipo visitante: ");
+                break;
+            case 6:
+                std::cout << "Ingrese la nueva competición: ";
+                std::getline(std::cin, partido->competicion);
+                break;
+            case 0:
+                std::cout << "Cambios guardados.\n";
+                break;
+            default:
+                std::cout << "Opción inválida. Intente nuevamente.\n";
+        }
+    } while (campo != 0);
+}
+
+
+
+int menuProcesamientoDeDatos() {
     int opcion = 0;
     do {
-        std::cout << "\nSeleccione una opción:\n";
+        std::cout << "\nProcesamiento de datos durante lectura archivo CSV:\n";
         std::cout << "1. Top 5 partidos con más goles por competición\n";
         std::cout << "2. Goles a favor y en contra por equipo\n";
         std::cout << "3. Promedio de goles por equipo\n";
         std::cout << "4. Triunfos y derrotas por equipo\n";
         std::cout << "5. Fecha con más y menos goles por equipo\n";
         std::cout << "6. Competición con más goles\n";
-         std::cout << "7. Equipos con más y menos goles\n";
-        std::cout << "0. Salir\n";
+        std::cout << "7. Equipos con más y menos goles\n";
+        std::cout << "0. Volver al menú principal\n";
         std::cout << "Opción: ";
         std::cin >> opcion;
         std::cin.ignore();  // Limpiar el buffer de entrada
@@ -369,8 +625,74 @@ int main() {
                 mostrarCompeticionConMasGoles();
                 break;
             case 7:
-    mostrarEquipoConMasYMenosGoles();
-    break;
+                mostrarEquipoConMasYMenosGoles();
+                break;
+            case 0:
+                std::cout << "Volviendo al menú principal...\n";
+                break;
+            default:
+                std::cout << "Opción no válida. Intente nuevamente.\n";
+        }
+    } while (opcion != 0);
+
+    return 0;
+}
+
+void menuModificacionDeDatos() {
+    int opcion = 0;
+    do {
+        std::cout << "\nModificación de datos y reprocesamiento:\n";
+        std::cout << "1. Agregar un partido\n";
+        std::cout << "2. Eliminar un partido\n";
+        std::cout << "3. Modificar un partido\n";
+        std::cout << "0. Volver al menú principal\n";
+        std::cout << "Opción: ";
+        std::cin >> opcion;
+        std::cin.ignore();  // Limpiar el buffer de entrada
+
+        switch (opcion) {
+            case 1:
+                agregarPartido();
+                break;
+            case 2:
+                eliminarPartido();
+                break;
+            case 3:
+                modificarPartido();
+                break;
+            case 0:
+                std::cout << "Volviendo al menú principal...\n";
+                break;
+            default:
+                std::cout << "Opción no válida. Intente nuevamente.\n";
+        }
+    } while (opcion != 0);
+}
+
+// Menú principal
+int main() {
+    std::string archivo = "Base_Datos_COMA.csv";
+    cargarDatosDesdeCSV(archivo);
+
+    std::cout << "Total de partidos cargados: " << partidos.size() << "\n";
+
+    int opcion = 0;
+    do {
+        std::cout << "\nMenú Principal:\n";
+        std::cout << "1. Procesamiento de datos durante lectura archivo CSV\n";
+        std::cout << "2. Modificación de datos y reprocesamiento\n";
+        std::cout << "0. Salir\n";
+        std::cout << "Opción: ";
+        std::cin >> opcion;
+        std::cin.ignore();  // Limpiar el buffer de entrada
+
+        switch (opcion) {
+            case 1:
+                menuProcesamientoDeDatos();
+                break;
+            case 2:
+                menuModificacionDeDatos();
+                break;
             case 0:
                 std::cout << "Saliendo...\n";
                 break;
@@ -381,5 +703,3 @@ int main() {
 
     return 0;
 }
-
-
