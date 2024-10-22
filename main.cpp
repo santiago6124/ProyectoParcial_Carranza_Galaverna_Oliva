@@ -739,7 +739,156 @@ void listarResultadosEquipoEntreFechas() {
                   << " entre " << fecha_inicio << " y " << fecha_fin << ".\n";
     }
 }
+void compararRendimientoEntreEquipos() {
+    std::string equipo1, equipo2;
 
+    // Pedir los nombres de los equipos al usuario
+    std::cout << "Ingrese el primer equipo: ";
+    std::getline(std::cin, equipo1);
+
+    std::cout << "Ingrese el segundo equipo: ";
+    std::getline(std::cin, equipo2);
+
+    // Convertir los nombres a minúsculas para comparación
+    std::string equipo1_lower = toLower(equipo1);
+    std::string equipo2_lower = toLower(equipo2);
+
+    bool equipo1_encontrado = false, equipo2_encontrado = false;
+
+    std::cout << "\nComparación de rendimiento:\n";
+
+    // Recorrer los equipos en las estadísticas
+    for (const auto& [equipo, competiciones] : estadisticas) {
+        std::string equipo_lower = toLower(equipo);  // Convertir para comparación
+
+        // Verificar si el equipo es uno de los ingresados
+        if (equipo_lower == equipo1_lower || equipo_lower == equipo2_lower) {
+            for (const auto& [competicion, stats] : competiciones) {
+                std::cout << equipo << " - " << competicion << ":\n";
+                std::cout << "  Goles a favor: " << stats.goles_a_favor << "\n";
+                std::cout << "  Goles en contra: " << stats.goles_en_contra << "\n";
+            }
+
+            if (equipo_lower == equipo1_lower) equipo1_encontrado = true;
+            if (equipo_lower == equipo2_lower) equipo2_encontrado = true;
+        }
+    }
+
+    // Mostrar mensajes de error si no se encontraron datos
+    if (!equipo1_encontrado) {
+        std::cout << "No se encontraron datos para el equipo: " << equipo1 << "\n";
+    }
+    if (!equipo2_encontrado) {
+        std::cout << "No se encontraron datos para el equipo: " << equipo2 << "\n";
+    }
+}
+
+void compararRendimientoParticularEntreEquipos() {
+    std::string equipo1, equipo2;
+
+    // Pedir los nombres de los equipos al usuario
+    std::cout << "Ingrese el primer equipo: ";
+    std::getline(std::cin, equipo1);
+
+    std::cout << "Ingrese el segundo equipo: ";
+    std::getline(std::cin, equipo2);
+
+    // Convertir los nombres a minúsculas para comparación
+    std::string equipo1_lower = toLower(equipo1);
+    std::string equipo2_lower = toLower(equipo2);
+
+    int partidos_jugados = 0;
+    int empates = 0;
+    int victorias_equipo1 = 0;
+    int victorias_equipo2 = 0;
+
+    // Recorrer todos los partidos
+    for (const auto& partido_ptr : partidos) {
+        Partido* partido = partido_ptr.get();
+        std::string local = toLower(partido->equipo_local);
+        std::string visitante = toLower(partido->equipo_visitante);
+
+        // Verificar si ambos equipos participaron en el mismo partido
+        if ((local == equipo1_lower && visitante == equipo2_lower) ||
+            (local == equipo2_lower && visitante == equipo1_lower)) {
+            partidos_jugados++;
+
+            // Verificar el resultado del partido
+            if (partido->goles_local == partido->goles_visitante) {
+                empates++;
+            } else if ((local == equipo1_lower && partido->goles_local > partido->goles_visitante) ||
+                       (visitante == equipo1_lower && partido->goles_visitante > partido->goles_local)) {
+                victorias_equipo1++;
+            } else {
+                victorias_equipo2++;
+            }
+        }
+    }
+
+    // Mostrar los resultados
+    std::cout << "\nComparación de rendimiento particular entre " << equipo1 << " y " << equipo2 << ":\n";
+    std::cout << "Partidos jugados entre ellos: " << partidos_jugados << "\n";
+    std::cout << "Empates: " << empates << "\n";
+
+    if (victorias_equipo1 > victorias_equipo2) {
+        std::cout << equipo1 << " ha ganado más partidos: " << victorias_equipo1 << "\n";
+    } else if (victorias_equipo2 > victorias_equipo1) {
+        std::cout << equipo2 << " ha ganado más partidos: " << victorias_equipo2 << "\n";
+    } else {
+        std::cout << "Ambos equipos tienen la misma cantidad de victorias.\n";
+    }
+}
+
+void filtrarEquiposPorUmbralDeGoles() {
+    double umbral;
+    char opcion;
+
+    // Pedir el umbral y la opción al usuario
+    std::cout << "Ingrese el umbral de goles promedio por partido: ";
+    std::cin >> umbral;
+
+    do {
+        std::cout << "¿Desea filtrar por encima ('A') o por debajo ('B') del umbral? (A/B): ";
+        std::cin >> opcion;
+        opcion = std::toupper(opcion);  // Convertir a mayúsculas para comparación
+    } while (opcion != 'A' && opcion != 'B');
+
+    std::cin.ignore();  // Limpiar el buffer de entrada
+
+    std::cout << "\nEquipos con promedio de goles ";
+    if (opcion == 'A') {
+        std::cout << "por encima de " << umbral << ":\n";
+    } else {
+        std::cout << "por debajo de " << umbral << ":\n";
+    }
+
+    bool encontrado = false;
+
+    // Recorrer las estadísticas de todos los equipos y competiciones
+    for (const auto& [equipo, competiciones] : estadisticas) {
+        for (const auto& [competicion, stats] : competiciones) {
+            int partidos_jugados = stats.triunfos + stats.derrotas + stats.empates;
+
+            // Evitar divisiones por cero
+            if (partidos_jugados == 0) continue;
+
+            // Calcular el promedio de goles por partido
+            double promedio_goles = static_cast<double>(stats.goles_a_favor) / partidos_jugados;
+
+            // Verificar si el equipo cumple con el criterio del umbral
+            if ((opcion == 'A' && promedio_goles >= umbral) || 
+                (opcion == 'B' && promedio_goles <= umbral)) {
+                std::cout << equipo << " " << promedio_goles 
+                          << " goles promedio por partido en " << competicion << "\n";
+                encontrado = true;
+            }
+        }
+    }
+
+    if (!encontrado) {
+        std::cout << "No se encontraron equipos que cumplan con el criterio.\n";
+    }
+}
 
 void menuConsultasDinamicas() {
     int opcion = 0;
@@ -747,6 +896,9 @@ void menuConsultasDinamicas() {
         std::cout << "\nConsultas dinamicas:\n";
         std::cout << "1. Todos los resultados de un equipo en una competicion\n";
         std::cout << "2. Resultados de un equipo entre dos fechas\n";
+        std::cout << "3. Comparación de rendimiento entre dos equipos\n";
+        std::cout << "4. Comparación particular entre dos equipos\n";
+        std::cout << "5. Filtrar equipos por umbral de goles\n";  // Nueva opción
         std::cout << "0. Volver al menu principal\n";
         std::cout << "Opcion: ";
         std::cin >> opcion;
@@ -759,6 +911,15 @@ void menuConsultasDinamicas() {
             case 2:
                 listarResultadosEquipoEntreFechas();
                 break;
+            case 3:
+                compararRendimientoEntreEquipos();
+                break;
+            case 4:
+                compararRendimientoParticularEntreEquipos();  // Nueva opción
+                break;
+            case 5:
+                filtrarEquiposPorUmbralDeGoles();  // Nueva opción
+                break;
             case 0:
                 std::cout << "Volviendo al menu principal...\n";
                 break;
@@ -767,6 +928,8 @@ void menuConsultasDinamicas() {
         }
     } while (opcion != 0);
 }
+
+
 
 int menuProcesamientoDeDatos() {
     int opcion = 0;
