@@ -597,13 +597,8 @@ int convertirFecha(const std::string& fecha) {
     getline(ss, mes, '/');
     getline(ss, anio);
 
-    // Asegurarnos de que día y mes tengan dos dígitos
-    std::ostringstream fecha_convertida;
-    fecha_convertida << anio
-                     << std::setw(2) << std::setfill('0') << mes  // Mes con dos dígitos
-                     << std::setw(2) << std::setfill('0') << dia; // Día con dos dígitos
-
-    return std::stoi(fecha_convertida.str());
+    // Convertir al formato YYYYMMDD
+    return std::stoi(anio + mes + dia);
 }
 void listarResultadosEquipoCompeticion() {
     std::string equipo, competicion;
@@ -666,8 +661,84 @@ void listarResultadosEquipoCompeticion() {
     }
 }
 
+void listarResultadosEquipoEntreFechas() {
+    std::string equipo, fecha_inicio, fecha_fin;
 
+    // Pedir el equipo y las fechas al usuario
+    std::cout << "Ingrese el equipo: ";
+    std::getline(std::cin, equipo);
 
+    do {
+        std::cout << "Ingrese la fecha de inicio (DD/MM/YYYY): ";
+        std::getline(std::cin, fecha_inicio);
+        if (!validarFecha(fecha_inicio)) {
+            std::cout << "Fecha inválida. Intente nuevamente.\n";
+        }
+    } while (!validarFecha(fecha_inicio));
+
+    do {
+        std::cout << "Ingrese la fecha de fin (DD/MM/YYYY): ";
+        std::getline(std::cin, fecha_fin);
+        if (!validarFecha(fecha_fin)) {
+            std::cout << "Fecha inválida. Intente nuevamente.\n";
+        }
+    } while (!validarFecha(fecha_fin));
+
+    equipo = toLower(equipo);  // Convertir a minúsculas para comparación
+
+    int fecha_inicio_int = convertirFecha(fecha_inicio);
+    int fecha_fin_int = convertirFecha(fecha_fin);
+
+    bool encontrados = false;
+
+    // Buscar partidos del equipo entre las fechas especificadas
+    for (const auto& partido_ptr : partidos) {
+        Partido* partido = partido_ptr.get();
+        std::string equipo_local = toLower(partido->equipo_local);
+        std::string equipo_visitante = toLower(partido->equipo_visitante);
+        std::string fecha_partido = partido->fecha;
+
+        int fecha_partido_int = convertirFecha(fecha_partido);
+
+        // Verificar si el equipo participó y la fecha está en el rango
+        if ((equipo_local == equipo || equipo_visitante == equipo) &&
+            fecha_partido_int >= fecha_inicio_int && fecha_partido_int <= fecha_fin_int) {
+            encontrados = true;
+
+            // Imprimir el resultado del partido
+            std::cout << partido->fecha << " - ";
+            if (equipo_local == equipo) {
+                std::cout << partido->equipo_local << " " << partido->goles_local << " a "
+                          << partido->goles_visitante << " ";
+
+                if (partido->goles_local > partido->goles_visitante) {
+                    std::cout << "ganó a " << partido->equipo_visitante;
+                } else if (partido->goles_local < partido->goles_visitante) {
+                    std::cout << "perdió con " << partido->equipo_visitante;
+                } else {
+                    std::cout << "empató con " << partido->equipo_visitante;
+                }
+            } else {
+                std::cout << partido->equipo_visitante << " " << partido->goles_visitante
+                          << " a " << partido->goles_local << " ";
+
+                if (partido->goles_visitante > partido->goles_local) {
+                    std::cout << "ganó a " << partido->equipo_local;
+                } else if (partido->goles_visitante < partido->goles_local) {
+                    std::cout << "perdió con " << partido->equipo_local;
+                } else {
+                    std::cout << "empató con " << partido->equipo_local;
+                }
+            }
+            std::cout << " en " << partido->competicion << ".\n";
+        }
+    }
+
+    if (!encontrados) {
+        std::cout << "No se encontraron partidos para " << equipo
+                  << " entre " << fecha_inicio << " y " << fecha_fin << ".\n";
+    }
+}
 
 
 void menuConsultasDinamicas() {
@@ -685,7 +756,9 @@ void menuConsultasDinamicas() {
             case 1:
                 listarResultadosEquipoCompeticion();
                 break;
-
+            case 2:
+                listarResultadosEquipoEntreFechas();
+                break;
             case 0:
                 std::cout << "Volviendo al menu principal...\n";
                 break;
@@ -777,7 +850,7 @@ void menuModificacionDeDatos() {
 
 // Menu principal
 int main() {
-    std::string archivo = "Base_Datos_COMA.csv";
+    std::string archivo = "Base_Datos_COMA_Normalizado.csv";
     cargarDatosDesdeCSV(archivo);
 
     int opcion = 0;
