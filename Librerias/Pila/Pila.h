@@ -87,7 +87,7 @@ T Pila<T>::pop()
 }
 
 /**
- * Responde si la pila se encuentra Vacía
+ * Responde si la pila se encuentra Vacia
  * @tparam T
  * @return
  */

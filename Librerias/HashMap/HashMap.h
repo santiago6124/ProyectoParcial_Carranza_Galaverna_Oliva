@@ -108,7 +108,7 @@ void HashMap<K, T>::remove(K clave) {
 
     if (tabla[pos]->getClave() == clave) {
         delete tabla[pos]; // Eliminar la entrada
-        tabla[pos] = NULL;  // Marcar la posición como vacía
+        tabla[pos] = NULL;  // Marcar la posicion como vacia
     } else {
         throw 409; // Conflicto: la clave no coincide
     }

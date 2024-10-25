@@ -99,7 +99,7 @@ void ListaDoble<T>::insertarUltimo(T dato) {
 template <class T>
 void ListaDoble<T>::remover(int pos) {
     if (esVacia() || pos < 0 || pos >= getTamanio()) {
-        throw std::out_of_range("Posición inválida");
+        throw std::out_of_range("Posicion invalida");
     }
 
     NodoDoble<T>* aux = inicio;
@@ -135,7 +135,7 @@ void ListaDoble<T>::remover(int pos) {
 template <class T>
 T ListaDoble<T>::getDato(int pos) const {
     if (pos < 0 || pos >= getTamanio()) {
-        throw std::out_of_range("Posición inválida");
+        throw std::out_of_range("Posicion invalida");
     }
 
     NodoDoble<T>* aux = inicio;
@@ -152,7 +152,7 @@ T ListaDoble<T>::getDato(int pos) const {
 template <class T>
 void ListaDoble<T>::reemplazar(int pos, T dato) {
     if (pos < 0 || pos >= getTamanio()) {
-        throw std::out_of_range("Posición inválida");
+        throw std::out_of_range("Posicion invalida");
     }
 
     NodoDoble<T>* aux = inicio;

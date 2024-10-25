@@ -4,7 +4,7 @@
 #include <iomanip>
 #include <string>
 
-// Función para verificar si una cadena es numérica
+// Funcion para verificar si una cadena es numerica
 bool esNumerico(const std::string& str) {
     for (char c : str) {
         if (!std::isdigit(c)) {
@@ -14,7 +14,7 @@ bool esNumerico(const std::string& str) {
     return true;
 }
 
-// Función para convertir la fecha al formato dd/mm/YYYY
+// Funcion para convertir la fecha al formato dd/mm/YYYY
 std::string formatearFecha(const std::string& fecha) {
     std::istringstream ss(fecha);
     std::string dia, mes, anio;
@@ -23,7 +23,7 @@ std::string formatearFecha(const std::string& fecha) {
     getline(ss, mes, '/');
     getline(ss, anio);
 
-    // Asegurar que día y mes tengan dos dígitos
+    // Asegurar que dia y mes tengan dos digitos
     std::ostringstream fecha_formateada;
     fecha_formateada << std::setw(2) << std::setfill('0') << dia << "/"
                      << std::setw(2) << std::setfill('0') << mes << "/"
@@ -32,7 +32,7 @@ std::string formatearFecha(const std::string& fecha) {
     return fecha_formateada.str();
 }
 
-// Función para normalizar las fechas en el CSV
+// Funcion para normalizar las fechas en el CSV
 void normalizarCSV(const std::string& archivo_entrada, const std::string& archivo_salida) {
     std::ifstream archivo_csv(archivo_entrada);
     std::ofstream archivo_csv_salida(archivo_salida);
@@ -50,7 +50,7 @@ void normalizarCSV(const std::string& archivo_entrada, const std::string& archiv
     std::string linea;
     bool primera_linea = true;
 
-    // Leer y escribir línea por línea
+    // Leer y escribir linea por linea
     while (getline(archivo_csv, linea)) {
         std::istringstream ss(linea);
         std::string jornada, fecha, local, golesL, golesV, visitante, competicion;
@@ -64,12 +64,12 @@ void normalizarCSV(const std::string& archivo_entrada, const std::string& archiv
         getline(ss, visitante, ',');
         getline(ss, competicion, ',');
 
-        // Formatear la fecha si no es la primera línea (encabezado)
+        // Formatear la fecha si no es la primera linea (encabezado)
         if (!primera_linea) {
             fecha = formatearFecha(fecha);
         }
 
-        // Escribir la línea modificada en el archivo de salida
+        // Escribir la linea modificada en el archivo de salida
         archivo_csv_salida << jornada << "," << fecha << "," << local << ","
                            << golesL << "," << golesV << "," << visitante << ","
                            << competicion << "\n";

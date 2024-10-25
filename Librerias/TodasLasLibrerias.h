@@ -54,8 +54,8 @@ private:
 
 /**
  * Constructor del Arbol
- * @tparam K Clave por la cual va a ordenar el árbol
- * @tparam T Valor guardado por el árbol
+ * @tparam K Clave por la cual va a ordenar el arbol
+ * @tparam T Valor guardado por el arbol
  */
 template <class T>
 ArbolBinarioAVL<T>::ArbolBinarioAVL() { root = nullptr; }
@@ -67,8 +67,8 @@ template <class T>
 ArbolBinarioAVL<T>::~ArbolBinarioAVL() {}
 
 /**
- * Busca un dato en el árbol. Si no esta el dato en el árbol
- * tira una excepción
+ * Busca un dato en el arbol. Si no esta el dato en el arbol
+ * tira una excepcion
  * @param clave Valor a buscar
  * @return el valor buscado
  */
@@ -102,7 +102,7 @@ T ArbolBinarioAVL<T>::search(T data, NodoArbolAVL<T> *r)
 }
 
 /**
- * Agrega un dato al árbol
+ * Agrega un dato al arbol
  * @param clave Clave para agregar el dato
  * @param dato Dato a agregar
  */
@@ -169,7 +169,7 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::put(T data, NodoArbolAVL<T> *r)
 }
 
 /**
- * Elimina un dato del árbol
+ * Elimina un dato del arbol
  * @param clave Clave para identificar el nodo a borrar
  */
 template <class T>
@@ -282,14 +282,14 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::findMin(NodoArbolAVL<T> *r)
 }
 
 /**
- * Informa si un árbol esta vacío
+ * Informa si un arbol esta vacio
  * @return
  */
 template <class T>
 bool ArbolBinarioAVL<T>::esVacio() { return root == nullptr; }
 
 /**
- * Recorre un árbol en preorden
+ * Recorre un arbol en preorden
  */
 template <class T>
 void ArbolBinarioAVL<T>::preorder()
@@ -312,7 +312,7 @@ void ArbolBinarioAVL<T>::preorder(NodoArbolAVL<T> *r)
 }
 
 /**
- * Recorre un árbol en orden
+ * Recorre un arbol en orden
  */
 template <class T>
 void ArbolBinarioAVL<T>::inorder()
@@ -335,7 +335,7 @@ void ArbolBinarioAVL<T>::inorder(NodoArbolAVL<T> *r)
 }
 
 /**
- * Recorre un árbol en postorden
+ * Recorre un arbol en postorden
  */
 template <class T>
 void ArbolBinarioAVL<T>::postorder()
@@ -358,7 +358,7 @@ void ArbolBinarioAVL<T>::postorder(NodoArbolAVL<T> *r)
 }
 
 /**
- * Muestra un árbol por consola
+ * Muestra un arbol por consola
  */
 template <class T>
 void ArbolBinarioAVL<T>::print()
@@ -551,7 +551,7 @@ T Pila<T>::pop()
 }
 
 /**
- * Responde si la pila se encuentra Vacía
+ * Responde si la pila se encuentra Vacia
  * @tparam T
  * @return
  */
@@ -663,7 +663,7 @@ void ListaDoble<T>::insertarUltimo(T dato) {
 template <class T>
 void ListaDoble<T>::remover(int pos) {
     if (esVacia() || pos < 0 || pos >= getTamanio()) {
-        throw std::out_of_range("Posición inválida");
+        throw std::out_of_range("Posicion invalida");
     }
 
     NodoDoble<T>* aux = inicio;
@@ -699,7 +699,7 @@ void ListaDoble<T>::remover(int pos) {
 template <class T>
 T ListaDoble<T>::getDato(int pos) const {
     if (pos < 0 || pos >= getTamanio()) {
-        throw std::out_of_range("Posición inválida");
+        throw std::out_of_range("Posicion invalida");
     }
 
     NodoDoble<T>* aux = inicio;
@@ -716,7 +716,7 @@ T ListaDoble<T>::getDato(int pos) const {
 template <class T>
 void ListaDoble<T>::reemplazar(int pos, T dato) {
     if (pos < 0 || pos >= getTamanio()) {
-        throw std::out_of_range("Posición inválida");
+        throw std::out_of_range("Posicion invalida");
     }
 
     NodoDoble<T>* aux = inicio;
@@ -843,7 +843,7 @@ template <class T> int Lista<T>::getTamanio() {
 /**
  * Inserta un nodo con el dato en la posicion pos
  * @tparam T
- * @param pos lugar donde será insertado el dato
+ * @param pos lugar donde sera insertado el dato
  * @param dato  dato a insertar
  */
 template <class T> void Lista<T>::insertar(int pos, T dato) {
@@ -978,7 +978,7 @@ template <class T> void Lista<T>::reemplazar(int pos, T dato) {
 }
 
 /**
- * Función que vacia la lista enlazada
+ * Funcion que vacia la lista enlazada
  * @tparam T
  */
 template <class T> void Lista<T>::vaciar() {
@@ -1095,11 +1095,11 @@ template <class T>
 void CircList<T>::insertar(int pos, T dato)
 {
     if (pos < 0) {
-        throw std::out_of_range("Posición negativa no válida");
+        throw std::out_of_range("Posicion negativa no valida");
     }
 
     if (pos != 0 && esVacia()) {
-        throw 400;  // No se puede insertar en una posición diferente a 0 si la lista está vacía
+        throw 400;  // No se puede insertar en una posicion diferente a 0 si la lista esta vacia
     }
 
     Nodo<T> *nuevo = new Nodo<T>();
@@ -1130,7 +1130,7 @@ void CircList<T>::insertar(int pos, T dato)
     }
 
     if (posActual < pos - 1) {
-        throw std::out_of_range("Posición fuera del rango de la lista");
+        throw std::out_of_range("Posicion fuera del rango de la lista");
     }
 
     nuevo->setSiguiente(aux->getSiguiente());
@@ -1161,14 +1161,14 @@ void CircList<T>::insertarUltimo(T dato)
         aux = aux->getSiguiente();
     }
 
-    nuevo->setSiguiente(inicio); // Simplificación del código
+    nuevo->setSiguiente(inicio); // Simplificacion del codigo
     aux->setSiguiente(nuevo);
 }
 
 template <class T>
 T CircList<T>::getDato(int pos) {
     if (pos < 0 || esVacia()) {
-        throw 404;  // Posición inválida
+        throw 404;  // Posicion invalida
     }
 
     Nodo<T> *aux = inicio;
@@ -1182,7 +1182,7 @@ T CircList<T>::getDato(int pos) {
         posActual++;
     } while (aux != inicio);
 
-    throw 404;  // Posición fuera del rango de la lista
+    throw 404;  // Posicion fuera del rango de la lista
 }
 
 
@@ -1190,7 +1190,7 @@ template <class T>
 void CircList<T>::imprimir()
 {
     if (esVacia()) {
-        std::cout << "La lista está vacía." << std::endl;
+        std::cout << "La lista esta vacia." << std::endl;
         return;
     }
 
@@ -1213,7 +1213,7 @@ void CircList<T>::eliminarPorValor(const T& valor) {
     Nodo<T> *previo = nullptr;
     Nodo<T> *ultimo = inicio;
 
-    // Encontrar el último nodo
+    // Encontrar el ultimo nodo
     while (ultimo->getSiguiente() != inicio) {
         ultimo = ultimo->getSiguiente();
     }
@@ -1226,7 +1226,7 @@ void CircList<T>::eliminarPorValor(const T& valor) {
                     delete inicio;
                     inicio = nullptr;
                     return;
-                } else { // Más de un nodo
+                } else { // Mas de un nodo
                     ultimo->setSiguiente(inicio->getSiguiente());
                     Nodo<T>* temp = inicio;
                     inicio = inicio->getSiguiente();
@@ -1234,7 +1234,7 @@ void CircList<T>::eliminarPorValor(const T& valor) {
                     actual = inicio; // Continuar con el siguiente nodo
                 }
             } else {
-                // Nodo en cualquier otra posición
+                // Nodo en cualquier otra posicion
                 previo->setSiguiente(actual->getSiguiente());
                 delete actual;
                 return;
@@ -1254,7 +1254,7 @@ void CircList<T>::eliminarPorValor(const T& valor) {
  * @param pos posicion del nodo a eliminar
  */
 template <class T> void CircList<T>::remover(int pos) {
-    if (inicio == nullptr) {  // Verificar si la lista está vacía
+    if (inicio == nullptr) {  // Verificar si la lista esta vacia
         throw 404;
     }
 
@@ -1269,25 +1269,25 @@ template <class T> void CircList<T>::remover(int pos) {
             return;
         }
 
-        // Buscar el último nodo para actualizar su puntero
+        // Buscar el ultimo nodo para actualizar su puntero
         while (aux->getSiguiente() != inicio) {
             aux = aux->getSiguiente();
         }
 
-        aux->setSiguiente(inicio->getSiguiente());  // Conectar el último nodo al nuevo inicio
+        aux->setSiguiente(inicio->getSiguiente());  // Conectar el ultimo nodo al nuevo inicio
         aBorrar = inicio;
         inicio = inicio->getSiguiente();  // Actualizar el inicio al siguiente nodo
         delete aBorrar;
         return;
     }
 
-    // Búsqueda del nodo anterior al que se desea eliminar
+    // Busqueda del nodo anterior al que se desea eliminar
     while (aux->getSiguiente() != inicio && posActual < pos - 1) {
         aux = aux->getSiguiente();
         posActual++;
     }
 
-    if (posActual < pos - 1 || aux->getSiguiente() == inicio) {  // Si la posición no es válida
+    if (posActual < pos - 1 || aux->getSiguiente() == inicio) {  // Si la posicion no es valida
         throw 404;
     }
 

@@ -112,7 +112,7 @@ T ColaPrioridad<T>::desencolar()
 }
 
 /**
- * Responde si la Cola se encuentra Vacía
+ * Responde si la Cola se encuentra Vacia
  * @tparam T
  * @return
  */

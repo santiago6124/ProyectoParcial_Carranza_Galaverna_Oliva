@@ -3,7 +3,8 @@
 #define CARGA_DATOS_H
 
 #include <string>
+using namespace std;
 
-void cargarDatosDesdeCSV(const std::string& archivo);
+void cargarDatosDesdeCSV(const string &archivo);
 
-#endif  // CARGA_DATOS_H
+#endif // CARGA_DATOS_H

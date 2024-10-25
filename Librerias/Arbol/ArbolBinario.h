@@ -42,8 +42,8 @@ private:
 
 /**
  * Constructor del Arbol
- * @tparam K Clave por la cual va a ordenar el árbol
- * @tparam T Valor guardado por el árbol
+ * @tparam K Clave por la cual va a ordenar el arbol
+ * @tparam T Valor guardado por el arbol
  */
 template <class T>
 ArbolBinario<T>::ArbolBinario() { root = nullptr; }
@@ -55,8 +55,8 @@ template <class T>
 ArbolBinario<T>::~ArbolBinario() {}
 
 /**
- * Busca un dato en el árbol. Si no esta el dato en el árbol
- * tira una excepción
+ * Busca un dato en el arbol. Si no esta el dato en el arbol
+ * tira una excepcion
  * @param clave Valor a buscar
  * @return el valor buscado
  */
@@ -90,7 +90,7 @@ T ArbolBinario<T>::search(T data, NodoArbol<T> *r)
 }
 
 /**
- * Agrega un dato al árbol
+ * Agrega un dato al arbol
  * @param clave Clave para agregar el dato
  * @param dato Dato a agregar
  */
@@ -123,7 +123,7 @@ NodoArbol<T> *ArbolBinario<T>::put(T data, NodoArbol<T> *r)
 }
 
 /**
- * Elimina un dato del árbol
+ * Elimina un dato del arbol
  * @param clave Clave para identificar el nodo a borrar
  */
 template <class T>
@@ -198,17 +198,17 @@ NodoArbol<T> *ArbolBinario<T>::remove(T data, NodoArbol<T> *r)
 {
     if (r == nullptr)
     {
-        throw 404;  // Si el nodo es nulo, lanzamos excepción de "no encontrado"
+        throw 404;  // Si el nodo es nulo, lanzamos excepcion de "no encontrado"
     }
 
     if (data < r->getData())
     {
-        // Si el valor a eliminar es menor, buscamos en el subárbol izquierdo
+        // Si el valor a eliminar es menor, buscamos en el subarbol izquierdo
         r->setLeft(remove(data, r->getLeft()));
     }
     else if (data > r->getData())
     {
-        // Si el valor a eliminar es mayor, buscamos en el subárbol derecho
+        // Si el valor a eliminar es mayor, buscamos en el subarbol derecho
         r->setRight(remove(data, r->getRight()));
     }
     else
@@ -237,9 +237,9 @@ NodoArbol<T> *ArbolBinario<T>::remove(T data, NodoArbol<T> *r)
         else
         {
             // Caso 4: El nodo tiene dos hijos
-            NodoArbol<T> *temp = findMaxAndRemove(r->getLeft(), nullptr);  // Buscamos el máximo en el subárbol izquierdo
+            NodoArbol<T> *temp = findMaxAndRemove(r->getLeft(), nullptr);  // Buscamos el maximo en el subarbol izquierdo
             r->setData(temp->getData());  // Reemplazamos los datos del nodo actual
-            r->setLeft(remove(temp->getData(), r->getLeft()));  // Eliminamos el nodo que contenía el mayor valor
+            r->setLeft(remove(temp->getData(), r->getLeft()));  // Eliminamos el nodo que contenia el mayor valor
         }
     }
     return r;
@@ -271,9 +271,9 @@ NodoArbol<T> *ArbolBinario<T>::findMaxAndRemove(NodoArbol<T> *r, bool *found)
 {
     if (r->getRight() == nullptr)
     {
-        // Si no tiene subárbol derecho, este es el máximo
+        // Si no tiene subarbol derecho, este es el maximo
         NodoArbol<T> *maxNode = r;
-        r = r->getLeft();  // Actualizamos el puntero para el padre del nodo máximo
+        r = r->getLeft();  // Actualizamos el puntero para el padre del nodo maximo
         return maxNode;
     }
     r->setRight(findMaxAndRemove(r->getRight(), found));
@@ -281,14 +281,14 @@ NodoArbol<T> *ArbolBinario<T>::findMaxAndRemove(NodoArbol<T> *r, bool *found)
 }
 
 /**
- * Informa si un árbol esta vacío
+ * Informa si un arbol esta vacio
  * @return
  */
 template <class T>
 bool ArbolBinario<T>::esVacio() { return root == nullptr; }
 
 /**
- * Recorre un árbol en preorden
+ * Recorre un arbol en preorden
  */
 template <class T>
 void ArbolBinario<T>::preorder()
@@ -311,7 +311,7 @@ void ArbolBinario<T>::preorder(NodoArbol<T> *r)
 }
 
 /**
- * Recorre un árbol en orden
+ * Recorre un arbol en orden
  */
 template <class T>
 void ArbolBinario<T>::inorder()
@@ -334,7 +334,7 @@ void ArbolBinario<T>::inorder(NodoArbol<T> *r)
 }
 
 /**
- * Recorre un árbol en postorden
+ * Recorre un arbol en postorden
  */
 template <class T>
 void ArbolBinario<T>::postorder()
@@ -357,7 +357,7 @@ void ArbolBinario<T>::postorder(NodoArbol<T> *r)
 }
 
 /**
- * Muestra un árbol por consola
+ * Muestra un arbol por consola
  */
 template <class T>
 void ArbolBinario<T>::print()

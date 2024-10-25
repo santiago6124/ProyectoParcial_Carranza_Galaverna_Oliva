@@ -86,7 +86,7 @@ template <class T> int Lista<T>::getTamanio() {
 /**
  * Inserta un nodo con el dato en la posicion pos
  * @tparam T
- * @param pos lugar donde será insertado el dato
+ * @param pos lugar donde sera insertado el dato
  * @param dato  dato a insertar
  */
 template <class T> void Lista<T>::insertar(int pos, T dato) {
@@ -221,7 +221,7 @@ template <class T> void Lista<T>::reemplazar(int pos, T dato) {
 }
 
 /**
- * Función que vacia la lista enlazada
+ * Funcion que vacia la lista enlazada
  * @tparam T
  */
 template <class T> void Lista<T>::vaciar() {

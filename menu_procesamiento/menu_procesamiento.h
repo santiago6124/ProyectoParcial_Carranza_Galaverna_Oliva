@@ -1,5 +1,6 @@
 #ifndef MENU_PROCESAMIENTO_H
 #define MENU_PROCESAMIENTO_H
+using namespace std;
 
 void mostrarTop5PartidosTodasLasCompeticiones();
 void mostrarGolesPorEquipoYCompeticion();

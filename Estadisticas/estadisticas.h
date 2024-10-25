@@ -4,8 +4,10 @@
 
 #include <string>
 #include <unordered_map>
+using namespace std;
 
-struct Estadisticas {
+struct Estadisticas
+{
     int goles_a_favor = 0;
     int goles_en_contra = 0;
     int triunfos = 0;
@@ -13,7 +15,7 @@ struct Estadisticas {
     int empates = 0;
 };
 
-void actualizarEstadisticas(const std::string& equipo, const std::string& competicion,
+void actualizarEstadisticas(const string &equipo, const string &competicion,
                             int goles_a_favor, int goles_en_contra, bool triunfo, bool empate);
 
-#endif  // ESTADISTICAS_H
+#endif // ESTADISTICAS_H

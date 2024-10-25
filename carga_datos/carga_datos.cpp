@@ -9,23 +9,25 @@
 #include <memory>
 #include "../Globals/globals.h"
 
-
 // Cargar datos desde el archivo CSV con el formato proporcionado
-void cargarDatosDesdeCSV(const std::string& archivo) {
-    std::ifstream archivo_csv(archivo);
+void cargarDatosDesdeCSV(const string &archivo)
+{
+    ifstream archivo_csv(archivo);
 
-    if (!archivo_csv.is_open()) {
-        std::cerr << "Error: No se pudo abrir el archivo " << archivo << "\n";
+    if (!archivo_csv.is_open())
+    {
+        cerr << "Error: No se pudo abrir el archivo " << archivo << "\n";
         return;
     }
 
-    std::string linea;
+    string linea;
     // Saltar la primera linea (encabezados)
     getline(archivo_csv, linea);
 
-    while (getline(archivo_csv, linea)) {
-        std::istringstream ss(linea);
-        std::string jornada, fecha, local, golesL, golesV, visitante, competicion;
+    while (getline(archivo_csv, linea))
+    {
+        istringstream ss(linea);
+        string jornada, fecha, local, golesL, golesV, visitante, competicion;
 
         getline(ss, jornada, ',');
         getline(ss, fecha, ',');
@@ -35,16 +37,17 @@ void cargarDatosDesdeCSV(const std::string& archivo) {
         getline(ss, visitante, ',');
         getline(ss, competicion, ',');
 
-        if (!esNumerico(golesL) || !esNumerico(golesV)) {
-            std::cerr << "Error: Datos invalidos en la linea: " << linea << "\n";
+        if (!esNumerico(golesL) || !esNumerico(golesV))
+        {
+            cerr << "Error: Datos invalidos en la linea: " << linea << "\n";
             continue;
         }
 
         // Crear el partido y almacenar el puntero
-        auto partido = std::make_unique<Partido>(
-            jornada, fecha, local, std::stoi(golesL), std::stoi(golesV), visitante, competicion);
-        Partido* ptr = partido.get();
-        partidos.push_back(std::move(partido));
+        auto partido = make_unique<Partido>(
+            jornada, fecha, local, stoi(golesL), stoi(golesV), visitante, competicion);
+        Partido *ptr = partido.get();
+        partidos.push_back(move(partido));
 
         int total_goles = ptr->goles_local + ptr->goles_visitante;
 

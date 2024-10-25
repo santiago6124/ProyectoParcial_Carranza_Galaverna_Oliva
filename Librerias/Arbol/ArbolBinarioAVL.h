@@ -54,8 +54,8 @@ private:
 
 /**
  * Constructor del Arbol
- * @tparam K Clave por la cual va a ordenar el árbol
- * @tparam T Valor guardado por el árbol
+ * @tparam K Clave por la cual va a ordenar el a�rbol
+ * @tparam T Valor guardado por el a�rbol
  */
 template <class T>
 ArbolBinarioAVL<T>::ArbolBinarioAVL() { root = nullptr; }
@@ -67,8 +67,8 @@ template <class T>
 ArbolBinarioAVL<T>::~ArbolBinarioAVL() {}
 
 /**
- * Busca un dato en el árbol. Si no esta el dato en el árbol
- * tira una excepción
+ * Busca un dato en el a�rbol. Si no esta el dato en elaárbol
+ * tira una excepcio�n
  * @param clave Valor a buscar
  * @return el valor buscado
  */
@@ -102,7 +102,7 @@ T ArbolBinarioAVL<T>::search(T data, NodoArbolAVL<T> *r)
 }
 
 /**
- * Agrega un dato al árbol
+ * Agrega un dato al a�rbol
  * @param clave Clave para agregar el dato
  * @param dato Dato a agregar
  */
@@ -169,7 +169,7 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::put(T data, NodoArbolAVL<T> *r)
 }
 
 /**
- * Elimina un dato del árbol
+ * Elimina un dato del a�rbol
  * @param clave Clave para identificar el nodo a borrar
  */
 template <class T>
@@ -282,14 +282,14 @@ NodoArbolAVL<T> *ArbolBinarioAVL<T>::findMin(NodoArbolAVL<T> *r)
 }
 
 /**
- * Informa si un árbol esta vacío
+ * Informa si un a�rbol esta vicío
  * @return
  */
 template <class T>
 bool ArbolBinarioAVL<T>::esVacio() { return root == nullptr; }
 
 /**
- * Recorre un árbol en preorden
+ * Recorre un a�rbol en preorden
  */
 template <class T>
 void ArbolBinarioAVL<T>::preorder()
@@ -312,7 +312,7 @@ void ArbolBinarioAVL<T>::preorder(NodoArbolAVL<T> *r)
 }
 
 /**
- * Recorre un árbol en orden
+ * Recorre un a�rbol en orden
  */
 template <class T>
 void ArbolBinarioAVL<T>::inorder()
@@ -335,7 +335,7 @@ void ArbolBinarioAVL<T>::inorder(NodoArbolAVL<T> *r)
 }
 
 /**
- * Recorre un árbol en postorden
+ * Recorre un a�rbol en postorden
  */
 template <class T>
 void ArbolBinarioAVL<T>::postorder()
@@ -358,7 +358,7 @@ void ArbolBinarioAVL<T>::postorder(NodoArbolAVL<T> *r)
 }
 
 /**
- * Muestra un árbol por consola
+ * Muestra un a�rbol por consola
  */
 template <class T>
 void ArbolBinarioAVL<T>::print()

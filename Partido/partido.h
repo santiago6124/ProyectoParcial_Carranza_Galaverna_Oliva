@@ -3,21 +3,23 @@
 #define PARTIDO_H
 
 #include <string>
+using namespace std;
 
 // Estructura que representa un partido
-struct Partido {
-    std::string jornada;
-    std::string fecha;  
-    std::string equipo_local;
-    std::string equipo_visitante;
+struct Partido
+{
+    string jornada;
+    string fecha;
+    string equipo_local;
+    string equipo_visitante;
     int goles_local;
     int goles_visitante;
-    std::string competicion;
+    string competicion;
 
     // Constructor
-    Partido(const std::string& j, const std::string& f,
-            const std::string& local, int golesL, int golesV,
-            const std::string& visitante, const std::string& comp);
+    Partido(const string &j, const string &f,
+            const string &local, int golesL, int golesV,
+            const string &visitante, const string &comp);
 };
 
-#endif  // PARTIDO_H
+#endif // PARTIDO_H

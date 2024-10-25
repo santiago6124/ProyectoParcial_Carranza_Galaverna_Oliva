@@ -1,6 +1,6 @@
 #ifndef GRAFO_H
 #define GRAFO_H
-/*Estructura de Datos Grafo no dirigido con aristas sin y con ponderar. Se sugiere revisar la ponderación antes de usarla.*/
+/*Estructura de Datos Grafo no dirigido con aristas sin y con ponderar. Se sugiere revisar la ponderacion antes de usarla.*/
 #include <iostream>
 #include <map>
 #include "NodoGrafo.h"
@@ -12,7 +12,7 @@
 #include <utility>
 using namespace std;
 
-// Definición de Grafo
+// Definicion de Grafo
 template <class T>
 class Grafo {
 private:
@@ -27,7 +27,7 @@ public:
     void eliminarNodo(const T& nodo);
     void eliminarArista(const T& origen, const T& destino);
     bool estanConectados(const T& origen, const T& destino);
-    bool buscarNodo(const T& nodo); // Declaración añadida
+    bool buscarNodo(const T& nodo); // Declaracion añadida
     void imprimir();
 
 private:
@@ -35,7 +35,7 @@ private:
     bool dfs(const T& origen, const T& destino, std::map<T, bool>& visitado);
 };
 
-// Implementación del Grafo
+// Implementacion del Grafo
 
 template <class T>
 Grafo<T>::Grafo() {}

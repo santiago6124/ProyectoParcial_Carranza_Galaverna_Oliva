@@ -7,7 +7,7 @@ int main() {
     std::string archivo = "Base_Datos_COMA_Normalizado.csv";
     cargarDatosDesdeCSV(archivo);
 
-    std::cout << "Bienvenido al sistema de gestión de partidos.\n";
+    std::cout << "Bienvenido al sistema de gestion de partidos.\n";
     menuPrincipal();
 
     return 0;

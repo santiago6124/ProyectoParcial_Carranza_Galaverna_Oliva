@@ -4,11 +4,12 @@
 
 #include <vector>
 #include "../Partido/partido.h"
+using namespace std;
 
 // Funciones para agregar, eliminar y modificar partidos
 void agregarPartido();
-std::vector<Partido*> filtrarPartidosPorAnio();
+vector<Partido *> filtrarPartidosPorAnio();
 void eliminarPartido();
 void modificarPartido();
 
-#endif  // MENU_MODIFICACION_H
+#endif // MENU_MODIFICACION_H

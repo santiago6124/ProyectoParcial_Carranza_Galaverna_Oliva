@@ -12,43 +12,44 @@
 #include <memory>
 #include <map>
 #include <algorithm>
-#include <sstream>  // Para std::istringstream
-#include <iomanip> // Add this line to include <memory> for std::unique_ptr
+#include <sstream> // Para istringstream
+#include <iomanip> // Add this line to include <memory> for unique_ptr
 #include "../Globals/globals.h"
 
-
-
-void agregarPartido() {
-    std::string fecha, equipo_local, equipo_visitante, competicion;
+void agregarPartido()
+{
+    string fecha, equipo_local, equipo_visitante, competicion;
     int goles_local, goles_visitante;
 
     // Pedir datos al usuario con validacion
-    do {
-        std::cout << "Ingrese la fecha (DD/MM/YYYY): ";
-        std::getline(std::cin, fecha);
-        if (!validarFecha(fecha)) {
-            std::cout << "Fecha invalida. Intente nuevamente.\n";
+    do
+    {
+        cout << "Ingrese la fecha (DD/MM/YYYY): ";
+        getline(cin, fecha);
+        if (!validarFecha(fecha))
+        {
+            cout << "Fecha invalida. Intente nuevamente.\n";
         }
     } while (!validarFecha(fecha));
 
-    std::cout << "Ingrese el equipo local: ";
-    std::getline(std::cin, equipo_local);
+    cout << "Ingrese el equipo local: ";
+    getline(cin, equipo_local);
 
     goles_local = ingresarEnteroPositivo("Ingrese los goles del equipo local: ");
 
-    std::cout << "Ingrese el equipo visitante: ";
-    std::getline(std::cin, equipo_visitante);
+    cout << "Ingrese el equipo visitante: ";
+    getline(cin, equipo_visitante);
 
     goles_visitante = ingresarEnteroPositivo("Ingrese los goles del equipo visitante: ");
 
-    std::cout << "Ingrese la competicion: ";
-    std::getline(std::cin, competicion);
+    cout << "Ingrese la competicion: ";
+    getline(cin, competicion);
 
     // Crear y almacenar el nuevo partido
-    auto nuevo_partido = std::make_unique<Partido>(
+    auto nuevo_partido = make_unique<Partido>(
         "Nueva Jornada", fecha, equipo_local, goles_local, goles_visitante, equipo_visitante, competicion);
-    Partido* ptr = nuevo_partido.get();
-    partidos.push_back(std::move(nuevo_partido));
+    Partido *ptr = nuevo_partido.get();
+    partidos.push_back(move(nuevo_partido));
 
     // Actualizar estadisticas y mapas
     actualizarEstadisticas(equipo_local, competicion, goles_local, goles_visitante,
@@ -59,41 +60,41 @@ void agregarPartido() {
     goles_por_competicion[competicion].emplace(goles_local + goles_visitante, ptr);
     goles_totales_por_competicion[competicion] += (goles_local + goles_visitante);
 
-    std::cout << "Partido agregado exitosamente.\n";
+    cout << "Partido agregado exitosamente.\n";
 }
-#include <algorithm> // para std::transform
-
-
+#include <algorithm> // para transform
 
 // Funcion de filtrado por año
-std::vector<Partido*> filtrarPartidosPorAnio() {
-    std::string competicion, equipo;
+vector<Partido *> filtrarPartidosPorAnio()
+{
+    string competicion, equipo;
     int anio;
 
     // Pedir la competicion
-    std::cout << "Ingrese la competicion: ";
-    std::getline(std::cin, competicion);
-    competicion = toLower(competicion);  // Convertir a minusculas
+    cout << "Ingrese la competicion: ";
+    getline(cin, competicion);
+    competicion = toLower(competicion); // Convertir a minusculas
 
     // Pedir el equipo
-    std::cout << "Ingrese el equipo (local o visitante): ";
-    std::getline(std::cin, equipo);
-    equipo = toLower(equipo);  // Convertir a minusculas
+    cout << "Ingrese el equipo (local o visitante): ";
+    getline(cin, equipo);
+    equipo = toLower(equipo); // Convertir a minusculas
 
     // Pedir el año del partido
-    std::cout << "Ingrese el año del partido (YYYY): ";
-    std::cin >> anio;
-    std::cin.ignore();  // Limpiar el buffer de entrada
+    cout << "Ingrese el año del partido (YYYY): ";
+    cin >> anio;
+    cin.ignore(); // Limpiar el buffer de entrada
 
     // Filtrar los partidos segun los criterios proporcionados
-    std::vector<Partido*> resultados;
-    for (const auto& partido_ptr : partidos) {
-        Partido* partido = partido_ptr.get();
+    vector<Partido *> resultados;
+    for (const auto &partido_ptr : partidos)
+    {
+        Partido *partido = partido_ptr.get();
 
         // Convertir datos del partido a minusculas para comparacion
-        std::string competicion_partido = toLower(partido->competicion);
-        std::string local = toLower(partido->equipo_local);
-        std::string visitante = toLower(partido->equipo_visitante);
+        string competicion_partido = toLower(partido->competicion);
+        string local = toLower(partido->equipo_local);
+        string visitante = toLower(partido->equipo_visitante);
 
         // Extraer el año del partido
         int anio_partido = extraerAnio(partido->fecha);
@@ -101,7 +102,8 @@ std::vector<Partido*> filtrarPartidosPorAnio() {
         // Verificar coincidencias
         if (competicion_partido == competicion &&
             (local == equipo || visitante == equipo) &&
-            anio_partido == anio) {
+            anio_partido == anio)
+        {
             resultados.push_back(partido);
         }
     }
@@ -109,42 +111,48 @@ std::vector<Partido*> filtrarPartidosPorAnio() {
     return resultados;
 }
 
+void eliminarPartido()
+{
+    vector<Partido *> resultados = filtrarPartidosPorAnio();
 
-void eliminarPartido() {
-    std::vector<Partido*> resultados = filtrarPartidosPorAnio();
-
-    if (resultados.empty()) {
-        std::cout << "No se encontraron partidos que coincidan con los criterios.\n";
+    if (resultados.empty())
+    {
+        cout << "No se encontraron partidos que coincidan con los criterios.\n";
         return;
     }
 
     // Mostrar los partidos filtrados
-    std::cout << "Partidos encontrados:\n";
-    for (size_t i = 0; i < resultados.size(); ++i) {
-        Partido* partido = resultados[i];
-        std::cout << i + 1 << ". " << partido->equipo_local << " vs "
-                  << partido->equipo_visitante << " - " << partido->fecha
-                  << " (" << partido->competicion << ")\n";
+    cout << "Partidos encontrados:\n";
+    for (size_t i = 0; i < resultados.size(); ++i)
+    {
+        Partido *partido = resultados[i];
+        cout << i + 1 << ". " << partido->equipo_local << " vs "
+             << partido->equipo_visitante << " - " << partido->fecha
+             << " (" << partido->competicion << ")\n";
     }
 
     // Seleccionar un partido para eliminar
     int opcion;
-    do {
-        std::cout << "Seleccione el numero del partido que desea eliminar: ";
-        std::cin >> opcion;
-        if (opcion < 1 || opcion > static_cast<int>(resultados.size())) {
-            std::cout << "Opcion invalida. Intente nuevamente.\n";
+    do
+    {
+        cout << "Seleccione el numero del partido que desea eliminar: ";
+        cin >> opcion;
+        if (opcion < 1 || opcion > static_cast<int>(resultados.size()))
+        {
+            cout << "Opcion invalida. Intente nuevamente.\n";
         }
     } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
 
     // Eliminar el partido seleccionado
-    Partido* partido_eliminado = resultados[opcion - 1];
-    std::string competicion = partido_eliminado->competicion;
+    Partido *partido_eliminado = resultados[opcion - 1];
+    string competicion = partido_eliminado->competicion;
     int total_goles = partido_eliminado->goles_local + partido_eliminado->goles_visitante;
 
-    auto& partidos_competicion = goles_por_competicion[competicion];
-    for (auto it = partidos_competicion.begin(); it != partidos_competicion.end(); ++it) {
-        if (it->second == partido_eliminado) {
+    auto &partidos_competicion = goles_por_competicion[competicion];
+    for (auto it = partidos_competicion.begin(); it != partidos_competicion.end(); ++it)
+    {
+        if (it->second == partido_eliminado)
+        {
             partidos_competicion.erase(it);
             break;
         }
@@ -153,96 +161,106 @@ void eliminarPartido() {
     goles_totales_por_competicion[competicion] -= total_goles;
 
     // Eliminar de la lista principal
-    partidos.erase(std::remove_if(partidos.begin(), partidos.end(),
-                                  [&](const std::unique_ptr<Partido>& p) {
-                                      return p.get() == partido_eliminado;
-                                  }),
+    partidos.erase(remove_if(partidos.begin(), partidos.end(),
+                             [&](const unique_ptr<Partido> &p)
+                             {
+                                 return p.get() == partido_eliminado;
+                             }),
                    partidos.end());
 
-    std::cout << "Partido eliminado correctamente.\n";
+    cout << "Partido eliminado correctamente.\n";
 }
 
+void modificarPartido()
+{
+    vector<Partido *> resultados = filtrarPartidosPorAnio();
 
-void modificarPartido() {
-    std::vector<Partido*> resultados = filtrarPartidosPorAnio();
-
-    if (resultados.empty()) {
-        std::cout << "No se encontraron partidos que coincidan con los criterios.\n";
+    if (resultados.empty())
+    {
+        cout << "No se encontraron partidos que coincidan con los criterios.\n";
         return;
     }
 
     // Mostrar los partidos filtrados
-    std::cout << "Partidos encontrados:\n";
-    for (size_t i = 0; i < resultados.size(); ++i) {
-        Partido* partido = resultados[i];
-        std::cout << i + 1 << ". " << partido->equipo_local << " vs "
-                  << partido->equipo_visitante << " - " << partido->fecha
-                  << " (" << partido->competicion << ")\n";
+    cout << "Partidos encontrados:\n";
+    for (size_t i = 0; i < resultados.size(); ++i)
+    {
+        Partido *partido = resultados[i];
+        cout << i + 1 << ". " << partido->equipo_local << " vs "
+             << partido->equipo_visitante << " - " << partido->fecha
+             << " (" << partido->competicion << ")\n";
     }
 
     // Seleccionar un partido para modificar
     int opcion;
-    do {
-        std::cout << "Seleccione el numero del partido que desea modificar: ";
-        std::cin >> opcion;
-        if (opcion < 1 || opcion > static_cast<int>(resultados.size())) {
-            std::cout << "Opcion invalida. Intente nuevamente.\n";
+    do
+    {
+        cout << "Seleccione el numero del partido que desea modificar: ";
+        cin >> opcion;
+        if (opcion < 1 || opcion > static_cast<int>(resultados.size()))
+        {
+            cout << "Opcion invalida. Intente nuevamente.\n";
         }
     } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
 
-    Partido* partido = resultados[opcion - 1];
+    Partido *partido = resultados[opcion - 1];
 
     // Menu para modificar campos
     int campo;
-    do {
-        std::cout << "\nSeleccione el campo a modificar:\n";
-        std::cout << "1. Fecha (" << partido->fecha << ")\n";
-        std::cout << "2. Equipo local (" << partido->equipo_local << ")\n";
-        std::cout << "3. Goles equipo local (" << partido->goles_local << ")\n";
-        std::cout << "4. Equipo visitante (" << partido->equipo_visitante << ")\n";
-        std::cout << "5. Goles equipo visitante (" << partido->goles_visitante << ")\n";
-        std::cout << "6. Competicion (" << partido->competicion << ")\n";
-        std::cout << "0. Guardar y salir\n";
-        std::cout << "Opcion: ";
-        std::cin >> campo;
-        std::cin.ignore();
+    do
+    {
+        cout << "\nSeleccione el campo a modificar:\n";
+        cout << "1. Fecha (" << partido->fecha << ")\n";
+        cout << "2. Equipo local (" << partido->equipo_local << ")\n";
+        cout << "3. Goles equipo local (" << partido->goles_local << ")\n";
+        cout << "4. Equipo visitante (" << partido->equipo_visitante << ")\n";
+        cout << "5. Goles equipo visitante (" << partido->goles_visitante << ")\n";
+        cout << "6. Competicion (" << partido->competicion << ")\n";
+        cout << "0. Guardar y salir\n";
+        cout << "Opcion: ";
+        cin >> campo;
+        cin.ignore();
 
-        switch (campo) {
-            case 1: {
-                std::string nueva_fecha;
-                do {
-                    std::cout << "Ingrese la nueva fecha (DD/MM/YYYY): ";
-                    std::getline(std::cin, nueva_fecha);
-                    if (!validarFecha(nueva_fecha)) {
-                        std::cout << "Fecha invalida. Intente nuevamente.\n";
-                    }
-                } while (!validarFecha(nueva_fecha));
-                partido->fecha = nueva_fecha;
-                break;
-            }
-            case 2:
-                std::cout << "Ingrese el nuevo equipo local: ";
-                std::getline(std::cin, partido->equipo_local);
-                break;
-            case 3:
-                partido->goles_local = ingresarEnteroPositivo("Ingrese los nuevos goles del equipo local: ");
-                break;
-            case 4:
-                std::cout << "Ingrese el nuevo equipo visitante: ";
-                std::getline(std::cin, partido->equipo_visitante);
-                break;
-            case 5:
-                partido->goles_visitante = ingresarEnteroPositivo("Ingrese los nuevos goles del equipo visitante: ");
-                break;
-            case 6:
-                std::cout << "Ingrese la nueva competicion: ";
-                std::getline(std::cin, partido->competicion);
-                break;
-            case 0:
-                std::cout << "Cambios guardados.\n";
-                break;
-            default:
-                std::cout << "Opcion invalida. Intente nuevamente.\n";
+        switch (campo)
+        {
+        case 1:
+        {
+            string nueva_fecha;
+            do
+            {
+                cout << "Ingrese la nueva fecha (DD/MM/YYYY): ";
+                getline(cin, nueva_fecha);
+                if (!validarFecha(nueva_fecha))
+                {
+                    cout << "Fecha invalida. Intente nuevamente.\n";
+                }
+            } while (!validarFecha(nueva_fecha));
+            partido->fecha = nueva_fecha;
+            break;
+        }
+        case 2:
+            cout << "Ingrese el nuevo equipo local: ";
+            getline(cin, partido->equipo_local);
+            break;
+        case 3:
+            partido->goles_local = ingresarEnteroPositivo("Ingrese los nuevos goles del equipo local: ");
+            break;
+        case 4:
+            cout << "Ingrese el nuevo equipo visitante: ";
+            getline(cin, partido->equipo_visitante);
+            break;
+        case 5:
+            partido->goles_visitante = ingresarEnteroPositivo("Ingrese los nuevos goles del equipo visitante: ");
+            break;
+        case 6:
+            cout << "Ingrese la nueva competicion: ";
+            getline(cin, partido->competicion);
+            break;
+        case 0:
+            cout << "Cambios guardados.\n";
+            break;
+        default:
+            cout << "Opcion invalida. Intente nuevamente.\n";
         }
     } while (campo != 0);
 }

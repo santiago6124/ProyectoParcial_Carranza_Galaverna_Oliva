@@ -4,7 +4,7 @@
 #include <iostream>
 #include <list>
 
-// Definición de NodoGrafo
+// Definicion de NodoGrafo
 template <class T>
 class NodoGrafo {
 public:

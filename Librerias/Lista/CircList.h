@@ -87,11 +87,11 @@ template <class T>
 void CircList<T>::insertar(int pos, T dato)
 {
     if (pos < 0) {
-        throw std::out_of_range("Posición negativa no válida");
+        throw std::out_of_range("Posicion negativa no valida");
     }
 
     if (pos != 0 && esVacia()) {
-        throw 400;  // No se puede insertar en una posición diferente a 0 si la lista está vacía
+        throw 400;  // No se puede insertar en una posicion diferente a 0 si la lista esta vacia
     }
 
     Nodo<T> *nuevo = new Nodo<T>();
@@ -122,7 +122,7 @@ void CircList<T>::insertar(int pos, T dato)
     }
 
     if (posActual < pos - 1) {
-        throw std::out_of_range("Posición fuera del rango de la lista");
+        throw std::out_of_range("Posicion fuera del rango de la lista");
     }
 
     nuevo->setSiguiente(aux->getSiguiente());
@@ -153,14 +153,14 @@ void CircList<T>::insertarUltimo(T dato)
         aux = aux->getSiguiente();
     }
 
-    nuevo->setSiguiente(inicio); // Simplificación del código
+    nuevo->setSiguiente(inicio); // Simplificacion del codigo
     aux->setSiguiente(nuevo);
 }
 
 template <class T>
 T CircList<T>::getDato(int pos) {
     if (pos < 0 || esVacia()) {
-        throw 404;  // Posición inválida
+        throw 404;  // Posicion invalida
     }
 
     Nodo<T> *aux = inicio;
@@ -174,7 +174,7 @@ T CircList<T>::getDato(int pos) {
         posActual++;
     } while (aux != inicio);
 
-    throw 404;  // Posición fuera del rango de la lista
+    throw 404;  // Posicion fuera del rango de la lista
 }
 
 
@@ -182,7 +182,7 @@ template <class T>
 void CircList<T>::imprimir()
 {
     if (esVacia()) {
-        std::cout << "La lista está vacía." << std::endl;
+        std::cout << "La lista esta vacia." << std::endl;
         return;
     }
 
@@ -205,7 +205,7 @@ void CircList<T>::eliminarPorValor(const T& valor) {
     Nodo<T> *previo = nullptr;
     Nodo<T> *ultimo = inicio;
 
-    // Encontrar el último nodo
+    // Encontrar el ultimo nodo
     while (ultimo->getSiguiente() != inicio) {
         ultimo = ultimo->getSiguiente();
     }
@@ -218,7 +218,7 @@ void CircList<T>::eliminarPorValor(const T& valor) {
                     delete inicio;
                     inicio = nullptr;
                     return;
-                } else { // Más de un nodo
+                } else { // Mas de un nodo
                     ultimo->setSiguiente(inicio->getSiguiente());
                     Nodo<T>* temp = inicio;
                     inicio = inicio->getSiguiente();
@@ -226,7 +226,7 @@ void CircList<T>::eliminarPorValor(const T& valor) {
                     actual = inicio; // Continuar con el siguiente nodo
                 }
             } else {
-                // Nodo en cualquier otra posición
+                // Nodo en cualquier otra posicion
                 previo->setSiguiente(actual->getSiguiente());
                 delete actual;
                 return;
@@ -246,7 +246,7 @@ void CircList<T>::eliminarPorValor(const T& valor) {
  * @param pos posicion del nodo a eliminar
  */
 template <class T> void CircList<T>::remover(int pos) {
-    if (inicio == nullptr) {  // Verificar si la lista está vacía
+    if (inicio == nullptr) {  // Verificar si la lista esta vacia
         throw 404;
     }
 
@@ -261,25 +261,25 @@ template <class T> void CircList<T>::remover(int pos) {
             return;
         }
 
-        // Buscar el último nodo para actualizar su puntero
+        // Buscar el ultimo nodo para actualizar su puntero
         while (aux->getSiguiente() != inicio) {
             aux = aux->getSiguiente();
         }
 
-        aux->setSiguiente(inicio->getSiguiente());  // Conectar el último nodo al nuevo inicio
+        aux->setSiguiente(inicio->getSiguiente());  // Conectar el ultimo nodo al nuevo inicio
         aBorrar = inicio;
         inicio = inicio->getSiguiente();  // Actualizar el inicio al siguiente nodo
         delete aBorrar;
         return;
     }
 
-    // Búsqueda del nodo anterior al que se desea eliminar
+    // Busqueda del nodo anterior al que se desea eliminar
     while (aux->getSiguiente() != inicio && posActual < pos - 1) {
         aux = aux->getSiguiente();
         posActual++;
     }
 
-    if (posActual < pos - 1 || aux->getSiguiente() == inicio) {  // Si la posición no es válida
+    if (posActual < pos - 1 || aux->getSiguiente() == inicio) {  // Si la posicion no es valida
         throw 404;
     }
 

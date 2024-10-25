@@ -5,7 +5,7 @@
 #include "Nodo.h"
 
 /**
- * Clase que implementa una Lista Enlazada genérica, ya que puede
+ * Clase que implementa una Lista Enlazada generica, ya que puede
  * almacenar cualquier tipo de dato T
  * @tparam T cualquier tipo de dato
  */
@@ -78,9 +78,9 @@ Lista<T>::~Lista() {
 }
 
 /**
- * Método para saber si la lista esta vacía
+ * Metodo para saber si la lista esta vacia
  * @tparam T
- * @return true si la lista esta vacía, sino false
+ * @return true si la lista esta vacia, sino false
  */
 template <class T>
 bool Lista<T>::esVacia() {
@@ -88,7 +88,7 @@ bool Lista<T>::esVacia() {
 }
 
 /**
- * Método para obtener la cantidad de nodos de la lista
+ * Metodo para obtener la cantidad de nodos de la lista
  * @tparam T
  * @return la cantidad de nodos de la lista
  */
@@ -106,9 +106,9 @@ int Lista<T>::getTamanio() {
 }
 
 /**
- * Inserta un nodo con el dato en la posición pos
+ * Inserta un nodo con el dato en la posicion pos
  * @tparam T
- * @param pos lugar donde será insertado el dato
+ * @param pos lugar donde sera insertado el dato
  * @param dato dato a insertar
  */
 template <class T>
@@ -139,7 +139,7 @@ void Lista<T>::insertar(int pos, T dato) {
 }
 
 /**
- * Inserta un nodo con el dato en la primera posición
+ * Inserta un nodo con el dato en la primera posicion
  * @tparam T
  * @param dato dato a insertar
  */
@@ -149,7 +149,7 @@ void Lista<T>::insertarPrimero(T dato) {
 }
 
 /**
- * Inserta un nodo con el dato en la última posición
+ * Inserta un nodo con el dato en la ultima posicion
  * @tparam T
  * @param dato dato a insertar
  */
@@ -175,9 +175,9 @@ void Lista<T>::insertarUltimo(T dato) {
 }
 
 /**
- * Elimina el nodo en la posición 'pos' de la lista enlazada
+ * Elimina el nodo en la posicion 'pos' de la lista enlazada
  * @tparam T
- * @param pos posición del nodo a eliminar
+ * @param pos posicion del nodo a eliminar
  */
 template <class T>
 void Lista<T>::remover(int pos) {
@@ -206,9 +206,9 @@ void Lista<T>::remover(int pos) {
 }
 
 /**
- * Obtener el dato del nodo en la posición pos
+ * Obtener el dato del nodo en la posicion pos
  * @tparam T
- * @param pos posición del dato
+ * @param pos posicion del dato
  * @return dato almacenado en el nodo
  */
 template <class T>
@@ -231,7 +231,7 @@ T Lista<T>::getDato(int pos) {
 /**
  * Reemplaza el dato almacenado en un nodo por este otro
  * @tparam T
- * @param pos posición donde se desea reemplazar
+ * @param pos posicion donde se desea reemplazar
  * @param dato nuevo dato a almacenar
  */
 template <class T>
@@ -252,7 +252,7 @@ void Lista<T>::reemplazar(int pos, T dato) {
 }
 
 /**
- * Función que vacia la lista enlazada
+ * Funcion que vacia la lista enlazada
  * @tparam T
  */
 template <class T>
@@ -269,7 +269,7 @@ void Lista<T>::vaciar() {
 }
 
 /**
- * Función que imprime la lista enlazada
+ * Funcion que imprime la lista enlazada
  * @tparam T
  */
 template <class T>
@@ -285,11 +285,11 @@ void Lista<T>::imprimir() {
 }
 
 /**
- * Método que inserta un nodo con el valor newValue después de la enésima
+ * Metodo que inserta un nodo con el valor newValue despues de la enesima
  * ocurrencia de oldValue
  * @tparam T
  * @param oldValue valor dentro de la lista
- * @param n número de repeticiones de oldValue
+ * @param n numero de repeticiones de oldValue
  * @param newValue nuevo valor a insertar
  */
 template <class T>

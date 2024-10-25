@@ -29,7 +29,7 @@ int main(int argc, char **argv)
             cout << "*     el argumento, se usa arr.txt   *" << endl;
             cout << "* -v  [opcional]: si esta presente   *" << endl;
             cout << "*     se imprimen los arboles al     *" << endl;
-            cout << "*     final de la ejecución.         *" << endl;
+            cout << "*     final de la ejecucion.         *" << endl;
             cout << "*                                    *" << endl;
             cout << "* Ejemplos validos                   *" << endl;
             cout << "*   ./main -t ordenado               *" << endl;
