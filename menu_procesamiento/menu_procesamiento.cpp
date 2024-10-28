@@ -165,23 +165,31 @@ void mostrarFechasConMasYMenosGolesPorEquipoYCompeticion()
         }
     }
 }
-void mostrarCompeticionConMasGoles()
-{
-    if (goles_totales_por_competicion.empty())
-    {
-        cout << "No hay competiciones registradas.\n";
+void mostrarCompeticionConMasGoles() {
+    if (estadisticas.empty()) {
+        std::cout << "No hay competiciones registradas.\n";
         return;
     }
 
-    auto max_goles_it = max_element(
-        goles_totales_por_competicion.begin(), goles_totales_por_competicion.end(),
-        [](const auto &a, const auto &b)
-        {
+    // Mapa para acumular goles totales por competición
+    std::unordered_map<std::string, int> golesPorCompeticion;
+
+    // Recorrer las estadísticas globales
+    for (const auto &[equipo, competiciones] : estadisticas) {
+        for (const auto &[competicion, stats] : competiciones) {
+            golesPorCompeticion[competicion] += stats.goles_a_favor;
+        }
+    }
+
+    // Encontrar la competición con más goles
+    auto max_goles_it = std::max_element(
+        golesPorCompeticion.begin(), golesPorCompeticion.end(),
+        [](const auto &a, const auto &b) {
             return a.second < b.second;
         });
 
-    cout << "La competicion con mas goles es: " << max_goles_it->first
-         << " con " << max_goles_it->second << " goles.\n";
+    std::cout << "La competición con más goles es: " << max_goles_it->first
+              << " con " << max_goles_it->second << " goles.\n";
 }
 void mostrarEquipoConMasYMenosGoles()
 {

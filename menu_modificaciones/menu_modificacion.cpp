@@ -110,21 +110,17 @@ vector<Partido *> filtrarPartidosPorAnio()
 
     return resultados;
 }
-
-void eliminarPartido()
-{
+void eliminarPartido() {
     vector<Partido *> resultados = filtrarPartidosPorAnio();
 
-    if (resultados.empty())
-    {
+    if (resultados.empty()) {
         cout << "No se encontraron partidos que coincidan con los criterios.\n";
         return;
     }
 
     // Mostrar los partidos filtrados
     cout << "Partidos encontrados:\n";
-    for (size_t i = 0; i < resultados.size(); ++i)
-    {
+    for (size_t i = 0; i < resultados.size(); ++i) {
         Partido *partido = resultados[i];
         cout << i + 1 << ". " << partido->equipo_local << " vs "
              << partido->equipo_visitante << " - " << partido->fecha
@@ -133,58 +129,51 @@ void eliminarPartido()
 
     // Seleccionar un partido para eliminar
     int opcion;
-    do
-    {
+    do {
         cout << "Seleccione el numero del partido que desea eliminar: ";
         cin >> opcion;
-        if (opcion < 1 || opcion > static_cast<int>(resultados.size()))
-        {
+        if (opcion < 1 || opcion > static_cast<int>(resultados.size())) {
             cout << "Opcion invalida. Intente nuevamente.\n";
         }
     } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
 
-    // Eliminar el partido seleccionado
+    // Obtener el partido a eliminar
     Partido *partido_eliminado = resultados[opcion - 1];
     string competicion = partido_eliminado->competicion;
     int total_goles = partido_eliminado->goles_local + partido_eliminado->goles_visitante;
 
+    // Eliminar del mapa de goles por competición usando un bucle con iteradores
     auto &partidos_competicion = goles_por_competicion[competicion];
-    for (auto it = partidos_competicion.begin(); it != partidos_competicion.end(); ++it)
-    {
-        if (it->second == partido_eliminado)
-        {
+    for (auto it = partidos_competicion.begin(); it != partidos_competicion.end(); ++it) {
+        if (it->second == partido_eliminado) {
             partidos_competicion.erase(it);
             break;
         }
     }
 
+    // Actualizar los goles totales
     goles_totales_por_competicion[competicion] -= total_goles;
 
-    // Eliminar de la lista principal
+    // Eliminar del vector global
     partidos.erase(remove_if(partidos.begin(), partidos.end(),
-                             [&](const unique_ptr<Partido> &p)
-                             {
+                             [&](const unique_ptr<Partido> &p) {
                                  return p.get() == partido_eliminado;
                              }),
                    partidos.end());
 
     cout << "Partido eliminado correctamente.\n";
 }
-
-void modificarPartido()
-{
+void modificarPartido() {
     vector<Partido *> resultados = filtrarPartidosPorAnio();
 
-    if (resultados.empty())
-    {
+    if (resultados.empty()) {
         cout << "No se encontraron partidos que coincidan con los criterios.\n";
         return;
     }
 
     // Mostrar los partidos filtrados
     cout << "Partidos encontrados:\n";
-    for (size_t i = 0; i < resultados.size(); ++i)
-    {
+    for (size_t i = 0; i < resultados.size(); ++i) {
         Partido *partido = resultados[i];
         cout << i + 1 << ". " << partido->equipo_local << " vs "
              << partido->equipo_visitante << " - " << partido->fecha
@@ -193,74 +182,100 @@ void modificarPartido()
 
     // Seleccionar un partido para modificar
     int opcion;
-    do
-    {
+    do {
         cout << "Seleccione el numero del partido que desea modificar: ";
         cin >> opcion;
-        if (opcion < 1 || opcion > static_cast<int>(resultados.size()))
-        {
+        if (opcion < 1 || opcion > static_cast<int>(resultados.size())) {
             cout << "Opcion invalida. Intente nuevamente.\n";
         }
     } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
 
     Partido *partido = resultados[opcion - 1];
 
-    // Menu para modificar campos
+    // Eliminar los goles antiguos del mapa
+    auto &partidos_competicion = goles_por_competicion[partido->competicion];
+    for (auto it = partidos_competicion.begin(); it != partidos_competicion.end(); ++it) {
+        if (it->second == partido) {
+            partidos_competicion.erase(it);
+            break;
+        }
+    }
+
+    goles_totales_por_competicion[partido->competicion] -= 
+        (partido->goles_local + partido->goles_visitante);
+
+    // Menú para modificar campos del partido
     int campo;
-    do
-    {
+    do {
         cout << "\nSeleccione el campo a modificar:\n";
         cout << "1. Fecha (" << partido->fecha << ")\n";
         cout << "2. Equipo local (" << partido->equipo_local << ")\n";
         cout << "3. Goles equipo local (" << partido->goles_local << ")\n";
         cout << "4. Equipo visitante (" << partido->equipo_visitante << ")\n";
         cout << "5. Goles equipo visitante (" << partido->goles_visitante << ")\n";
-        cout << "6. Competicion (" << partido->competicion << ")\n";
+        cout << "6. Competición (" << partido->competicion << ")\n";
         cout << "0. Guardar y salir\n";
-        cout << "Opcion: ";
+        cout << "Opción: ";
         cin >> campo;
-        cin.ignore();
+        cin.ignore();  // Limpiar el buffer de entrada
 
-        switch (campo)
-        {
-        case 1:
-        {
-            string nueva_fecha;
-            do
-            {
-                cout << "Ingrese la nueva fecha (DD/MM/YYYY): ";
-                getline(cin, nueva_fecha);
-                if (!validarFecha(nueva_fecha))
-                {
-                    cout << "Fecha invalida. Intente nuevamente.\n";
-                }
-            } while (!validarFecha(nueva_fecha));
-            partido->fecha = nueva_fecha;
-            break;
-        }
-        case 2:
-            cout << "Ingrese el nuevo equipo local: ";
-            getline(cin, partido->equipo_local);
-            break;
-        case 3:
-            partido->goles_local = ingresarEnteroPositivo("Ingrese los nuevos goles del equipo local: ");
-            break;
-        case 4:
-            cout << "Ingrese el nuevo equipo visitante: ";
-            getline(cin, partido->equipo_visitante);
-            break;
-        case 5:
-            partido->goles_visitante = ingresarEnteroPositivo("Ingrese los nuevos goles del equipo visitante: ");
-            break;
-        case 6:
-            cout << "Ingrese la nueva competicion: ";
-            getline(cin, partido->competicion);
-            break;
-        case 0:
-            cout << "Cambios guardados.\n";
-            break;
-        default:
-            cout << "Opcion invalida. Intente nuevamente.\n";
+        switch (campo) {
+            case 1: {
+                string nueva_fecha;
+                do {
+                    cout << "Ingrese la nueva fecha (DD/MM/YYYY): ";
+                    getline(cin, nueva_fecha);
+                    if (!validarFecha(nueva_fecha)) {
+                        cout << "Fecha inválida. Intente nuevamente.\n";
+                    }
+                } while (!validarFecha(nueva_fecha));
+                partido->fecha = nueva_fecha;
+                break;
+            }
+            case 2:
+                cout << "Ingrese el nuevo equipo local: ";
+                getline(cin, partido->equipo_local);
+                break;
+            case 3:
+                partido->goles_local = ingresarEnteroPositivo(
+                    "Ingrese los nuevos goles del equipo local: ");
+                break;
+            case 4:
+                cout << "Ingrese el nuevo equipo visitante: ";
+                getline(cin, partido->equipo_visitante);
+                break;
+            case 5:
+                partido->goles_visitante = ingresarEnteroPositivo(
+                    "Ingrese los nuevos goles del equipo visitante: ");
+                break;
+            case 6:
+                cout << "Ingrese la nueva competición: ";
+                getline(cin, partido->competicion);
+                break;
+            case 0:
+                cout << "Cambios guardados.\n";
+                break;
+            default:
+                cout << "Opción inválida. Intente nuevamente.\n";
         }
     } while (campo != 0);
+
+    // Agregar los nuevos valores al mapa y actualizar estadísticas
+    goles_por_competicion[partido->competicion].emplace(
+        partido->goles_local + partido->goles_visitante, partido);
+
+    goles_totales_por_competicion[partido->competicion] += 
+        (partido->goles_local + partido->goles_visitante);
+
+    actualizarEstadisticas(partido->equipo_local, partido->competicion, 
+                           partido->goles_local, partido->goles_visitante,
+                           partido->goles_local > partido->goles_visitante,
+                           partido->goles_local == partido->goles_visitante);
+
+    actualizarEstadisticas(partido->equipo_visitante, partido->competicion, 
+                           partido->goles_visitante, partido->goles_local,
+                           partido->goles_visitante > partido->goles_local,
+                           partido->goles_local == partido->goles_visitante);
+
+    cout << "Partido modificado exitosamente.\n";
 }
