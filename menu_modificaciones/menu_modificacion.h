@@ -8,7 +8,7 @@ using namespace std;
 
 // Funciones para agregar, eliminar y modificar partidos
 void agregarPartido();
-vector<Partido *> filtrarPartidosPorAnio();
+pair<vector<Partido *>, double> filtrarPartidosPorAnio();
 void eliminarPartido();
 void modificarPartido();
 

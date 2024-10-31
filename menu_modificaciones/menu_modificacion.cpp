@@ -83,8 +83,8 @@ void agregarPartido() {
 #include <algorithm> // para transform
 
 // Funcion de filtrado por año
-vector<Partido *> filtrarPartidosPorAnio()
-{
+// Funcion de filtrado por año
+pair<vector<Partido *>, double> filtrarPartidosPorAnio() {
     string competicion, equipo;
     int anio;
 
@@ -103,10 +103,12 @@ vector<Partido *> filtrarPartidosPorAnio()
     cin >> anio;
     cin.ignore(); // Limpiar el buffer de entrada
 
+    // Iniciar la medición del tiempo de procesamiento
+    auto inicio = high_resolution_clock::now();
+
     // Filtrar los partidos segun los criterios proporcionados
     vector<Partido *> resultados;
-    for (const auto &partido_ptr : partidos)
-    {
+    for (const auto &partido_ptr : partidos) {
         Partido *partido = partido_ptr.get();
 
         // Convertir datos del partido a minusculas para comparacion
@@ -120,25 +122,28 @@ vector<Partido *> filtrarPartidosPorAnio()
         // Verificar coincidencias
         if (competicion_partido == competicion &&
             (local == equipo || visitante == equipo) &&
-            anio_partido == anio)
-        {
+            anio_partido == anio) {
             resultados.push_back(partido);
         }
     }
 
-    return resultados;
-}void eliminarPartido() {
-    // Obtener los partidos filtrados por año
-    vector<Partido *> resultados = filtrarPartidosPorAnio();
+    // Finalizar la medición del tiempo de procesamiento
+    auto fin = high_resolution_clock::now();
+    auto duracion = duration_cast<duration<double>>(fin - inicio).count();  // Duración en segundos
 
-    // Iniciar la medición del tiempo de ejecución
-    auto inicio = high_resolution_clock::now();
+    return {resultados, duracion};
+}
+void eliminarPartido() {
+    // Obtener los partidos filtrados por año
+    // Obtener los partidos filtrados y el tiempo de procesamiento
+    auto [resultados, tiempo_filtrado] = filtrarPartidosPorAnio();
+
+    // Iniciar la medición del tiempo de eliminación
     int contador_ifs = 0; // Contador de 'if'
 
-    // Verificar si hay partidos disponibles
     if (resultados.empty()) {
         cout << "No se encontraron partidos que coincidan con los criterios.\n";
-        contador_ifs++; // Conteo del 'if' para resultados vacíos
+        contador_ifs++;
         return;
     }
 
@@ -162,6 +167,7 @@ vector<Partido *> filtrarPartidosPorAnio()
             contador_ifs++; // Conteo del 'if' para opción inválida
         }
     } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
+    auto inicio = high_resolution_clock::now();
 
     // Obtener el partido a eliminar
     Partido *partido_eliminado = resultados[opcion - 1];
@@ -191,21 +197,24 @@ vector<Partido *> filtrarPartidosPorAnio()
     cout << "Partido eliminado correctamente.\n";
 
     // Finalizar la medición del tiempo de ejecución
-    auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio);  // Duración en segundos
+auto fin = high_resolution_clock::now();
+    auto duracion = duration_cast<duration<double>>(fin - inicio).count();
 
-    // Mostrar resultados de ejecución
-    cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Sumar el tiempo de filtrado al tiempo de eliminación
+    double tiempo_total = duracion + tiempo_filtrado;
+
+    cout << "\nTiempo de ejecución total: " << tiempo_total << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }void modificarPartido() {
     // Obtener los partidos filtrados por año
-    vector<Partido *> resultados = filtrarPartidosPorAnio();
+    auto [resultados, tiempo_filtrado] = filtrarPartidosPorAnio();
 
-    // Verificar si hay partidos disponibles
     if (resultados.empty()) {
         cout << "No se encontraron partidos que coincidan con los criterios.\n";
         return;
     }
+
+
 
     // Mostrar los partidos filtrados
     cout << "Partidos encontrados:\n";
@@ -229,7 +238,6 @@ vector<Partido *> filtrarPartidosPorAnio()
     Partido *partido = resultados[opcion - 1];
 
     // Iniciar la medición del tiempo de ejecución
-    auto inicio = high_resolution_clock::now();
     int contador_ifs = 0; // Contador de 'if'
 
     // Eliminar los goles antiguos del mapa
@@ -302,6 +310,7 @@ vector<Partido *> filtrarPartidosPorAnio()
                 contador_ifs++; // Conteo del 'if' para opción inválida
         }
     } while (campo != 0);
+    auto inicio = high_resolution_clock::now();
 
     // Agregar los nuevos valores al mapa y actualizar estadísticas
     goles_por_competicion[partido->competicion].emplace(
@@ -324,9 +333,11 @@ vector<Partido *> filtrarPartidosPorAnio()
 
     // Finalizar la medición del tiempo de ejecución
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio).count();
 
-    // Mostrar resultados de ejecución
-    cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Sumar el tiempo de filtrado al tiempo de modificación
+    double tiempo_total = duracion + tiempo_filtrado;
+
+    cout << "\nTiempo de ejecución total: " << tiempo_total << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
