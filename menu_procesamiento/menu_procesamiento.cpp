@@ -21,6 +21,7 @@
 using namespace std::chrono;
 
 
+
 void mostrarTop5PartidosTodasLasCompeticiones() {
     cout << "Top 5 partidos con más goles por competición:\n";
 
@@ -32,16 +33,13 @@ void mostrarTop5PartidosTodasLasCompeticiones() {
         cout << "\nCompetición: " << competicion << "\n";
         int contador = 0;
 
+        // Iterar en reversa para obtener los partidos con más goles (ya están ordenados)
         for (auto it = partidos.rbegin(); it != partidos.rend() && contador < 5; ++it, ++contador) {
-            // Contamos cada condición evaluada
-            contador_ifs++; // Condición: it != partidos.rend()
-            contador_ifs++; // Condición: contador < 5
+            contador_ifs++;  // Condición de límite de top 5
 
             const auto *partido = it->second;
-            int total_goles = partido->goles_local + partido->goles_visitante;
-
             cout << partido->equipo_local << " vs " << partido->equipo_visitante
-                 << " - " << total_goles << " goles - " << partido->fecha
+                 << " - " << it->first << " goles - " << partido->fecha
                  << " - " << competicion << " - ("
                  << partido->goles_local << "-" << partido->goles_visitante << ")\n";
         }
@@ -55,6 +53,7 @@ void mostrarTop5PartidosTodasLasCompeticiones() {
     cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
+
 
 void mostrarGolesPorEquipoYCompeticion() {
     // Iniciar la medición del tiempo de ejecución
