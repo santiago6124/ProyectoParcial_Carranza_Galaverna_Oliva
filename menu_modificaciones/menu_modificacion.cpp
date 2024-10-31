@@ -14,8 +14,8 @@
 #include <algorithm>
 #include <sstream> // Para istringstream
 #include <iomanip> // Add this line to include <memory> for unique_ptr
-#include <chrono>   // Para medir el tiempo de ejecución
-#include "../Globals/globals.h"  // Asegúrate de incluir estadísticas y funciones globales
+#include <chrono>   // Para medir el tiempo de ejecucion
+#include "../Globals/globals.h"  // Asegurate de incluir estadisticas y funciones globales
 
 using namespace std;
 using namespace std::chrono;
@@ -26,12 +26,12 @@ void agregarPartido() {
     string fecha, equipo_local, equipo_visitante, competicion;
     int goles_local, goles_visitante;
 
-    // Pedir datos al usuario con validación
+    // Pedir datos al usuario con validacion
     do {
         cout << "Ingrese la fecha (DD/MM/YYYY): ";
         getline(cin, fecha);
         if (!validarFecha(fecha)) {
-            cout << "Fecha inválida. Intente nuevamente.\n";
+            cout << "Fecha invalida. Intente nuevamente.\n";
         }
     } while (!validarFecha(fecha));
 
@@ -45,10 +45,10 @@ void agregarPartido() {
 
     goles_visitante = ingresarEnteroPositivo("Ingrese los goles del equipo visitante: ");
 
-    cout << "Ingrese la competición: ";
+    cout << "Ingrese la competicion: ";
     getline(cin, competicion);
 
-    // Iniciar la medición del tiempo de ejecución
+    // Iniciar la medicion del tiempo de ejecucion
     auto inicio = high_resolution_clock::now();
     int contador_ifs = 0; // Contador de 'if'
 
@@ -58,7 +58,7 @@ void agregarPartido() {
     Partido *ptr = nuevo_partido.get();
     partidos.push_back(move(nuevo_partido));
 
-    // Actualizar estadísticas y mapas
+    // Actualizar estadisticas y mapas
     actualizarEstadisticas(equipo_local, competicion, goles_local, goles_visitante,
                            goles_local > goles_visitante, goles_local == goles_visitante);
     contador_ifs++;  // Conteo del 'if' para victoria del equipo local
@@ -72,18 +72,18 @@ void agregarPartido() {
 
     cout << "Partido agregado exitosamente.\n";
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio);  // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio);  // Duracion en segundos
 
-    // Mostrar resultados de ejecución
-    cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Mostrar resultados de ejecucion
+    cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
 #include <algorithm> // para transform
 
-// Funcion de filtrado por año
-// Funcion de filtrado por año
+// Funcion de filtrado por anio
+// Funcion de filtrado por anio
 pair<vector<Partido *>, double> filtrarPartidosPorAnio() {
     string competicion, equipo;
     int anio;
@@ -98,12 +98,12 @@ pair<vector<Partido *>, double> filtrarPartidosPorAnio() {
     getline(cin, equipo);
     equipo = toLower(equipo); // Convertir a minusculas
 
-    // Pedir el año del partido
-    cout << "Ingrese el año del partido (YYYY): ";
+    // Pedir el anio del partido
+    cout << "Ingrese el anio del partido (YYYY): ";
     cin >> anio;
     cin.ignore(); // Limpiar el buffer de entrada
 
-    // Iniciar la medición del tiempo de procesamiento
+    // Iniciar la medicion del tiempo de procesamiento
     auto inicio = high_resolution_clock::now();
 
     // Filtrar los partidos segun los criterios proporcionados
@@ -116,7 +116,7 @@ pair<vector<Partido *>, double> filtrarPartidosPorAnio() {
         string local = toLower(partido->equipo_local);
         string visitante = toLower(partido->equipo_visitante);
 
-        // Extraer el año del partido
+        // Extraer el anio del partido
         int anio_partido = extraerAnio(partido->fecha);
 
         // Verificar coincidencias
@@ -127,18 +127,18 @@ pair<vector<Partido *>, double> filtrarPartidosPorAnio() {
         }
     }
 
-    // Finalizar la medición del tiempo de procesamiento
+    // Finalizar la medicion del tiempo de procesamiento
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio).count();  // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio).count();  // Duracion en segundos
 
     return {resultados, duracion};
 }
 void eliminarPartido() {
-    // Obtener los partidos filtrados por año
+    // Obtener los partidos filtrados por anio
     // Obtener los partidos filtrados y el tiempo de procesamiento
     auto [resultados, tiempo_filtrado] = filtrarPartidosPorAnio();
 
-    // Iniciar la medición del tiempo de eliminación
+    // Iniciar la medicion del tiempo de eliminacion
     int contador_ifs = 0; // Contador de 'if'
 
     if (resultados.empty()) {
@@ -159,12 +159,12 @@ void eliminarPartido() {
     // Seleccionar un partido para eliminar
     int opcion;
     do {
-        cout << "Seleccione el número del partido que desea eliminar: ";
+        cout << "Seleccione el numero del partido que desea eliminar: ";
         cin >> opcion;
 
         if (opcion < 1 || opcion > static_cast<int>(resultados.size())) {
-            cout << "Opción inválida. Intente nuevamente.\n";
-            contador_ifs++; // Conteo del 'if' para opción inválida
+            cout << "Opcion invalida. Intente nuevamente.\n";
+            contador_ifs++; // Conteo del 'if' para opcion invalida
         }
     } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
     auto inicio = high_resolution_clock::now();
@@ -174,7 +174,7 @@ void eliminarPartido() {
     string competicion = partido_eliminado->competicion;
     int total_goles = partido_eliminado->goles_local + partido_eliminado->goles_visitante;
 
-    // Eliminar del mapa de goles por competición
+    // Eliminar del mapa de goles por competicion
     auto &partidos_competicion = goles_por_competicion[competicion];
     for (auto it = partidos_competicion.begin(); it != partidos_competicion.end(); ++it) {
         if (it->second == partido_eliminado) {
@@ -196,17 +196,17 @@ void eliminarPartido() {
 
     cout << "Partido eliminado correctamente.\n";
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
 auto fin = high_resolution_clock::now();
     auto duracion = duration_cast<duration<double>>(fin - inicio).count();
 
-    // Sumar el tiempo de filtrado al tiempo de eliminación
+    // Sumar el tiempo de filtrado al tiempo de eliminacion
     double tiempo_total = duracion + tiempo_filtrado;
 
-    cout << "\nTiempo de ejecución total: " << tiempo_total << " segundos\n";
+    cout << "\nTiempo de ejecucion total: " << tiempo_total << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }void modificarPartido() {
-    // Obtener los partidos filtrados por año
+    // Obtener los partidos filtrados por anio
     auto [resultados, tiempo_filtrado] = filtrarPartidosPorAnio();
 
     if (resultados.empty()) {
@@ -228,16 +228,16 @@ auto fin = high_resolution_clock::now();
     // Seleccionar un partido para modificar
     int opcion;
     do {
-        cout << "Seleccione el número del partido que desea modificar: ";
+        cout << "Seleccione el numero del partido que desea modificar: ";
         cin >> opcion;
         if (opcion < 1 || opcion > static_cast<int>(resultados.size())) {
-            cout << "Opción inválida. Intente nuevamente.\n";
+            cout << "Opcion invalida. Intente nuevamente.\n";
         }
     } while (opcion < 1 || opcion > static_cast<int>(resultados.size()));
 
     Partido *partido = resultados[opcion - 1];
 
-    // Iniciar la medición del tiempo de ejecución
+    // Iniciar la medicion del tiempo de ejecucion
     int contador_ifs = 0; // Contador de 'if'
 
     // Eliminar los goles antiguos del mapa
@@ -253,7 +253,7 @@ auto fin = high_resolution_clock::now();
     goles_totales_por_competicion[partido->competicion] -= 
         (partido->goles_local + partido->goles_visitante);
 
-    // Menú para modificar campos del partido
+    // Menu para modificar campos del partido
     int campo;
     do {
         cout << "\nSeleccione el campo a modificar:\n";
@@ -262,9 +262,9 @@ auto fin = high_resolution_clock::now();
         cout << "3. Goles equipo local (" << partido->goles_local << ")\n";
         cout << "4. Equipo visitante (" << partido->equipo_visitante << ")\n";
         cout << "5. Goles equipo visitante (" << partido->goles_visitante << ")\n";
-        cout << "6. Competición (" << partido->competicion << ")\n";
+        cout << "6. Competicion (" << partido->competicion << ")\n";
         cout << "0. Guardar y salir\n";
-        cout << "Opción: ";
+        cout << "Opcion: ";
         cin >> campo;
         cin.ignore(); // Limpiar el buffer de entrada
 
@@ -275,8 +275,8 @@ auto fin = high_resolution_clock::now();
                     cout << "Ingrese la nueva fecha (DD/MM/YYYY): ";
                     getline(cin, nueva_fecha);
                     if (!validarFecha(nueva_fecha)) {
-                        cout << "Fecha inválida. Intente nuevamente.\n";
-                        contador_ifs++; // Conteo del 'if' para fecha inválida
+                        cout << "Fecha invalida. Intente nuevamente.\n";
+                        contador_ifs++; // Conteo del 'if' para fecha invalida
                     }
                 } while (!validarFecha(nueva_fecha));
                 partido->fecha = nueva_fecha;
@@ -299,20 +299,20 @@ auto fin = high_resolution_clock::now();
                     "Ingrese los nuevos goles del equipo visitante: ");
                 break;
             case 6:
-                cout << "Ingrese la nueva competición: ";
+                cout << "Ingrese la nueva competicion: ";
                 getline(cin, partido->competicion);
                 break;
             case 0:
                 cout << "Cambios guardados.\n";
                 break;
             default:
-                cout << "Opción inválida. Intente nuevamente.\n";
-                contador_ifs++; // Conteo del 'if' para opción inválida
+                cout << "Opcion invalida. Intente nuevamente.\n";
+                contador_ifs++; // Conteo del 'if' para opcion invalida
         }
     } while (campo != 0);
     auto inicio = high_resolution_clock::now();
 
-    // Agregar los nuevos valores al mapa y actualizar estadísticas
+    // Agregar los nuevos valores al mapa y actualizar estadisticas
     goles_por_competicion[partido->competicion].emplace(
         partido->goles_local + partido->goles_visitante, partido);
 
@@ -331,13 +331,13 @@ auto fin = high_resolution_clock::now();
 
     cout << "Partido modificado exitosamente.\n";
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
     auto fin = high_resolution_clock::now();
     auto duracion = duration_cast<duration<double>>(fin - inicio).count();
 
-    // Sumar el tiempo de filtrado al tiempo de modificación
+    // Sumar el tiempo de filtrado al tiempo de modificacion
     double tiempo_total = duracion + tiempo_filtrado;
 
-    cout << "\nTiempo de ejecución total: " << tiempo_total << " segundos\n";
+    cout << "\nTiempo de ejecucion total: " << tiempo_total << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }

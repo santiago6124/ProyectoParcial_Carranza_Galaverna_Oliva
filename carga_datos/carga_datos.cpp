@@ -7,7 +7,7 @@
 #include <sstream>
 #include <vector>
 #include <memory>
-#include <chrono> // Para medir el tiempo de ejecución
+#include <chrono> // Para medir el tiempo de ejecucion
 #include "../Globals/globals.h"
 
 using namespace std;
@@ -15,7 +15,7 @@ using namespace std::chrono;
 
 // Cargar datos desde el archivo CSV con el formato proporcionado
 void cargarDatosDesdeCSV(const string &archivo) {
-    // Iniciar la medición del tiempo de ejecución
+    // Iniciar la medicion del tiempo de ejecucion
     auto inicio = high_resolution_clock::now();
     int contador_ifs = 0; // Contador de 'if'
 
@@ -23,12 +23,12 @@ void cargarDatosDesdeCSV(const string &archivo) {
 
     if (!archivo_csv.is_open()) {
         cerr << "Error: No se pudo abrir el archivo " << archivo << "\n";
-        contador_ifs++; // if para comprobar si el archivo está abierto
+        contador_ifs++; // if para comprobar si el archivo esta abierto
         return;
     }
 
     string linea;
-    // Saltar la primera línea (encabezados)
+    // Saltar la primera linea (encabezados)
     getline(archivo_csv, linea);
 
     while (getline(archivo_csv, linea)) {
@@ -43,10 +43,10 @@ void cargarDatosDesdeCSV(const string &archivo) {
         getline(ss, visitante, ',');
         getline(ss, competicion, ',');
 
-        // Verificar si los goles son numéricos
+        // Verificar si los goles son numaricos
         if (!esNumerico(golesL) || !esNumerico(golesV)) {
-            cerr << "Error: Datos inválidos en la línea: " << linea << "\n";
-            contador_ifs++; // if que verifica los datos numéricos
+            cerr << "Error: Datos invalidos en la linea: " << linea << "\n";
+            contador_ifs++; // if que verifica los datos numaricos
             continue;
         }
 
@@ -60,28 +60,28 @@ void cargarDatosDesdeCSV(const string &archivo) {
 
         // Evaluar condiciones de empate y triunfo local
         bool empate = (ptr->goles_local == ptr->goles_visitante);
-        contador_ifs++; // if implícito en la comparación de empate
+        contador_ifs++; // if implicito en la comparacion de empate
 
         bool triunfo_local = (ptr->goles_local > ptr->goles_visitante);
-        contador_ifs++; // if implícito en la comparación de triunfo local
+        contador_ifs++; // if implicito en la comparacion de triunfo local
 
         actualizarEstadisticas(local, competicion, ptr->goles_local, ptr->goles_visitante,
                                triunfo_local, empate);
         actualizarEstadisticas(visitante, competicion, ptr->goles_visitante, ptr->goles_local,
                                !triunfo_local && !empate, empate);
 
-        // Insertar en el mapa de partidos por goles y por competición
+        // Insertar en el mapa de partidos por goles y por competicion
         goles_por_competicion[competicion].emplace(total_goles, ptr);
 
-        // Actualizar el total de goles por competición
+        // Actualizar el total de goles por competicion
         goles_totales_por_competicion[competicion] += total_goles;
     }
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duracion en segundos
 
-    // Mostrar resultados de ejecución
-    cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Mostrar resultados de ejecucion
+    cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }

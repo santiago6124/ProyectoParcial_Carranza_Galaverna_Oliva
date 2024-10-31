@@ -14,8 +14,8 @@
 #include <algorithm>
 #include <sstream> // Para std::istringstream
 #include <iomanip> // Add this line to include <memory> for std::unique_ptr
-#include <chrono>     // Para medir el tiempo de ejecución
-#include "../Globals/globals.h" // Asegúrate de incluir las estadísticas y partidos globales
+#include <chrono>     // Para medir el tiempo de ejecucion
+#include "../Globals/globals.h" // Asegurate de incluir las estadisticas y partidos globales
 
 using namespace std;
 using namespace std::chrono;
@@ -33,38 +33,38 @@ int convertirFecha(const std::string &fecha)
     // Convertir al formato YYYYMMDD
     return std::stoi(anio + mes + dia);
 }void listarResultadosEquipoCompeticion() {
-    // Iniciar la medición del tiempo de ejecución
+    // Iniciar la medicion del tiempo de ejecucion
 
 
     string equipo, competicion;
 
-    // Pedir el equipo y la competición al usuario
+    // Pedir el equipo y la competicion al usuario
     cout << "Ingrese el equipo: ";
     getline(cin, equipo);
-    cout << "Ingrese la competición: ";
+    cout << "Ingrese la competicion: ";
     getline(cin, competicion);
         auto inicio = high_resolution_clock::now();
     int contador_ifs = 0; // Contador de 'if'
 
-    equipo = toLower(equipo);           // Convertir a minúsculas para comparación
-    competicion = toLower(competicion); // Convertir a minúsculas para comparación
+    equipo = toLower(equipo);           // Convertir a minusculas para comparacion
+    competicion = toLower(competicion); // Convertir a minusculas para comparacion
 
     bool encontrados = false;
 
-    // Listar los resultados del equipo en la competición específica
+    // Listar los resultados del equipo en la competicion especifica
     for (const auto &partido_ptr : partidos) {
         Partido *partido = partido_ptr.get();
         string equipo_local = toLower(partido->equipo_local);
         string equipo_visitante = toLower(partido->equipo_visitante);
         string competicion_partido = toLower(partido->competicion);
 
-        // Verificar si el equipo está en este partido y coincide la competición
+        // Verificar si el equipo esta en este partido y coincide la competicion
         if (competicion_partido == competicion &&
             (equipo_local == equipo || equipo_visitante == equipo)) {
             encontrados = true;
             contador_ifs++;  // Conteo del 'if' para coincidencia de partido
 
-            // Formatear la salida correctamente según el equipo que jugó
+            // Formatear la salida correctamente segun el equipo que jugo
             cout << partido->fecha << " - ";
 
             if (equipo_local == equipo) {
@@ -74,13 +74,13 @@ int convertirFecha(const std::string &fecha)
                      << partido->goles_visitante << " ";
 
                 if (partido->goles_local > partido->goles_visitante) {
-                    cout << "ganó a " << partido->equipo_visitante << ".\n";
+                    cout << "gano a " << partido->equipo_visitante << ".\n";
                     contador_ifs++;  // Conteo del 'if' para victoria local
                 } else if (partido->goles_local < partido->goles_visitante) {
-                    cout << "perdió con " << partido->equipo_visitante << ".\n";
+                    cout << "perdio con " << partido->equipo_visitante << ".\n";
                     contador_ifs++;  // Conteo del 'if' para derrota local
                 } else {
-                    cout << "empató con " << partido->equipo_visitante << ".\n";
+                    cout << "empato con " << partido->equipo_visitante << ".\n";
                     contador_ifs++;  // Conteo del 'if' para empate
                 }
             } else {
@@ -88,13 +88,13 @@ int convertirFecha(const std::string &fecha)
                      << " a " << partido->goles_local << " ";
 
                 if (partido->goles_visitante > partido->goles_local) {
-                    cout << "ganó a " << partido->equipo_local << ".\n";
+                    cout << "gano a " << partido->equipo_local << ".\n";
                     contador_ifs++;  // Conteo del 'if' para victoria visitante
                 } else if (partido->goles_visitante < partido->goles_local) {
-                    cout << "perdió con " << partido->equipo_local << ".\n";
+                    cout << "perdio con " << partido->equipo_local << ".\n";
                     contador_ifs++;  // Conteo del 'if' para derrota visitante
                 } else {
-                    cout << "empató con " << partido->equipo_local << ".\n";
+                    cout << "empato con " << partido->equipo_local << ".\n";
                     contador_ifs++;  // Conteo del 'if' para empate visitante
                 }
             }
@@ -104,20 +104,20 @@ int convertirFecha(const std::string &fecha)
     // Verificar si no se encontraron partidos
     if (!encontrados) {
         cout << "No se encontraron partidos para el equipo " << equipo
-             << " en la competición " << competicion << ".\n";
+             << " en la competicion " << competicion << ".\n";
         contador_ifs++;  // Conteo del 'if' para partidos no encontrados
     }
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio);  // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio);  // Duracion en segundos
 
-    // Mostrar resultados de ejecución
-    cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Mostrar resultados de ejecucion
+    cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
 void listarResultadosEquipoEntreFechas() {
-    // Iniciar la medición del tiempo de ejecución
+    // Iniciar la medicion del tiempo de ejecucion
     int contador_ifs = 0; // Contador de 'if'
 
 
@@ -133,8 +133,8 @@ void listarResultadosEquipoEntreFechas() {
         cout << "Ingrese la fecha de inicio (DD/MM/YYYY): ";
         getline(cin, fecha_inicio);
         if (!validarFecha(fecha_inicio)) {
-            cout << "Fecha inválida. Intente nuevamente.\n";
-            contador_ifs++;  // Conteo del 'if' para fecha inválida
+            cout << "Fecha invalida. Intente nuevamente.\n";
+            contador_ifs++;  // Conteo del 'if' para fecha invalida
         }
     } while (!validarFecha(fecha_inicio));
     // Validar la fecha de fin
@@ -142,13 +142,13 @@ void listarResultadosEquipoEntreFechas() {
         cout << "Ingrese la fecha de fin (DD/MM/YYYY): ";
         getline(cin, fecha_fin);
         if (!validarFecha(fecha_fin)) {
-            cout << "Fecha inválida. Intente nuevamente.\n";
-            contador_ifs++;  // Conteo del 'if' para fecha inválida
+            cout << "Fecha invalida. Intente nuevamente.\n";
+            contador_ifs++;  // Conteo del 'if' para fecha invalida
         }
     } while (!validarFecha(fecha_fin));
         auto inicio = high_resolution_clock::now();
 
-    equipo = toLower(equipo); // Convertir a minúsculas para comparación
+    equipo = toLower(equipo); // Convertir a minusculas para comparacion
 
     int fecha_inicio_int = convertirFecha(fecha_inicio);
     int fecha_fin_int = convertirFecha(fecha_fin);
@@ -164,7 +164,7 @@ void listarResultadosEquipoEntreFechas() {
 
         int fecha_partido_int = convertirFecha(fecha_partido);
 
-        // Verificar si el equipo participó y la fecha está en el rango
+        // Verificar si el equipo participo y la fecha esta en el rango
         if ((equipo_local == equipo || equipo_visitante == equipo) &&
             fecha_partido_int >= fecha_inicio_int && fecha_partido_int <= fecha_fin_int) {
             encontrados = true;
@@ -179,13 +179,13 @@ void listarResultadosEquipoEntreFechas() {
                      << partido->goles_visitante << " ";
 
                 if (partido->goles_local > partido->goles_visitante) {
-                    cout << "ganó a " << partido->equipo_visitante;
+                    cout << "gano a " << partido->equipo_visitante;
                     contador_ifs++;  // Conteo del 'if' para victoria local
                 } else if (partido->goles_local < partido->goles_visitante) {
-                    cout << "perdió con " << partido->equipo_visitante;
+                    cout << "perdio con " << partido->equipo_visitante;
                     contador_ifs++;  // Conteo del 'if' para derrota local
                 } else {
-                    cout << "empató con " << partido->equipo_visitante;
+                    cout << "empato con " << partido->equipo_visitante;
                     contador_ifs++;  // Conteo del 'if' para empate
                 }
             } else {
@@ -193,13 +193,13 @@ void listarResultadosEquipoEntreFechas() {
                      << " a " << partido->goles_local << " ";
 
                 if (partido->goles_visitante > partido->goles_local) {
-                    cout << "ganó a " << partido->equipo_local;
+                    cout << "gano a " << partido->equipo_local;
                     contador_ifs++;  // Conteo del 'if' para victoria visitante
                 } else if (partido->goles_visitante < partido->goles_local) {
-                    cout << "perdió con " << partido->equipo_local;
+                    cout << "perdio con " << partido->equipo_local;
                     contador_ifs++;  // Conteo del 'if' para derrota visitante
                 } else {
-                    cout << "empató con " << partido->equipo_local;
+                    cout << "empato con " << partido->equipo_local;
                     contador_ifs++;  // Conteo del 'if' para empate visitante
                 }
             }
@@ -214,12 +214,12 @@ void listarResultadosEquipoEntreFechas() {
         contador_ifs++;  // Conteo del 'if' para partidos no encontrados
     }
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio);  // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio);  // Duracion en segundos
 
-    // Mostrar resultados de ejecución
-    cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Mostrar resultados de ejecucion
+    cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }void compararRendimientoEntreEquipos() {
     std::string equipo1, equipo2;
@@ -231,21 +231,21 @@ void listarResultadosEquipoEntreFechas() {
     std::cout << "Ingrese el segundo equipo: ";
     std::getline(std::cin, equipo2);
 
-    // Convertir los nombres a minúsculas para comparación
+    // Convertir los nombres a minusculas para comparacion
     std::string equipo1_lower = toLower(equipo1);
     std::string equipo2_lower = toLower(equipo2);
 
-    // Iniciar la medición del tiempo de ejecución después de la entrada del usuario
+    // Iniciar la medicion del tiempo de ejecucion despues de la entrada del usuario
     auto inicio = high_resolution_clock::now();
     int contador_ifs = 0; // Contador de 'if'
 
     bool equipo1_encontrado = false, equipo2_encontrado = false;
 
-    std::cout << "\nComparación de rendimiento:\n";
+    std::cout << "\nComparacion de rendimiento:\n";
 
-    // Recorrer los equipos en las estadísticas
+    // Recorrer los equipos en las estadisticas
     for (const auto &[equipo, competiciones] : estadisticas) {
-        std::string equipo_lower = toLower(equipo); // Convertir para comparación
+        std::string equipo_lower = toLower(equipo); // Convertir para comparacion
 
         // Verificar si el equipo es uno de los ingresados
         if (equipo_lower == equipo1_lower || equipo_lower == equipo2_lower) {
@@ -278,12 +278,12 @@ void listarResultadosEquipoEntreFechas() {
         contador_ifs++; // Conteo del 'if' para equipo2 no encontrado
     }
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duracion en segundos
 
-    // Mostrar resultados de ejecución
-    std::cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Mostrar resultados de ejecucion
+    std::cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     std::cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
 void compararRendimientoParticularEntreEquipos() {
@@ -296,11 +296,11 @@ void compararRendimientoParticularEntreEquipos() {
     std::cout << "Ingrese el segundo equipo: ";
     std::getline(std::cin, equipo2);
 
-    // Convertir los nombres a minúsculas para comparación
+    // Convertir los nombres a minusculas para comparacion
     std::string equipo1_lower = toLower(equipo1);
     std::string equipo2_lower = toLower(equipo2);
 
-    // Iniciar la medición del tiempo de ejecución
+    // Iniciar la medicion del tiempo de ejecucion
     auto inicio = high_resolution_clock::now();
     int contador_ifs = 0; // Contador de 'if'
 
@@ -319,7 +319,7 @@ void compararRendimientoParticularEntreEquipos() {
         if ((local == equipo1_lower && visitante == equipo2_lower) ||
             (local == equipo2_lower && visitante == equipo1_lower)) {
             partidos_jugados++;
-            contador_ifs++; // Conteo del 'if' para verificar participación de equipos
+            contador_ifs++; // Conteo del 'if' para verificar participacion de equipos
 
             // Verificar el resultado del partido
             if (partido->goles_local == partido->goles_visitante) {
@@ -337,35 +337,35 @@ void compararRendimientoParticularEntreEquipos() {
     }
 
     // Mostrar los resultados
-    std::cout << "\nComparación de rendimiento particular entre " << equipo1 << " y " << equipo2 << ":\n";
+    std::cout << "\nComparacion de rendimiento particular entre " << equipo1 << " y " << equipo2 << ":\n";
     std::cout << "Partidos jugados entre ellos: " << partidos_jugados << "\n";
     std::cout << "Empates: " << empates << "\n";
 
-    // Comparar el número de victorias
+    // Comparar el numero de victorias
     if (victorias_equipo1 > victorias_equipo2) {
-        std::cout << equipo1 << " ha ganado más partidos: " << victorias_equipo1 << "\n";
-        contador_ifs++; // Conteo del 'if' para más victorias del equipo1
+        std::cout << equipo1 << " ha ganado mas partidos: " << victorias_equipo1 << "\n";
+        contador_ifs++; // Conteo del 'if' para mas victorias del equipo1
     } else if (victorias_equipo2 > victorias_equipo1) {
-        std::cout << equipo2 << " ha ganado más partidos: " << victorias_equipo2 << "\n";
-        contador_ifs++; // Conteo del 'if' para más victorias del equipo2
+        std::cout << equipo2 << " ha ganado mas partidos: " << victorias_equipo2 << "\n";
+        contador_ifs++; // Conteo del 'if' para mas victorias del equipo2
     } else {
         std::cout << "Ambos equipos tienen la misma cantidad de victorias.\n";
         contador_ifs++; // Conteo del 'if' para empate en victorias
     }
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duracion en segundos
 
-    // Mostrar resultados de ejecución
-    std::cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Mostrar resultados de ejecucion
+    std::cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     std::cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
 #include <iostream>
 #include <string>
 #include <algorithm> // Para std::toupper
-#include <chrono>     // Para medir el tiempo de ejecución
-#include "../Globals/globals.h" // Asegúrate de incluir las estadísticas
+#include <chrono>     // Para medir el tiempo de ejecucion
+#include "../Globals/globals.h" // Asegurate de incluir las estadisticas
 
 using namespace std;
 using namespace std::chrono;
@@ -374,42 +374,42 @@ void filtrarEquiposPorUmbralDeGoles() {
     double umbral;
     char opcion;
 
-    // Pedir el umbral y la opción al usuario
+    // Pedir el umbral y la opcion al usuario
     cout << "Ingrese el umbral de goles promedio por partido: ";
     cin >> umbral;
 
-    // Validar la opción del usuario
+    // Validar la opcion del usuario
     do {
         cout << "¿Desea filtrar por encima ('A') o por debajo ('B') del umbral? (A/B): ";
         cin >> opcion;
-        opcion = toupper(opcion); // Convertir a mayúsculas para comparación
+        opcion = toupper(opcion); // Convertir a mayusculas para comparacion
     } while (opcion != 'A' && opcion != 'B');
 
     cin.ignore(); // Limpiar el buffer de entrada
 
-    // Iniciar la medición del tiempo de ejecución
+    // Iniciar la medicion del tiempo de ejecucion
     auto inicio = high_resolution_clock::now();
     int contador_ifs = 0; // Contador de 'if'
 
     cout << "\nEquipos con promedio de goles ";
     if (opcion == 'A') {
         cout << "por encima de " << umbral << ":\n";
-        contador_ifs++; // Conteo del 'if' para opción A
+        contador_ifs++; // Conteo del 'if' para opcion A
     } else {
         cout << "por debajo de " << umbral << ":\n";
-        contador_ifs++; // Conteo del 'if' para opción B
+        contador_ifs++; // Conteo del 'if' para opcion B
     }
 
     bool encontrado = false;
 
-    // Recorrer las estadísticas de todos los equipos y competiciones
+    // Recorrer las estadisticas de todos los equipos y competiciones
     for (const auto &[equipo, competiciones] : estadisticas) {
         for (const auto &[competicion, stats] : competiciones) {
             int partidos_jugados = stats.triunfos + stats.derrotas + stats.empates;
 
             // Evitar divisiones por cero
             if (partidos_jugados == 0) {
-                contador_ifs++; // Conteo del 'if' para evitar división por cero
+                contador_ifs++; // Conteo del 'if' para evitar division por cero
                 continue;
             }
 
@@ -433,11 +433,11 @@ void filtrarEquiposPorUmbralDeGoles() {
         contador_ifs++; // Conteo del 'if' para equipos no encontrados
     }
 
-    // Finalizar la medición del tiempo de ejecución
+    // Finalizar la medicion del tiempo de ejecucion
     auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duración en segundos
+    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duracion en segundos
 
-    // Mostrar resultados de ejecución
-    cout << "\nTiempo de ejecución: " << duracion.count() << " segundos\n";
+    // Mostrar resultados de ejecucion
+    cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
