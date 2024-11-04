@@ -4,7 +4,7 @@
 #include <iostream>
 
 int main() {
-    std::string archivo = "Base_Datos_COMA_Normalizado.csv";
+    std::string archivo = "Base_Datos_COMA.csv";
     cargarDatosDesdeCSV(archivo);
 
     std::cout << "Bienvenido al sistema de gestion de partidos.\n";

@@ -65,8 +65,6 @@ void cargarDatosDesdeCSV(const string &archivo) {
         bool triunfo_local = (ptr->goles_local > ptr->goles_visitante);
         contador_ifs++; // if implicito en la comparacion de triunfo local
 
-        actualizarEstadisticas(local, competicion, ptr->goles_local, ptr->goles_visitante,
-                               triunfo_local, empate);
         actualizarEstadisticas(visitante, competicion, ptr->goles_visitante, ptr->goles_local,
                                !triunfo_local && !empate, empate);
 

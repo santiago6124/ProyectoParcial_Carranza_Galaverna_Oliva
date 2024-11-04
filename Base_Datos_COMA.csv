@@ -1,6 +1,6 @@
-﻿Jornada,Fecha,Equipo Local,Goles Local,Goles Visitante,Equipo Visitante,Competicion
+Jornada,Fecha,Equipo Local,Goles Local,Goles Visitante,Equipo Visitante,Competicion
 Fase de grupos partido 1,18/9/2012,Malaga CF,3,0,Zenit,Champions League
-Fase de grupos partido 1,18/9/2012,Real Madrid,3,2,Manchester City,Champions League
+Fase de grupos partido 1,18/9/2012,Real Madrid,3,2,Manchester City FC,Champions League
 Fase de grupos partido 1,18/9/2012,Milan,0,0,Anderlecht,Champions League
 Fase de grupos partido 1,18/9/2012,Dinamo Zagreb,0,2,Porto,Champions League
 Fase de grupos partido 1,18/9/2012,Olympiacos,1,2,FC Schalke 04,Champions League
@@ -8,7 +8,7 @@ Fase de grupos partido 1,18/9/2012,Montpellier,1,2,Arsenal FC,Champions League
 Fase de grupos partido 1,18/9/2012,PSG,4,1,Dynamo Kyiv,Champions League
 Fase de grupos partido 1,18/9/2012,Borussia Dortmund,1,0,Ajax,Champions League
 Fase de grupos partido 1,19/9/2012,Braga,0,2,Cluj,Champions League
-Fase de grupos partido 1,19/9/2012,Shakhtar Donetsk,2,0,Nordsjælland,Champions League
+Fase de grupos partido 1,19/9/2012,Shakhtar Donetsk,2,0,Nordsj�lland,Champions League
 Fase de grupos partido 1,19/9/2012,Chelsea FC,2,2,Juventus,Champions League
 Fase de grupos partido 1,19/9/2012,Manchester United FC,1,0,Galatasaray,Champions League
 Fase de grupos partido 1,19/9/2012,Lille,1,3,BATE Borisov,Champions League
@@ -22,16 +22,16 @@ Fase de grupos partido 2,2/10/2012,Spartak Moskva,3,2,Celtic,Champions League
 Fase de grupos partido 2,2/10/2012,Benfica,0,2,Barcelona,Champions League
 Fase de grupos partido 2,2/10/2012,Cluj,1,2,Manchester United FC,Champions League
 Fase de grupos partido 2,2/10/2012,Galatasaray,0,2,Braga,Champions League
-Fase de grupos partido 2,2/10/2012,Nordsjælland,0,4,Chelsea FC,Champions League
+Fase de grupos partido 2,2/10/2012,Nordsj�lland,0,4,Chelsea FC,Champions League
 Fase de grupos partido 2,3/10/2012,Ajax,1,4,Real Madrid,Champions League
-Fase de grupos partido 2,3/10/2012,Manchester City,1,1,Borussia Dortmund,Champions League
+Fase de grupos partido 2,3/10/2012,Manchester City FC,1,1,Borussia Dortmund,Champions League
 Fase de grupos partido 2,3/10/2012,Anderlecht,0,3,Malaga CF,Champions League
 Fase de grupos partido 2,3/10/2012,Zenit,2,3,Milan,Champions League
 Fase de grupos partido 2,3/10/2012,Arsenal FC,3,1,Olympiacos,Champions League
 Fase de grupos partido 2,3/10/2012,FC Schalke 04,2,2,Montpellier,Champions League
 Fase de grupos partido 2,3/10/2012,Porto,1,0,PSG,Champions League
 Fase de grupos partido 2,3/10/2012,Dynamo Kyiv,2,0,Dinamo Zagreb,Champions League
-Fase de grupos partido 3,23/10/2012,Nordsjælland,1,1,Juventus,Champions League
+Fase de grupos partido 3,23/10/2012,Nordsj�lland,1,1,Juventus,Champions League
 Fase de grupos partido 3,23/10/2012,Shakhtar Donetsk,2,1,Chelsea FC,Champions League
 Fase de grupos partido 3,23/10/2012,BATE Borisov,0,3,Valencia CF,Champions League
 Fase de grupos partido 3,23/10/2012,Lille,0,1,Bayern Munich,Champions League
@@ -41,7 +41,7 @@ Fase de grupos partido 3,23/10/2012,Galatasaray,1,1,Cluj,Champions League
 Fase de grupos partido 3,23/10/2012,Manchester United FC,3,2,Braga,Champions League
 Fase de grupos partido 3,24/10/2012,Dinamo Zagreb,0,2,PSG,Champions League
 Fase de grupos partido 3,24/10/2012,Borussia Dortmund,2,1,Real Madrid,Champions League
-Fase de grupos partido 3,24/10/2012,Ajax,3,1,Manchester City,Champions League
+Fase de grupos partido 3,24/10/2012,Ajax,3,1,Manchester City FC,Champions League
 Fase de grupos partido 3,24/10/2012,Malaga CF,1,0,Milan,Champions League
 Fase de grupos partido 3,24/10/2012,Zenit,1,0,Anderlecht,Champions League
 Fase de grupos partido 3,24/10/2012,Montpellier,1,2,Olympiacos,Champions League
@@ -49,7 +49,7 @@ Fase de grupos partido 3,24/10/2012,Porto,3,2,Dynamo Kyiv,Champions League
 Fase de grupos partido 3,24/10/2012,Arsenal FC,0,2,FC Schalke 04,Champions League
 Fase de grupos partido 4,6/11/2012,Real Madrid,2,2,Borussia Dortmund,Champions League
 Fase de grupos partido 4,6/11/2012,FC Schalke 04,2,2,Arsenal FC,Champions League
-Fase de grupos partido 4,6/11/2012,Manchester City,2,2,Ajax,Champions League
+Fase de grupos partido 4,6/11/2012,Manchester City FC,2,2,Ajax,Champions League
 Fase de grupos partido 4,6/11/2012,Milan,1,1,Malaga CF,Champions League
 Fase de grupos partido 4,6/11/2012,Anderlecht,1,0,Zenit,Champions League
 Fase de grupos partido 4,6/11/2012,Olympiacos,3,1,Montpellier,Champions League
@@ -59,11 +59,11 @@ Fase de grupos partido 4,7/11/2012,Braga,1,3,Manchester United FC,Champions Leag
 Fase de grupos partido 4,7/11/2012,Bayern Munich,6,1,Lille,Champions League
 Fase de grupos partido 4,7/11/2012,Cluj,1,3,Galatasaray,Champions League
 Fase de grupos partido 4,7/11/2012,Valencia CF,4,2,BATE Borisov,Champions League
-Fase de grupos partido 4,7/11/2012,Juventus,4,0,Nordsjælland,Champions League
+Fase de grupos partido 4,7/11/2012,Juventus,4,0,Nordsj�lland,Champions League
 Fase de grupos partido 4,7/11/2012,Celtic,2,1,Barcelona,Champions League
 Fase de grupos partido 4,7/11/2012,Benfica,2,0,Spartak Moskva,Champions League
 Fase de grupos partido 4,7/11/2012,Chelsea FC,3,2,Shakhtar Donetsk,Champions League
-Fase de grupos partido 5,20/11/2012,Nordsjælland,2,5,Shakhtar Donetsk,Champions League
+Fase de grupos partido 5,20/11/2012,Nordsj�lland,2,5,Shakhtar Donetsk,Champions League
 Fase de grupos partido 5,20/11/2012,Cluj,3,1,Braga,Champions League
 Fase de grupos partido 5,20/11/2012,Galatasaray,1,0,Manchester United FC,Champions League
 Fase de grupos partido 5,20/11/2012,Benfica,2,1,Celtic,Champions League
@@ -73,7 +73,7 @@ Fase de grupos partido 5,20/11/2012,BATE Borisov,0,2,Lille,Champions League
 Fase de grupos partido 5,20/11/2012,Juventus,3,0,Chelsea FC,Champions League
 Fase de grupos partido 5,21/11/2012,Anderlecht,1,3,Milan,Champions League
 Fase de grupos partido 5,21/11/2012,Dynamo Kyiv,0,2,PSG,Champions League
-Fase de grupos partido 5,21/11/2012,Manchester City,1,1,Real Madrid,Champions League
+Fase de grupos partido 5,21/11/2012,Manchester City FC,1,1,Real Madrid,Champions League
 Fase de grupos partido 5,21/11/2012,Ajax,1,4,Borussia Dortmund,Champions League
 Fase de grupos partido 5,21/11/2012,Zenit,2,2,Malaga CF,Champions League
 Fase de grupos partido 5,21/11/2012,FC Schalke 04,1,0,Olympiacos,Champions League
@@ -86,7 +86,7 @@ Fase de grupos partido 6,4/12/2012,PSG,2,1,Porto,Champions League
 Fase de grupos partido 6,4/12/2012,Olympiacos,2,1,Arsenal FC,Champions League
 Fase de grupos partido 6,4/12/2012,Malaga CF,2,2,Anderlecht,Champions League
 Fase de grupos partido 6,4/12/2012,Milan,0,1,Zenit,Champions League
-Fase de grupos partido 6,4/12/2012,Borussia Dortmund,1,0,Manchester City,Champions League
+Fase de grupos partido 6,4/12/2012,Borussia Dortmund,1,0,Manchester City FC,Champions League
 Fase de grupos partido 6,5/12/2012,Braga,1,2,Galatasaray,Champions League
 Fase de grupos partido 6,5/12/2012,Manchester United FC,0,1,Cluj,Champions League
 Fase de grupos partido 6,5/12/2012,Shakhtar Donetsk,0,1,Juventus,Champions League
@@ -94,7 +94,7 @@ Fase de grupos partido 6,5/12/2012,Lille,0,1,Valencia CF,Champions League
 Fase de grupos partido 6,5/12/2012,Celtic,2,1,Spartak Moskva,Champions League
 Fase de grupos partido 6,5/12/2012,Barcelona,0,0,Benfica,Champions League
 Fase de grupos partido 6,5/12/2012,Bayern Munich,4,1,BATE Borisov,Champions League
-Fase de grupos partido 6,5/12/2012,Chelsea FC,6,1,Nordsjælland,Champions League
+Fase de grupos partido 6,5/12/2012,Chelsea FC,6,1,Nordsj�lland,Champions League
 Octavos de final (ida),12/2/2013,Valencia CF,1,2,PSG,Champions League
 Octavos de final (ida),12/2/2013,Celtic,0,3,Juventus,Champions League
 Octavos de final (ida),13/2/2013,Real Madrid,1,1,Manchester United FC,Champions League
@@ -131,7 +131,7 @@ Fase de grupos partido 1,17/9/2013,Kobenhavn,1,1,Juventus,Champions League
 Fase de grupos partido 1,17/9/2013,Benfica,2,0,Anderlecht,Champions League
 Fase de grupos partido 1,17/9/2013,Olympiacos,1,4,PSG,Champions League
 Fase de grupos partido 1,17/9/2013,Bayern Munich,3,0,CSKA Moskva,Champions League
-Fase de grupos partido 1,17/9/2013,Viktoria Plzen,0,3,Manchester City,Champions League
+Fase de grupos partido 1,17/9/2013,Viktoria Plzen,0,3,Manchester City FC,Champions League
 Fase de grupos partido 1,18/9/2013,Milan,2,0,Celtic,Champions League
 Fase de grupos partido 1,18/9/2013,Olympique de Marseille,1,2,Arsenal FC,Champions League
 Fase de grupos partido 1,18/9/2013,Barcelona,4,0,Ajax,Champions League
@@ -149,7 +149,7 @@ Fase de grupos partido 2,1/10/2013,Ajax,1,1,Milan,Champions League
 Fase de grupos partido 2,1/10/2013,Celtic,0,1,Barcelona,Champions League
 Fase de grupos partido 2,1/10/2013,Steaua Bucuresti,0,4,Chelsea FC,Champions League
 Fase de grupos partido 2,2/10/2013,PSG,3,0,Benfica,Champions League
-Fase de grupos partido 2,2/10/2013,Manchester City,1,3,Bayern Munich,Champions League
+Fase de grupos partido 2,2/10/2013,Manchester City FC,1,3,Bayern Munich,Champions League
 Fase de grupos partido 2,2/10/2013,CSKA Moskva,3,2,Viktoria Plzen,Champions League
 Fase de grupos partido 2,2/10/2013,Anderlecht,0,3,Olympiacos,Champions League
 Fase de grupos partido 2,2/10/2013,Shakhtar Donetsk,1,1,Manchester United FC,Champions League
@@ -167,12 +167,12 @@ Fase de grupos partido 3,22/10/2013,Arsenal FC,1,2,Borussia Dortmund,Champions L
 Fase de grupos partido 3,23/10/2013,Bayer Leverkusen,4,0,Shakhtar Donetsk,Champions League
 Fase de grupos partido 3,23/10/2013,Benfica,1,1,Olympiacos,Champions League
 Fase de grupos partido 3,23/10/2013,Manchester United FC,1,0,Real Sociedad,Champions League
-Fase de grupos partido 3,23/10/2013,CSKA Moskva,1,2,Manchester City,Champions League
+Fase de grupos partido 3,23/10/2013,CSKA Moskva,1,2,Manchester City FC,Champions League
 Fase de grupos partido 3,23/10/2013,Bayern Munich,5,0,Viktoria Plzen,Champions League
 Fase de grupos partido 3,23/10/2013,Real Madrid,2,1,Juventus,Champions League
 Fase de grupos partido 3,23/10/2013,Galatasaray,3,1,Kobenhavn,Champions League
 Fase de grupos partido 3,23/10/2013,Anderlecht,0,5,PSG,Champions League
-Fase de grupos partido 4,5/11/2013,Manchester City,5,2,CSKA Moskva,Champions League
+Fase de grupos partido 4,5/11/2013,Manchester City FC,5,2,CSKA Moskva,Champions League
 Fase de grupos partido 4,5/11/2013,Viktoria Plzen,0,1,Bayern Munich,Champions League
 Fase de grupos partido 4,5/11/2013,Kobenhavn,1,0,Galatasaray,Champions League
 Fase de grupos partido 4,5/11/2013,Olympiacos,1,0,Benfica,Champions League
@@ -196,7 +196,7 @@ Fase de grupos partido 5,26/11/2013,Borussia Dortmund,3,1,Napoli,Champions Leagu
 Fase de grupos partido 5,26/11/2013,Zenit,1,1,Atletico Madrid,Champions League
 Fase de grupos partido 5,26/11/2013,Celtic,0,3,Milan,Champions League
 Fase de grupos partido 5,26/11/2013,Porto,1,1,Austria Wien,Champions League
-Fase de grupos partido 5,27/11/2013,Manchester City,4,2,Viktoria Plzen,Champions League
+Fase de grupos partido 5,27/11/2013,Manchester City FC,4,2,Viktoria Plzen,Champions League
 Fase de grupos partido 5,27/11/2013,Bayer Leverkusen,0,5,Manchester United FC,Champions League
 Fase de grupos partido 5,27/11/2013,CSKA Moskva,1,3,Bayern Munich,Champions League
 Fase de grupos partido 5,27/11/2013,PSG,2,1,Olympiacos,Champions League
@@ -209,7 +209,7 @@ Fase de grupos partido 6,10/12/2013,Real Sociedad,0,1,Bayer Leverkusen,Champions
 Fase de grupos partido 6,10/12/2013,Olympiacos,3,1,Anderlecht,Champions League
 Fase de grupos partido 6,10/12/2013,Benfica,2,1,PSG,Champions League
 Fase de grupos partido 6,10/12/2013,Kobenhavn,0,2,Real Madrid,Champions League
-Fase de grupos partido 6,10/12/2013,Bayern Munich,2,3,Manchester City,Champions League
+Fase de grupos partido 6,10/12/2013,Bayern Munich,2,3,Manchester City FC,Champions League
 Fase de grupos partido 6,10/12/2013,Manchester United FC,1,0,Shakhtar Donetsk,Champions League
 Fase de grupos partido 6,11/12/2013,Atletico Madrid,2,0,Porto,Champions League
 Fase de grupos partido 6,11/12/2013,Chelsea FC,1,0,Steaua Bucuresti,Champions League
@@ -220,7 +220,7 @@ Fase de grupos partido 6,11/12/2013,Austria Wien,4,1,Zenit,Champions League
 Fase de grupos partido 6,11/12/2013,Napoli,2,0,Arsenal FC,Champions League
 Fase de grupos partido 6,11/12/2013,Galatasaray,1,0,Juventus,Champions League
 Fase de grupos partido 6,11/12/2013,FC Schalke 04,2,0,Basel,Champions League
-Octavos de final (ida),18/2/2014,Manchester City,0,2,Barcelona,Champions League
+Octavos de final (ida),18/2/2014,Manchester City FC,0,2,Barcelona,Champions League
 Octavos de final (ida),18/2/2014,Bayer Leverkusen,0,4,PSG,Champions League
 Octavos de final (ida),19/2/2014,Arsenal FC,0,2,Bayern Munich,Champions League
 Octavos de final (ida),19/2/2014,Milan,0,1,Atletico Madrid,Champions League
@@ -230,7 +230,7 @@ Octavos de final (ida),26/2/2014,FC Schalke 04,1,6,Real Madrid,Champions League
 Octavos de final (ida),26/2/2014,Galatasaray,1,1,Chelsea FC,Champions League
 Octavos de final (vuelta),11/3/2014,Bayern Munich,1,1,Arsenal FC,Champions League
 Octavos de final (vuelta),11/3/2014,Atletico Madrid,4,1,Milan,Champions League
-Octavos de final (vuelta),12/3/2014,Barcelona,2,1,Manchester City,Champions League
+Octavos de final (vuelta),12/3/2014,Barcelona,2,1,Manchester City FC,Champions League
 Octavos de final (vuelta),12/3/2014,PSG,2,1,Bayer Leverkusen,Champions League
 Octavos de final (vuelta),18/3/2014,Real Madrid,3,1,FC Schalke 04,Champions League
 Octavos de final (vuelta),18/3/2014,Chelsea FC,2,0,Galatasaray,Champions League
@@ -258,7 +258,7 @@ Fase de grupos partido 1,16/9/2014,Olympiacos,3,2,Atletico Madrid,Champions Leag
 Fase de grupos partido 1,16/9/2014,Benfica,0,2,Zenit,Champions League
 Fase de grupos partido 1,16/9/2014,Galatasaray,1,1,Anderlecht,Champions League
 Fase de grupos partido 1,17/9/2014,Roma,5,1,CSKA Moskva,Champions League
-Fase de grupos partido 1,17/9/2014,Bayern Munich,1,0,Manchester City,Champions League
+Fase de grupos partido 1,17/9/2014,Bayern Munich,1,0,Manchester City FC,Champions League
 Fase de grupos partido 1,17/9/2014,Barcelona,1,0,APOEL,Champions League
 Fase de grupos partido 1,17/9/2014,Ajax,1,1,PSG,Champions League
 Fase de grupos partido 1,17/9/2014,Chelsea FC,1,1,FC Schalke 04,Champions League
@@ -266,7 +266,7 @@ Fase de grupos partido 1,17/9/2014,Maribor,1,1,Sporting de Portugal,Champions Le
 Fase de grupos partido 1,17/9/2014,Porto,6,0,BATE Borisov,Champions League
 Fase de grupos partido 1,17/9/2014,Athletic Club Bilbao,0,0,Shakhtar Donetsk,Champions League
 Fase de grupos partido 2,30/9/2014,CSKA Moskva,0,1,Bayern Munich,Champions League
-Fase de grupos partido 2,30/9/2014,Manchester City,1,1,Roma,Champions League
+Fase de grupos partido 2,30/9/2014,Manchester City FC,1,1,Roma,Champions League
 Fase de grupos partido 2,30/9/2014,APOEL,1,1,Ajax,Champions League
 Fase de grupos partido 2,30/9/2014,Sporting de Portugal,0,1,Chelsea FC,Champions League
 Fase de grupos partido 2,30/9/2014,FC Schalke 04,1,1,Maribor,Champions League
@@ -282,7 +282,7 @@ Fase de grupos partido 2,1/10/2014,Bayer Leverkusen,3,1,Benfica,Champions League
 Fase de grupos partido 2,1/10/2014,Arsenal FC,4,1,Galatasaray,Champions League
 Fase de grupos partido 2,1/10/2014,Ludogorets,1,2,Real Madrid,Champions League
 Fase de grupos partido 3,21/10/2014,Barcelona,3,1,Ajax,Champions League
-Fase de grupos partido 3,21/10/2014,CSKA Moskva,2,2,Manchester City,Champions League
+Fase de grupos partido 3,21/10/2014,CSKA Moskva,2,2,Manchester City FC,Champions League
 Fase de grupos partido 3,21/10/2014,APOEL,0,1,PSG,Champions League
 Fase de grupos partido 3,21/10/2014,Porto,2,1,Athletic Club Bilbao,Champions League
 Fase de grupos partido 3,21/10/2014,BATE Borisov,0,7,Shakhtar Donetsk,Champions League
@@ -306,7 +306,7 @@ Fase de grupos partido 4,4/11/2014,Benfica,1,0,Monaco,Champions League
 Fase de grupos partido 4,4/11/2014,Arsenal FC,3,3,Anderlecht,Champions League
 Fase de grupos partido 4,4/11/2014,Borussia Dortmund,4,1,Galatasaray,Champions League
 Fase de grupos partido 4,5/11/2014,PSG,1,0,APOEL,Champions League
-Fase de grupos partido 4,5/11/2014,Manchester City,1,2,CSKA Moskva,Champions League
+Fase de grupos partido 4,5/11/2014,Manchester City FC,1,2,CSKA Moskva,Champions League
 Fase de grupos partido 4,5/11/2014,Bayern Munich,2,0,Roma,Champions League
 Fase de grupos partido 4,5/11/2014,Ajax,0,2,Barcelona,Champions League
 Fase de grupos partido 4,5/11/2014,Sporting de Portugal,4,2,FC Schalke 04,Champions League
@@ -314,7 +314,7 @@ Fase de grupos partido 4,5/11/2014,Maribor,1,1,Chelsea FC,Champions League
 Fase de grupos partido 4,5/11/2014,Shakhtar Donetsk,5,0,BATE Borisov,Champions League
 Fase de grupos partido 4,5/11/2014,Athletic Club Bilbao,0,2,Porto,Champions League
 Fase de grupos partido 5,25/11/2014,CSKA Moskva,1,1,Roma,Champions League
-Fase de grupos partido 5,25/11/2014,Manchester City,3,2,Bayern Munich,Champions League
+Fase de grupos partido 5,25/11/2014,Manchester City FC,3,2,Bayern Munich,Champions League
 Fase de grupos partido 5,25/11/2014,APOEL,0,4,Barcelona,Champions League
 Fase de grupos partido 5,25/11/2014,PSG,3,1,Ajax,Champions League
 Fase de grupos partido 5,25/11/2014,FC Schalke 04,0,5,Chelsea FC,Champions League
@@ -337,7 +337,7 @@ Fase de grupos partido 6,9/12/2014,Monaco,2,0,Zenit,Champions League
 Fase de grupos partido 6,9/12/2014,Benfica,0,0,Bayer Leverkusen,Champions League
 Fase de grupos partido 6,9/12/2014,Galatasaray,1,4,Arsenal FC,Champions League
 Fase de grupos partido 6,9/12/2014,Borussia Dortmund,1,1,Anderlecht,Champions League
-Fase de grupos partido 6,10/12/2014,Roma,0,2,Manchester City,Champions League
+Fase de grupos partido 6,10/12/2014,Roma,0,2,Manchester City FC,Champions League
 Fase de grupos partido 6,10/12/2014,Bayern Munich,3,0,CSKA Moskva,Champions League
 Fase de grupos partido 6,10/12/2014,Barcelona,3,1,PSG,Champions League
 Fase de grupos partido 6,10/12/2014,Ajax,4,0,APOEL,Champions League
@@ -350,7 +350,7 @@ Octavos de final (ida),17/2/2015,PSG,1,1,Chelsea FC,Champions League
 Octavos de final (ida),18/2/2015,Basel,1,1,Porto,Champions League
 Octavos de final (ida),18/2/2015,FC Schalke 04,0,2,Real Madrid,Champions League
 Octavos de final (ida),24/2/2015,Juventus,2,1,Borussia Dortmund,Champions League
-Octavos de final (ida),24/2/2015,Manchester City,1,2,Barcelona,Champions League
+Octavos de final (ida),24/2/2015,Manchester City FC,1,2,Barcelona,Champions League
 Octavos de final (ida),25/2/2015,Bayer Leverkusen,1,0,Atletico Madrid,Champions League
 Octavos de final (ida),25/2/2015,Arsenal FC,1,3,Monaco,Champions League
 Octavos de final (vuelta),10/3/2015,Real Madrid,3,4,FC Schalke 04,Champions League
@@ -360,7 +360,7 @@ Octavos de final (vuelta),11/3/2015,Chelsea FC,2,2,PSG,Champions League
 Octavos de final (vuelta),17/3/2015,Monaco,0,2,Arsenal FC,Champions League
 Octavos de final (vuelta),17/3/2015,Atletico Madrid,1,0,Bayer Leverkusen,Champions League
 Octavos de final (vuelta),18/3/2015,Borussia Dortmund,0,3,Juventus,Champions League
-Octavos de final (vuelta),18/3/2015,Barcelona,1,0,Manchester City,Champions League
+Octavos de final (vuelta),18/3/2015,Barcelona,1,0,Manchester City FC,Champions League
 Cuartos de final (ida),14/4/2015,Atletico Madrid,0,0,Real Madrid,Champions League
 Cuartos de final (ida),14/4/2015,Juventus,1,0,Monaco,Champions League
 Cuartos de final (ida),15/4/2015,PSG,1,3,Barcelona,Champions League
@@ -369,17 +369,17 @@ Cuartos de final (vuelta),21/4/2015,Bayern Munich,6,1,Porto,Champions League
 Cuartos de final (vuelta),21/4/2015,Barcelona,2,0,PSG,Champions League
 Cuartos de final (vuelta),22/4/2015,Monaco,0,0,Juventus,Champions League
 Cuartos de final (vuelta),22/4/2015,Real Madrid,1,0,Atletico Madrid,Champions League
-Semifinal (ida),5/5/2014,Juventus,2,1,Real Madrid,Champions League
-Semifinal (ida),6/5/2014,Barcelona,3,0,Bayern Munich,Champions League
-Semifinal (vuelta),12/5/2014,Bayern Munich,3,2,Barcelona,Champions League
-Semifinal (vuelta),13/5/2014,Real Madrid,1,1,Juventus,Champions League
+Semifinal (ida),5/5/2015,Juventus,2,1,Real Madrid,Champions League
+Semifinal (ida),6/5/2015,Barcelona,3,0,Bayern Munich,Champions League
+Semifinal (vuelta),12/5/2015,Bayern Munich,3,2,Barcelona,Champions League
+Semifinal (vuelta),13/5/2015,Real Madrid,1,1,Juventus,Champions League
 Final,6/6/2015,Juventus,1,3,Barcelona,Champions League
 Fase de grupos partido 1,15/9/2015,Wolfsburg,1,0,CSKA Moskva,Champions League
 Fase de grupos partido 1,15/9/2015,PSV,2,1,Manchester United FC,Champions League
 Fase de grupos partido 1,15/9/2015,PSG,2,0,Malmo,Champions League
 Fase de grupos partido 1,15/9/2015,Galatasaray,0,2,Atletico Madrid,Champions League
 Fase de grupos partido 1,15/9/2015,Benfica,2,0,Astana,Champions League
-Fase de grupos partido 1,15/9/2015,Manchester City,1,2,Juventus,Champions League
+Fase de grupos partido 1,15/9/2015,Manchester City FC,1,2,Juventus,Champions League
 Fase de grupos partido 1,15/9/2015,Sevilla FC,3,0,Bor. Monchengladbach,Champions League
 Fase de grupos partido 1,15/9/2015,Real Madrid,4,0,Shakhtar Donetsk,Champions League
 Fase de grupos partido 1,16/9/2015,Valencia CF,2,3,Zenit,Champions League
@@ -402,7 +402,7 @@ Fase de grupos partido 2,30/9/2015,Atletico Madrid,1,2,Benfica,Champions League
 Fase de grupos partido 2,30/9/2015,Manchester United FC,2,1,Wolfsburg,Champions League
 Fase de grupos partido 2,30/9/2015,CSKA Moskva,3,2,PSV,Champions League
 Fase de grupos partido 2,30/9/2015,Astana,2,2,Galatasaray,Champions League
-Fase de grupos partido 2,30/9/2015,Bor. Monchengladbach,1,2,Manchester City,Champions League
+Fase de grupos partido 2,30/9/2015,Bor. Monchengladbach,1,2,Manchester City FC,Champions League
 Fase de grupos partido 2,30/9/2015,Juventus,2,0,Sevilla FC,Champions League
 Fase de grupos partido 2,30/9/2015,Shakhtar Donetsk,0,3,PSG,Champions League
 Fase de grupos partido 2,30/9/2015,Malmo,0,2,Real Madrid,Champions League
@@ -421,9 +421,9 @@ Fase de grupos partido 3,21/10/2015,PSG,0,0,Real Madrid,Champions League
 Fase de grupos partido 3,21/10/2015,CSKA Moskva,1,1,Manchester United FC,Champions League
 Fase de grupos partido 3,21/10/2015,Wolfsburg,2,0,PSV,Champions League
 Fase de grupos partido 3,21/10/2015,Galatasaray,2,1,Benfica,Champions League
-Fase de grupos partido 3,21/10/2015,Manchester City,2,1,Sevilla FC,Champions League
+Fase de grupos partido 3,21/10/2015,Manchester City FC,2,1,Sevilla FC,Champions League
 Fase de grupos partido 4,3/11/2015,Bor. Monchengladbach,1,1,Juventus,Champions League
-Fase de grupos partido 4,3/11/2015,Sevilla FC,1,3,Manchester City,Champions League
+Fase de grupos partido 4,3/11/2015,Sevilla FC,1,3,Manchester City FC,Champions League
 Fase de grupos partido 4,3/11/2015,Benfica,2,1,Galatasaray,Champions League
 Fase de grupos partido 4,3/11/2015,Astana,0,0,Atletico Madrid,Champions League
 Fase de grupos partido 4,3/11/2015,PSV,2,0,Wolfsburg,Champions League
@@ -453,7 +453,7 @@ Fase de grupos partido 5,25/11/2015,CSKA Moskva,0,2,Wolfsburg,Champions League
 Fase de grupos partido 5,25/11/2015,Bor. Monchengladbach,4,2,Sevilla FC,Champions League
 Fase de grupos partido 5,25/11/2015,Astana,2,2,Benfica,Champions League
 Fase de grupos partido 5,25/11/2015,Atletico Madrid,2,0,Galatasaray,Champions League
-Fase de grupos partido 5,25/11/2015,Juventus,1,0,Manchester City,Champions League
+Fase de grupos partido 5,25/11/2015,Juventus,1,0,Manchester City FC,Champions League
 Fase de grupos partido 6,8/12/2015,Sevilla FC,1,0,Juventus,Champions League
 Fase de grupos partido 6,8/12/2015,Benfica,1,2,Atletico Madrid,Champions League
 Fase de grupos partido 6,8/12/2015,Galatasaray,1,1,Astana,Champions League
@@ -461,7 +461,7 @@ Fase de grupos partido 6,8/12/2015,PSV,2,1,CSKA Moskva,Champions League
 Fase de grupos partido 6,8/12/2015,Wolfsburg,3,2,Manchester United FC,Champions League
 Fase de grupos partido 6,8/12/2015,Real Madrid,8,0,Malmo,Champions League
 Fase de grupos partido 6,8/12/2015,PSG,2,0,Shakhtar Donetsk,Champions League
-Fase de grupos partido 6,8/12/2015,Manchester City,4,2,Bor. Monchengladbach,Champions League
+Fase de grupos partido 6,8/12/2015,Manchester City FC,4,2,Bor. Monchengladbach,Champions League
 Fase de grupos partido 6,9/12/2015,Gent,2,1,Zenit,Champions League
 Fase de grupos partido 6,9/12/2015,Bayer Leverkusen,1,1,Barcelona,Champions League
 Fase de grupos partido 6,9/12/2015,Roma,0,0,BATE Borisov,Champions League
@@ -476,28 +476,28 @@ Octavos de final (ida),17/2/2016,Gent,2,3,Wolfsburg,Champions League
 Octavos de final (ida),17/2/2016,Roma,0,2,Real Madrid,Champions League
 Octavos de final (ida),23/2/2016,Arsenal FC,0,2,Barcelona,Champions League
 Octavos de final (ida),23/2/2016,Juventus,2,2,Bayern Munich,Champions League
-Octavos de final (ida),24/2/2016,Dynamo Kyiv,1,3,Manchester City,Champions League
+Octavos de final (ida),24/2/2016,Dynamo Kyiv,1,3,Manchester City FC,Champions League
 Octavos de final (ida),24/2/2016,PSV,0,0,Atletico Madrid,Champions League
 Octavos de final (vuelta),8/3/2016,Real Madrid,2,0,Roma,Champions League
 Octavos de final (vuelta),8/3/2016,Wolfsburg,1,0,Gent,Champions League
 Octavos de final (vuelta),9/3/2016,Chelsea FC,1,2,PSG,Champions League
 Octavos de final (vuelta),9/3/2016,Zenit,1,2,Benfica,Champions League
-Octavos de final (vuelta),15/3/2016,Manchester City,0,0,Dynamo Kyiv,Champions League
+Octavos de final (vuelta),15/3/2016,Manchester City FC,0,0,Dynamo Kyiv,Champions League
 Octavos de final (vuelta),15/3/2016,Atletico Madrid,0,0,PSV,Champions League
 Octavos de final (vuelta),16/3/2016,Barcelona,3,1,Arsenal FC,Champions League
 Octavos de final (vuelta),16/3/2016,Bayern Munich,4,2,Juventus,Champions League
 Cuartos de final (ida),5/4/2016,Bayern Munich,1,0,Benfica,Champions League
 Cuartos de final (ida),5/4/2016,Barcelona,2,1,Atletico Madrid,Champions League
 Cuartos de final (ida),6/4/2016,Wolfsburg,2,0,Real Madrid,Champions League
-Cuartos de final (ida),6/4/2016,PSG,2,2,Manchester City,Champions League
-Cuartos de final (vuelta),12/4/2016,Manchester City,1,0,PSG,Champions League
+Cuartos de final (ida),6/4/2016,PSG,2,2,Manchester City FC,Champions League
+Cuartos de final (vuelta),12/4/2016,Manchester City FC,1,0,PSG,Champions League
 Cuartos de final (vuelta),12/4/2016,Real Madrid,3,0,Wolfsburg,Champions League
 Cuartos de final (vuelta),13/4/2016,Atletico Madrid,2,0,Barcelona,Champions League
 Cuartos de final (vuelta),13/4/2016,Benfica,2,2,Bayern Munich,Champions League
-Semifinal (ida),26/4/2016,Manchester City,0,0,Real Madrid,Champions League
+Semifinal (ida),26/4/2016,Manchester City FC,0,0,Real Madrid,Champions League
 Semifinal (ida),27/4/2016,Atletico Madrid,1,0,Bayern Munich,Champions League
 Semifinal (vuelta),3/5/2016,Bayern Munich,2,1,Atletico Madrid,Champions League
-Semifinal (vuelta),4/5/2016,Real Madrid,1,0,Manchester City,Champions League
+Semifinal (vuelta),4/5/2016,Real Madrid,1,0,Manchester City FC,Champions League
 Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 1,18/8/2012,West Ham United FC,1,0,Aston Villa FC,Premier League
 1,18/8/2012,West Bromwich Albion FC,3,0,Liverpool FC,Premier League
@@ -2020,10 +2020,10 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 38,15/5/2016,Chelsea FC,1,1,Leicester City FC,Premier League
 38,17/5/2016,Manchester United FC,3,1,AFC Bournemouth,Premier League
 1,18/8/2012,RCD Mallorca,2,1,RCD Espanyol,LALIGA
-1,18/8/2012,Sevilla FC FC,2,1,Getafe CF,LALIGA
+1,18/8/2012,Sevilla FC,2,1,Getafe CF,LALIGA
 1,18/8/2012,RC Celta Vigo,0,1,Malaga CF,LALIGA
 1,19/8/2012,Levante UD,1,1,Atletico Madrid,LALIGA
-1,19/8/2012,Real Madrid,1,1,Valencia CF CF,LALIGA
+1,19/8/2012,Real Madrid,1,1,Valencia CF,LALIGA
 1,19/8/2012,Barcelona,5,1,Real Sociedad,LALIGA
 1,19/8/2012,Athletic Club Bilbao,3,5,Real Betis,LALIGA
 1,20/8/2012,RCD La Coruna,2,0,CA Osasuna,LALIGA
@@ -2034,8 +2034,8 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 2,25/8/2012,Malaga CF,1,1,RCD Mallorca,LALIGA
 2,25/8/2012,RCD Espanyol,1,2,Real Zaragoza,LALIGA
 2,26/8/2012,Getafe CF,2,1,Real Madrid,LALIGA
-2,26/8/2012,Granada CF,1,1,Sevilla FC FC,LALIGA
-2,26/8/2012,Valencia CF CF,3,3,RCD La Coruna,LALIGA
+2,26/8/2012,Granada CF,1,1,Sevilla FC,LALIGA
+2,26/8/2012,Valencia CF,3,3,RCD La Coruna,LALIGA
 2,26/8/2012,CA Osasuna,1,2,Barcelona,LALIGA
 2,27/8/2012,Real Valladolid CF,2,0,Levante UD,LALIGA
 2,27/8/2012,Atletico Madrid,4,0,Athletic Club Bilbao,LALIGA
@@ -2045,13 +2045,13 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 3,1/9/2012,RCD La Coruna,1,1,Getafe CF,LALIGA
 3,2/9/2012,Athletic Club Bilbao,2,0,Real Valladolid CF,LALIGA
 3,2/9/2012,Levante UD,3,2,RCD Espanyol,LALIGA
-3,2/9/2012,Rayo Vallecano,0,0,Sevilla FC FC,LALIGA
-3,2/9/2012,Barcelona,1,0,Valencia CF CF,LALIGA
+3,2/9/2012,Rayo Vallecano,0,0,Sevilla FC,LALIGA
+3,2/9/2012,Barcelona,1,0,Valencia CF,LALIGA
 3,2/9/2012,Real Madrid,3,0,Granada CF,LALIGA
 4,15/9/2012,Malaga CF,3,1,Levante UD,LALIGA
 4,15/9/2012,Getafe CF,1,4,Barcelona,LALIGA
-4,15/9/2012,Sevilla FC FC,1,0,Real Madrid,LALIGA
-4,15/9/2012,Valencia CF CF,2,1,RC Celta Vigo,LALIGA
+4,15/9/2012,Sevilla FC,1,0,Real Madrid,LALIGA
+4,15/9/2012,Valencia CF,2,1,RC Celta Vigo,LALIGA
 4,16/9/2012,Granada CF,1,1,RCD La Coruna,LALIGA
 4,16/9/2012,CA Osasuna,1,1,RCD Mallorca,LALIGA
 4,16/9/2012,Real Sociedad,2,0,Real Zaragoza,LALIGA
@@ -2062,16 +2062,16 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 5,22/9/2012,RC Celta Vigo,2,1,Getafe CF,LALIGA
 5,22/9/2012,Real Zaragoza,3,1,CA Osasuna,LALIGA
 5,22/9/2012,Barcelona,2,0,Granada CF,LALIGA
-5,23/9/2012,RCD Mallorca,2,0,Valencia CF CF,LALIGA
+5,23/9/2012,RCD Mallorca,2,0,Valencia CF,LALIGA
 5,23/9/2012,Levante UD,2,1,Real Sociedad,LALIGA
 5,23/9/2012,Athletic Club Bilbao,0,0,Malaga CF,LALIGA
 5,23/9/2012,Atletico Madrid,2,1,Real Valladolid CF,LALIGA
 5,24/9/2012,Rayo Vallecano,0,2,Real Madrid,LALIGA
-5,24/9/2012,RCD La Coruna,0,2,Sevilla FC FC,LALIGA
+5,24/9/2012,RCD La Coruna,0,2,Sevilla FC,LALIGA
 3,26/9/2012,Real Betis,2,4,Atletico Madrid,LALIGA
-6,29/9/2012,Sevilla FC FC,2,3,Barcelona,LALIGA
+6,29/9/2012,Sevilla FC,2,3,Barcelona,LALIGA
 6,29/9/2012,Malaga CF,4,0,Real Betis,LALIGA
-6,29/9/2012,Valencia CF CF,2,0,Real Zaragoza,LALIGA
+6,29/9/2012,Valencia CF,2,0,Real Zaragoza,LALIGA
 6,29/9/2012,Real Sociedad,2,0,Athletic Club Bilbao,LALIGA
 6,30/9/2012,Granada CF,2,1,RC Celta Vigo,LALIGA
 6,30/9/2012,Real Madrid,5,1,RCD La Coruna,LALIGA
@@ -2079,44 +2079,44 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 6,30/9/2012,Real Valladolid CF,6,1,Rayo Vallecano,LALIGA
 6,30/9/2012,CA Osasuna,4,0,Levante UD,LALIGA
 6,1/10/2012,Getafe CF,1,0,RCD Mallorca,LALIGA
-7,5/10/2012,RC Celta Vigo,2,0,Sevilla FC FC,LALIGA
+7,5/10/2012,RC Celta Vigo,2,0,Sevilla FC,LALIGA
 7,6/10/2012,Rayo Vallecano,2,1,RCD La Coruna,LALIGA
 7,6/10/2012,Real Valladolid CF,1,1,RCD Espanyol,LALIGA
 7,6/10/2012,Real Zaragoza,0,1,Getafe CF,LALIGA
 7,6/10/2012,Real Betis,2,0,Real Sociedad,LALIGA
-7,7/10/2012,Levante UD,1,0,Valencia CF CF,LALIGA
+7,7/10/2012,Levante UD,1,0,Valencia CF,LALIGA
 7,7/10/2012,Athletic Club Bilbao,1,0,CA Osasuna,LALIGA
 7,7/10/2012,Atletico Madrid,2,1,Malaga CF,LALIGA
 7,7/10/2012,Barcelona,2,2,Real Madrid,LALIGA
 7,7/10/2012,RCD Mallorca,1,2,Granada CF,LALIGA
 8,20/10/2012,Real Madrid,2,0,RC Celta Vigo,LALIGA
 8,20/10/2012,RCD La Coruna,4,5,Barcelona,LALIGA
-8,20/10/2012,Valencia CF CF,3,2,Athletic Club Bilbao,LALIGA
+8,20/10/2012,Valencia CF,3,2,Athletic Club Bilbao,LALIGA
 8,20/10/2012,Malaga CF,2,1,Real Valladolid CF,LALIGA
 8,21/10/2012,RCD Espanyol,3,2,Rayo Vallecano,LALIGA
 8,21/10/2012,Getafe CF,0,1,Levante UD,LALIGA
 8,21/10/2012,Real Sociedad,0,1,Atletico Madrid,LALIGA
 8,21/10/2012,Granada CF,1,2,Real Zaragoza,LALIGA
 8,21/10/2012,CA Osasuna,0,0,Real Betis,LALIGA
-8,22/10/2012,Sevilla FC FC,3,2,RCD Mallorca,LALIGA
+8,22/10/2012,Sevilla FC,3,2,RCD Mallorca,LALIGA
 9,27/10/2012,RC Celta Vigo,1,1,RCD La Coruna,LALIGA
 9,27/10/2012,RCD Espanyol,0,0,Malaga CF,LALIGA
-9,27/10/2012,Real Betis,1,0,Valencia CF CF,LALIGA
+9,27/10/2012,Real Betis,1,0,Valencia CF,LALIGA
 9,27/10/2012,Rayo Vallecano,0,5,Barcelona,LALIGA
 9,28/10/2012,RCD Mallorca,0,5,Real Madrid,LALIGA
 9,28/10/2012,Athletic Club Bilbao,1,2,Getafe CF,LALIGA
-9,28/10/2012,Real Zaragoza,2,1,Sevilla FC FC,LALIGA
+9,28/10/2012,Real Zaragoza,2,1,Sevilla FC,LALIGA
 9,28/10/2012,Atletico Madrid,3,1,CA Osasuna,LALIGA
 9,28/10/2012,Levante UD,3,1,Granada CF,LALIGA
 9,29/10/2012,Real Valladolid CF,2,2,Real Sociedad,LALIGA
 10,3/11/2012,Malaga CF,1,2,Rayo Vallecano,LALIGA
 10,3/11/2012,Real Madrid,4,0,Real Zaragoza,LALIGA
 10,3/11/2012,Barcelona,3,1,RC Celta Vigo,LALIGA
-10,3/11/2012,Valencia CF CF,2,0,Atletico Madrid,LALIGA
+10,3/11/2012,Valencia CF,2,0,Atletico Madrid,LALIGA
 10,4/11/2012,Granada CF,1,2,Athletic Club Bilbao,LALIGA
 10,4/11/2012,RCD La Coruna,1,0,RCD Mallorca,LALIGA
 10,4/11/2012,Real Sociedad,0,1,RCD Espanyol,LALIGA
-10,4/11/2012,Sevilla FC FC,0,0,Levante UD,LALIGA
+10,4/11/2012,Sevilla FC,0,0,Levante UD,LALIGA
 10,4/11/2012,CA Osasuna,0,1,Real Valladolid CF,LALIGA
 10,5/11/2012,Getafe CF,2,4,Real Betis,LALIGA
 11,9/11/2012,Real Betis,1,2,Granada CF,LALIGA
@@ -2125,64 +2125,64 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 11,10/11/2012,RCD Espanyol,0,3,CA Osasuna,LALIGA
 11,10/11/2012,Malaga CF,1,2,Real Sociedad,LALIGA
 11,11/11/2012,Levante UD,1,2,Real Madrid,LALIGA
-11,11/11/2012,Real Valladolid CF,1,1,Valencia CF CF,LALIGA
+11,11/11/2012,Real Valladolid CF,1,1,Valencia CF,LALIGA
 11,11/11/2012,Atletico Madrid,2,0,Getafe CF,LALIGA
 11,11/11/2012,RCD Mallorca,2,4,Barcelona,LALIGA
-11,11/11/2012,Athletic Club Bilbao,2,1,Sevilla FC FC,LALIGA
+11,11/11/2012,Athletic Club Bilbao,2,1,Sevilla FC,LALIGA
 12,17/11/2012,Barcelona,3,1,Real Zaragoza,LALIGA
-12,17/11/2012,Valencia CF CF,2,1,RCD Espanyol,LALIGA
+12,17/11/2012,Valencia CF,2,1,RCD Espanyol,LALIGA
 12,17/11/2012,CA Osasuna,0,0,Malaga CF,LALIGA
 12,17/11/2012,Real Madrid,5,1,Athletic Club Bilbao,LALIGA
 12,18/11/2012,RCD La Coruna,0,2,Levante UD,LALIGA
-12,18/11/2012,Sevilla FC FC,5,1,Real Betis,LALIGA
+12,18/11/2012,Sevilla FC,5,1,Real Betis,LALIGA
 12,18/11/2012,Getafe CF,2,1,Real Valladolid CF,LALIGA
 12,18/11/2012,RC Celta Vigo,1,1,RCD Mallorca,LALIGA
 12,18/11/2012,Granada CF,0,1,Atletico Madrid,LALIGA
 12,19/11/2012,Real Sociedad,4,0,Rayo Vallecano,LALIGA
 13,23/11/2012,Real Sociedad,0,0,CA Osasuna,LALIGA
 13,24/11/2012,Real Betis,1,0,Real Madrid,LALIGA
-13,24/11/2012,Malaga CF,4,0,Valencia CF CF,LALIGA
+13,24/11/2012,Malaga CF,4,0,Valencia CF,LALIGA
 13,24/11/2012,Real Valladolid CF,1,0,Granada CF,LALIGA
 13,24/11/2012,Rayo Vallecano,2,0,RCD Mallorca,LALIGA
 13,25/11/2012,Levante UD,0,4,Barcelona,LALIGA
-13,25/11/2012,Atletico Madrid,4,0,Sevilla FC FC,LALIGA
+13,25/11/2012,Atletico Madrid,4,0,Sevilla FC,LALIGA
 13,25/11/2012,RCD Espanyol,0,2,Getafe CF,LALIGA
 13,25/11/2012,Athletic Club Bilbao,1,1,RCD La Coruna,LALIGA
 13,26/11/2012,Real Zaragoza,0,1,RC Celta Vigo,LALIGA
 14,30/11/2012,CA Osasuna,1,0,Rayo Vallecano,LALIGA
 14,1/12/2012,Real Madrid,2,0,Atletico Madrid,LALIGA
 14,1/12/2012,Getafe CF,1,0,Malaga CF,LALIGA
-14,1/12/2012,Valencia CF CF,2,5,Real Sociedad,LALIGA
+14,1/12/2012,Valencia CF,2,5,Real Sociedad,LALIGA
 14,1/12/2012,Barcelona,5,1,Athletic Club Bilbao,LALIGA
 14,2/12/2012,RCD Mallorca,1,1,Real Zaragoza,LALIGA
 14,2/12/2012,RC Celta Vigo,1,1,Levante UD,LALIGA
 14,2/12/2012,Granada CF,0,0,RCD Espanyol,LALIGA
 14,2/12/2012,RCD La Coruna,2,3,Real Betis,LALIGA
-14,3/12/2012,Sevilla FC FC,1,2,Real Valladolid CF,LALIGA
-15,7/12/2012,RCD Espanyol,2,2,Sevilla FC FC,LALIGA
+14,3/12/2012,Sevilla FC,1,2,Real Valladolid CF,LALIGA
+15,7/12/2012,RCD Espanyol,2,2,Sevilla FC,LALIGA
 15,8/12/2012,Real Sociedad,1,1,Getafe CF,LALIGA
 15,8/12/2012,Real Valladolid CF,2,3,Real Madrid,LALIGA
 15,8/12/2012,Malaga CF,4,0,Granada CF,LALIGA
-15,8/12/2012,CA Osasuna,0,1,Valencia CF CF,LALIGA
+15,8/12/2012,CA Osasuna,0,1,Valencia CF,LALIGA
 15,9/12/2012,Real Betis,1,2,Barcelona,LALIGA
 15,9/12/2012,Athletic Club Bilbao,1,0,RC Celta Vigo,LALIGA
 15,9/12/2012,Levante UD,4,0,RCD Mallorca,LALIGA
 15,9/12/2012,Atletico Madrid,6,0,RCD La Coruna,LALIGA
 15,10/12/2012,Rayo Vallecano,0,2,Real Zaragoza,LALIGA
 16,15/12/2012,Granada CF,0,0,Real Sociedad,LALIGA
-16,15/12/2012,Sevilla FC FC,0,2,Malaga CF,LALIGA
+16,15/12/2012,Sevilla FC,0,2,Malaga CF,LALIGA
 16,15/12/2012,Getafe CF,1,1,CA Osasuna,LALIGA
 16,15/12/2012,RCD Mallorca,0,1,Athletic Club Bilbao,LALIGA
 16,16/12/2012,Barcelona,4,1,Atletico Madrid,LALIGA
 16,16/12/2012,Real Zaragoza,0,1,Levante UD,LALIGA
 16,16/12/2012,Real Madrid,2,2,RCD Espanyol,LALIGA
-16,16/12/2012,Valencia CF CF,0,1,Rayo Vallecano,LALIGA
+16,16/12/2012,Valencia CF,0,1,Rayo Vallecano,LALIGA
 16,17/12/2012,RC Celta Vigo,0,1,Real Betis,LALIGA
 16,17/12/2012,RCD La Coruna,0,0,Real Valladolid CF,LALIGA
-17,20/12/2012,Real Sociedad,2,1,Sevilla FC FC,LALIGA
+17,20/12/2012,Real Sociedad,2,1,Sevilla FC,LALIGA
 17,20/12/2012,RCD Espanyol,2,0,RCD La Coruna,LALIGA
 17,20/12/2012,Rayo Vallecano,3,0,Levante UD,LALIGA
-17,21/12/2012,Valencia CF CF,4,2,Getafe CF,LALIGA
+17,21/12/2012,Valencia CF,4,2,Getafe CF,LALIGA
 17,21/12/2012,Atletico Madrid,1,0,RC Celta Vigo,LALIGA
 17,22/12/2012,Athletic Club Bilbao,0,2,Real Zaragoza,LALIGA
 17,22/12/2012,Real Valladolid CF,1,3,Barcelona,LALIGA
@@ -2190,9 +2190,9 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 17,22/12/2012,Malaga CF,3,2,Real Madrid,LALIGA
 17,22/12/2012,Real Betis,1,2,RCD Mallorca,LALIGA
 18,4/1/2013,Real Zaragoza,1,2,Real Betis,LALIGA
-18,5/1/2013,Granada CF,1,2,Valencia CF CF,LALIGA
+18,5/1/2013,Granada CF,1,2,Valencia CF,LALIGA
 18,5/1/2013,RCD La Coruna,1,0,Malaga CF,LALIGA
-18,5/1/2013,Sevilla FC FC,1,0,CA Osasuna,LALIGA
+18,5/1/2013,Sevilla FC,1,0,CA Osasuna,LALIGA
 18,5/1/2013,Levante UD,3,1,Athletic Club Bilbao,LALIGA
 18,6/1/2013,RCD Mallorca,1,1,Atletico Madrid,LALIGA
 18,6/1/2013,Barcelona,4,0,RCD Espanyol,LALIGA
@@ -2202,7 +2202,7 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 19,11/1/2013,Athletic Club Bilbao,1,2,Rayo Vallecano,LALIGA
 19,12/1/2013,RCD Espanyol,1,0,RC Celta Vigo,LALIGA
 19,12/1/2013,Real Valladolid CF,3,1,RCD Mallorca,LALIGA
-19,12/1/2013,Valencia CF CF,2,0,Sevilla FC FC,LALIGA
+19,12/1/2013,Valencia CF,2,0,Sevilla FC,LALIGA
 19,12/1/2013,CA Osasuna,0,0,Real Madrid,LALIGA
 19,13/1/2013,Atletico Madrid,2,0,Real Zaragoza,LALIGA
 19,13/1/2013,Real Sociedad,1,1,RCD La Coruna,LALIGA
@@ -2212,23 +2212,23 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 20,18/1/2013,RCD Espanyol,3,2,RCD Mallorca,LALIGA
 20,19/1/2013,Real Sociedad,3,2,Barcelona,LALIGA
 20,19/1/2013,Granada CF,2,0,Rayo Vallecano,LALIGA
-20,19/1/2013,Getafe CF,1,1,Sevilla FC FC,LALIGA
+20,19/1/2013,Getafe CF,1,1,Sevilla FC,LALIGA
 20,19/1/2013,Malaga CF,1,1,RC Celta Vigo,LALIGA
 20,20/1/2013,CA Osasuna,2,1,RCD La Coruna,LALIGA
 20,20/1/2013,Real Valladolid CF,2,0,Real Zaragoza,LALIGA
 20,20/1/2013,Atletico Madrid,2,0,Levante UD,LALIGA
-20,20/1/2013,Valencia CF CF,0,5,Real Madrid,LALIGA
+20,20/1/2013,Valencia CF,0,5,Real Madrid,LALIGA
 20,21/1/2013,Real Betis,1,1,Athletic Club Bilbao,LALIGA
 21,26/1/2013,Levante UD,2,1,Real Valladolid CF,LALIGA
 21,26/1/2013,RC Celta Vigo,1,1,Real Sociedad,LALIGA
-21,26/1/2013,RCD La Coruna,2,3,Valencia CF CF,LALIGA
+21,26/1/2013,RCD La Coruna,2,3,Valencia CF,LALIGA
 21,26/1/2013,Real Zaragoza,0,0,RCD Espanyol,LALIGA
 21,27/1/2013,Rayo Vallecano,3,0,Real Betis,LALIGA
 21,27/1/2013,Athletic Club Bilbao,3,0,Atletico Madrid,LALIGA
 21,27/1/2013,Barcelona,5,1,CA Osasuna,LALIGA
 21,27/1/2013,RCD Mallorca,2,3,Malaga CF,LALIGA
 21,27/1/2013,Real Madrid,4,0,Getafe CF,LALIGA
-21,28/1/2013,Sevilla FC FC,3,0,Granada CF,LALIGA
+21,28/1/2013,Sevilla FC,3,0,Granada CF,LALIGA
 22,1/2/2013,Real Valladolid CF,2,2,Athletic Club Bilbao,LALIGA
 22,2/2/2013,Getafe CF,3,1,RCD La Coruna,LALIGA
 22,2/2/2013,Granada CF,1,0,Real Madrid,LALIGA
@@ -2236,12 +2236,12 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 22,2/2/2013,CA Osasuna,1,0,RC Celta Vigo,LALIGA
 22,3/2/2013,Real Sociedad,3,0,RCD Mallorca,LALIGA
 22,3/2/2013,Atletico Madrid,1,0,Real Betis,LALIGA
-22,3/2/2013,Sevilla FC FC,2,1,Rayo Vallecano,LALIGA
+22,3/2/2013,Sevilla FC,2,1,Rayo Vallecano,LALIGA
 22,3/2/2013,Malaga CF,1,1,Real Zaragoza,LALIGA
-22,3/2/2013,Valencia CF CF,1,1,Barcelona,LALIGA
-23,9/2/2013,RC Celta Vigo,0,1,Valencia CF CF,LALIGA
+22,3/2/2013,Valencia CF,1,1,Barcelona,LALIGA
+23,9/2/2013,RC Celta Vigo,0,1,Valencia CF,LALIGA
 23,9/2/2013,Levante UD,1,2,Malaga CF,LALIGA
-23,9/2/2013,Real Madrid,4,1,Sevilla FC FC,LALIGA
+23,9/2/2013,Real Madrid,4,1,Sevilla FC,LALIGA
 23,9/2/2013,RCD La Coruna,0,3,Granada CF,LALIGA
 23,9/2/2013,RCD Mallorca,1,1,CA Osasuna,LALIGA
 23,10/2/2013,Real Zaragoza,1,2,Real Sociedad,LALIGA
@@ -2249,20 +2249,20 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 23,10/2/2013,Athletic Club Bilbao,0,4,RCD Espanyol,LALIGA
 23,10/2/2013,Barcelona,6,1,Getafe CF,LALIGA
 23,11/2/2013,Real Betis,0,0,Real Valladolid CF,LALIGA
-24,15/2/2013,Sevilla FC FC,3,1,RCD La Coruna,LALIGA
+24,15/2/2013,Sevilla FC,3,1,RCD La Coruna,LALIGA
 24,16/2/2013,Getafe CF,3,1,RC Celta Vigo,LALIGA
 24,16/2/2013,CA Osasuna,1,0,Real Zaragoza,LALIGA
 24,16/2/2013,Granada CF,1,2,Barcelona,LALIGA
 24,16/2/2013,Malaga CF,1,0,Athletic Club Bilbao,LALIGA
 24,17/2/2013,Real Valladolid CF,0,3,Atletico Madrid,LALIGA
 24,17/2/2013,Real Madrid,2,0,Rayo Vallecano,LALIGA
-24,17/2/2013,Valencia CF CF,2,0,RCD Mallorca,LALIGA
+24,17/2/2013,Valencia CF,2,0,RCD Mallorca,LALIGA
 24,17/2/2013,RCD Espanyol,1,0,Real Betis,LALIGA
 24,17/2/2013,Real Sociedad,1,1,Levante UD,LALIGA
 25,22/2/2013,Athletic Club Bilbao,1,3,Real Sociedad,LALIGA
-25,23/2/2013,Real Zaragoza,2,2,Valencia CF CF,LALIGA
+25,23/2/2013,Real Zaragoza,2,2,Valencia CF,LALIGA
 25,23/2/2013,RCD La Coruna,1,2,Real Madrid,LALIGA
-25,23/2/2013,Barcelona,2,1,Sevilla FC FC,LALIGA
+25,23/2/2013,Barcelona,2,1,Sevilla FC,LALIGA
 25,23/2/2013,RCD Mallorca,1,3,Getafe CF,LALIGA
 25,24/2/2013,RC Celta Vigo,2,1,Granada CF,LALIGA
 25,24/2/2013,Real Betis,3,0,Malaga CF,LALIGA
@@ -2273,39 +2273,39 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 26,2/3/2013,RCD La Coruna,0,0,Rayo Vallecano,LALIGA
 26,2/3/2013,Real Madrid,2,1,Barcelona,LALIGA
 26,2/3/2013,CA Osasuna,0,1,Athletic Club Bilbao,LALIGA
-26,2/3/2013,Valencia CF CF,2,2,Levante UD,LALIGA
+26,2/3/2013,Valencia CF,2,2,Levante UD,LALIGA
 26,3/3/2013,Malaga CF,0,0,Atletico Madrid,LALIGA
 26,3/3/2013,Real Sociedad,3,3,Real Betis,LALIGA
 26,3/3/2013,RCD Espanyol,0,0,Real Valladolid CF,LALIGA
 26,3/3/2013,Granada CF,1,2,RCD Mallorca,LALIGA
-26,4/3/2013,Sevilla FC FC,4,1,RC Celta Vigo,LALIGA
+26,4/3/2013,Sevilla FC,4,1,RC Celta Vigo,LALIGA
 27,8/3/2013,Real Betis,2,1,CA Osasuna,LALIGA
 27,9/3/2013,Real Valladolid CF,1,1,Malaga CF,LALIGA
 27,9/3/2013,Barcelona,2,0,RCD La Coruna,LALIGA
-27,9/3/2013,RCD Mallorca,2,1,Sevilla FC FC,LALIGA
+27,9/3/2013,RCD Mallorca,2,1,Sevilla FC,LALIGA
 27,9/3/2013,Rayo Vallecano,2,0,RCD Espanyol,LALIGA
 27,10/3/2013,Atletico Madrid,0,1,Real Sociedad,LALIGA
 27,10/3/2013,Levante UD,0,0,Getafe CF,LALIGA
-27,10/3/2013,Athletic Club Bilbao,1,0,Valencia CF CF,LALIGA
+27,10/3/2013,Athletic Club Bilbao,1,0,Valencia CF,LALIGA
 27,10/3/2013,RC Celta Vigo,1,2,Real Madrid,LALIGA
 27,11/3/2013,Real Zaragoza,0,0,Granada CF,LALIGA
 28,15/3/2013,RCD La Coruna,3,1,RC Celta Vigo,LALIGA
-28,16/3/2013,Valencia CF CF,3,0,Real Betis,LALIGA
+28,16/3/2013,Valencia CF,3,0,Real Betis,LALIGA
 28,16/3/2013,Real Madrid,5,2,RCD Mallorca,LALIGA
 28,16/3/2013,Real Sociedad,4,1,Real Valladolid CF,LALIGA
 28,16/3/2013,Getafe CF,1,0,Athletic Club Bilbao,LALIGA
 28,17/3/2013,Malaga CF,0,2,RCD Espanyol,LALIGA
 28,17/3/2013,CA Osasuna,0,2,Atletico Madrid,LALIGA
 28,17/3/2013,Barcelona,3,1,Rayo Vallecano,LALIGA
-28,17/3/2013,Sevilla FC FC,4,0,Real Zaragoza,LALIGA
+28,17/3/2013,Sevilla FC,4,0,Real Zaragoza,LALIGA
 28,17/3/2013,Granada CF,1,1,Levante UD,LALIGA
 29,30/3/2013,Rayo Vallecano,1,3,Malaga CF,LALIGA
-29,30/3/2013,Levante UD,1,0,Sevilla FC FC,LALIGA
+29,30/3/2013,Levante UD,1,0,Sevilla FC,LALIGA
 29,30/3/2013,RC Celta Vigo,2,2,Barcelona,LALIGA
 29,30/3/2013,Real Zaragoza,1,1,Real Madrid,LALIGA
 29,31/3/2013,RCD Espanyol,2,2,Real Sociedad,LALIGA
 29,31/3/2013,RCD Mallorca,2,3,RCD La Coruna,LALIGA
-29,31/3/2013,Atletico Madrid,1,1,Valencia CF CF,LALIGA
+29,31/3/2013,Atletico Madrid,1,1,Valencia CF,LALIGA
 29,31/3/2013,Real Valladolid CF,1,3,CA Osasuna,LALIGA
 29,1/4/2013,Athletic Club Bilbao,1,0,Granada CF,LALIGA
 29,1/4/2013,Real Betis,0,0,Getafe CF,LALIGA
@@ -2314,13 +2314,13 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 30,6/4/2013,Barcelona,5,0,RCD Mallorca,LALIGA
 30,6/4/2013,Real Sociedad,4,2,Malaga CF,LALIGA
 30,6/4/2013,Real Madrid,5,1,Levante UD,LALIGA
-30,7/4/2013,Valencia CF CF,2,1,Real Valladolid CF,LALIGA
+30,7/4/2013,Valencia CF,2,1,Real Valladolid CF,LALIGA
 30,7/4/2013,Getafe CF,0,0,Atletico Madrid,LALIGA
 30,7/4/2013,CA Osasuna,0,2,RCD Espanyol,LALIGA
 30,7/4/2013,RC Celta Vigo,0,2,Rayo Vallecano,LALIGA
-30,8/4/2013,Sevilla FC FC,2,1,Athletic Club Bilbao,LALIGA
-31,12/4/2013,Real Betis,3,3,Sevilla FC FC,LALIGA
-31,13/4/2013,RCD Espanyol,3,3,Valencia CF CF,LALIGA
+30,8/4/2013,Sevilla FC,2,1,Athletic Club Bilbao,LALIGA
+31,12/4/2013,Real Betis,3,3,Sevilla FC,LALIGA
+31,13/4/2013,RCD Espanyol,3,3,Valencia CF,LALIGA
 31,13/4/2013,Real Valladolid CF,2,1,Getafe CF,LALIGA
 31,13/4/2013,Levante UD,0,4,RCD La Coruna,LALIGA
 31,13/4/2013,Malaga CF,1,0,CA Osasuna,LALIGA
@@ -2331,30 +2331,30 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 31,15/4/2013,RCD Mallorca,1,0,RC Celta Vigo,LALIGA
 32,19/4/2013,RCD Mallorca,1,1,Rayo Vallecano,LALIGA
 32,20/4/2013,Real Madrid,3,1,Real Betis,LALIGA
-32,20/4/2013,Valencia CF CF,5,1,Malaga CF,LALIGA
+32,20/4/2013,Valencia CF,5,1,Malaga CF,LALIGA
 32,20/4/2013,Barcelona,1,0,Levante UD,LALIGA
 32,20/4/2013,Granada CF,1,1,Real Valladolid CF,LALIGA
 32,21/4/2013,Getafe CF,0,2,RCD Espanyol,LALIGA
 32,21/4/2013,CA Osasuna,0,0,Real Sociedad,LALIGA
 32,21/4/2013,RCD La Coruna,1,1,Athletic Club Bilbao,LALIGA
-32,21/4/2013,Sevilla FC FC,0,1,Atletico Madrid,LALIGA
+32,21/4/2013,Sevilla FC,0,1,Atletico Madrid,LALIGA
 32,22/4/2013,RC Celta Vigo,2,1,Real Zaragoza,LALIGA
 33,26/4/2013,Rayo Vallecano,2,2,CA Osasuna,LALIGA
 33,27/4/2013,Levante UD,0,1,RC Celta Vigo,LALIGA
 33,27/4/2013,Athletic Club Bilbao,2,2,Barcelona,LALIGA
 33,27/4/2013,Atletico Madrid,1,2,Real Madrid,LALIGA
 33,27/4/2013,Real Zaragoza,3,2,RCD Mallorca,LALIGA
-33,28/4/2013,Real Sociedad,4,2,Valencia CF CF,LALIGA
+33,28/4/2013,Real Sociedad,4,2,Valencia CF,LALIGA
 33,28/4/2013,RCD Espanyol,0,1,Granada CF,LALIGA
-33,28/4/2013,Real Valladolid CF,1,1,Sevilla FC FC,LALIGA
+33,28/4/2013,Real Valladolid CF,1,1,Sevilla FC,LALIGA
 33,28/4/2013,Malaga CF,2,1,Getafe CF,LALIGA
 33,29/4/2013,Real Betis,1,1,RCD La Coruna,LALIGA
 34,3/5/2013,RC Celta Vigo,1,1,Athletic Club Bilbao,LALIGA
 34,4/5/2013,Granada CF,1,0,Malaga CF,LALIGA
 34,4/5/2013,RCD La Coruna,0,0,Atletico Madrid,LALIGA
 34,4/5/2013,Real Madrid,4,3,Real Valladolid CF,LALIGA
-34,4/5/2013,Valencia CF CF,4,0,CA Osasuna,LALIGA
-34,5/5/2013,Sevilla FC FC,3,0,RCD Espanyol,LALIGA
+34,4/5/2013,Valencia CF,4,0,CA Osasuna,LALIGA
+34,5/5/2013,Sevilla FC,3,0,RCD Espanyol,LALIGA
 34,5/5/2013,Barcelona,4,2,Real Betis,LALIGA
 34,5/5/2013,RCD Mallorca,1,1,Levante UD,LALIGA
 34,5/5/2013,Real Zaragoza,3,0,Rayo Vallecano,LALIGA
@@ -2366,14 +2366,14 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 35,11/5/2013,Real Valladolid CF,1,0,RCD La Coruna,LALIGA
 35,11/5/2013,Athletic Club Bilbao,2,1,RCD Mallorca,LALIGA
 35,11/5/2013,CA Osasuna,1,0,Getafe CF,LALIGA
-35,12/5/2013,Malaga CF,0,0,Sevilla FC FC,LALIGA
+35,12/5/2013,Malaga CF,0,0,Sevilla FC,LALIGA
 35,12/5/2013,Atletico Madrid,1,2,Barcelona,LALIGA
-35,12/5/2013,Rayo Vallecano,0,4,Valencia CF CF,LALIGA
+35,12/5/2013,Rayo Vallecano,0,4,Valencia CF,LALIGA
 35,12/5/2013,Real Betis,1,0,RC Celta Vigo,LALIGA
 35,13/5/2013,Real Sociedad,2,2,Granada CF,LALIGA
 36,18/5/2013,Granada CF,3,0,CA Osasuna,LALIGA
-36,18/5/2013,Getafe CF,0,1,Valencia CF CF,LALIGA
-36,18/5/2013,Sevilla FC FC,1,2,Real Sociedad,LALIGA
+36,18/5/2013,Getafe CF,0,1,Valencia CF,LALIGA
+36,18/5/2013,Sevilla FC,1,2,Real Sociedad,LALIGA
 36,19/5/2013,RCD La Coruna,2,0,RCD Espanyol,LALIGA
 36,19/5/2013,Barcelona,2,1,Real Valladolid CF,LALIGA
 36,19/5/2013,Real Zaragoza,1,2,Athletic Club Bilbao,LALIGA
@@ -2382,12 +2382,12 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 37,26/5/2013,Getafe CF,1,2,Rayo Vallecano,LALIGA
 37,26/5/2013,Athletic Club Bilbao,0,1,Levante UD,LALIGA
 37,26/5/2013,RCD Espanyol,0,2,Barcelona,LALIGA
-37,26/5/2013,CA Osasuna,2,1,Sevilla FC FC,LALIGA
+37,26/5/2013,CA Osasuna,2,1,Sevilla FC,LALIGA
 37,26/5/2013,Real Sociedad,3,3,Real Madrid,LALIGA
 37,26/5/2013,Real Valladolid CF,0,2,RC Celta Vigo,LALIGA
 37,26/5/2013,Atletico Madrid,0,0,RCD Mallorca,LALIGA
 37,26/5/2013,Real Betis,4,0,Real Zaragoza,LALIGA
-37,26/5/2013,Valencia CF CF,1,0,Granada CF,LALIGA
+37,26/5/2013,Valencia CF,1,0,Granada CF,LALIGA
 37,26/5/2013,Malaga CF,3,1,RCD La Coruna,LALIGA
 38,1/6/2013,RCD La Coruna,0,1,Real Sociedad,LALIGA
 38,1/6/2013,Real Zaragoza,1,3,Atletico Madrid,LALIGA
@@ -2396,13 +2396,13 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 38,1/6/2013,RCD Mallorca,4,2,Real Valladolid CF,LALIGA
 38,1/6/2013,RC Celta Vigo,1,0,RCD Espanyol,LALIGA
 38,1/6/2013,Rayo Vallecano,2,2,Athletic Club Bilbao,LALIGA
-38,1/6/2013,Sevilla FC FC,4,3,Valencia CF CF,LALIGA
+38,1/6/2013,Sevilla FC,4,3,Valencia CF,LALIGA
 38,1/6/2013,Real Madrid,4,2,CA Osasuna,LALIGA
 38,1/6/2013,Levante UD,1,1,Real Betis,LALIGA
 1,17/8/2013,Real Sociedad,2,0,Getafe CF,LALIGA
 1,17/8/2013,Real Valladolid CF,1,2,Athletic Club Bilbao,LALIGA
-1,17/8/2013,Valencia CF CF,1,0,Malaga CF,LALIGA
-1,18/8/2013,Sevilla FC FC,1,3,Atletico Madrid,LALIGA
+1,17/8/2013,Valencia CF,1,0,Malaga CF,LALIGA
+1,18/8/2013,Sevilla FC,1,3,Atletico Madrid,LALIGA
 1,18/8/2013,CA Osasuna,1,2,Granada CF,LALIGA
 1,18/8/2013,Barcelona,7,0,Levante UD,LALIGA
 1,18/8/2013,Real Madrid,2,1,Real Betis,LALIGA
@@ -2413,8 +2413,8 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 2,23/8/2013,Athletic Club Bilbao,2,0,CA Osasuna,LALIGA
 2,24/8/2013,Villarreal CF,2,1,Real Valladolid CF,LALIGA
 2,24/8/2013,Elche CF,1,1,Real Sociedad,LALIGA
-2,24/8/2013,RCD Espanyol,3,1,Valencia CF CF,LALIGA
-2,25/8/2013,Levante UD,0,0,Sevilla FC FC,LALIGA
+2,24/8/2013,RCD Espanyol,3,1,Valencia CF,LALIGA
+2,25/8/2013,Levante UD,0,0,Sevilla FC,LALIGA
 2,25/8/2013,Real Betis,1,2,RC Celta Vigo,LALIGA
 2,25/8/2013,Malaga CF,0,1,Barcelona,LALIGA
 2,25/8/2013,Atletico Madrid,5,0,Rayo Vallecano,LALIGA
@@ -2426,14 +2426,14 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 3,31/8/2013,CA Osasuna,0,3,Villarreal CF,LALIGA
 3,1/9/2013,RCD Espanyol,0,0,Real Betis,LALIGA
 3,1/9/2013,Real Madrid,3,1,Athletic Club Bilbao,LALIGA
-3,1/9/2013,Sevilla FC FC,2,2,Malaga CF,LALIGA
-3,1/9/2013,Valencia CF CF,2,3,Barcelona,LALIGA
+3,1/9/2013,Sevilla FC,2,2,Malaga CF,LALIGA
+3,1/9/2013,Valencia CF,2,3,Barcelona,LALIGA
 3,1/9/2013,Real Sociedad,1,2,Atletico Madrid,LALIGA
 4,14/9/2013,Villarreal CF,2,2,Real Madrid,LALIGA
 4,14/9/2013,Atletico Madrid,4,2,UD Almeria,LALIGA
 4,14/9/2013,Levante UD,0,0,Real Sociedad,LALIGA
-4,14/9/2013,Barcelona,3,2,Sevilla FC FC,LALIGA
-4,15/9/2013,Real Betis,3,1,Valencia CF CF,LALIGA
+4,14/9/2013,Barcelona,3,2,Sevilla FC,LALIGA
+4,15/9/2013,Real Betis,3,1,Valencia CF,LALIGA
 4,15/9/2013,Granada CF,0,1,RCD Espanyol,LALIGA
 4,15/9/2013,Malaga CF,5,0,Rayo Vallecano,LALIGA
 4,15/9/2013,Getafe CF,2,1,CA Osasuna,LALIGA
@@ -2445,7 +2445,7 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 5,21/9/2013,UD Almeria,2,2,Levante UD,LALIGA
 5,21/9/2013,Real Valladolid CF,0,2,Atletico Madrid,LALIGA
 5,22/9/2013,Real Madrid,4,1,Getafe CF,LALIGA
-5,22/9/2013,Valencia CF CF,3,1,Sevilla FC FC,LALIGA
+5,22/9/2013,Valencia CF,3,1,Sevilla FC,LALIGA
 5,22/9/2013,RC Celta Vigo,0,0,Villarreal CF,LALIGA
 5,22/9/2013,Real Betis,0,0,Granada CF,LALIGA
 5,23/9/2013,RCD Espanyol,3,2,Athletic Club Bilbao,LALIGA
@@ -2453,15 +2453,15 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 6,24/9/2013,Malaga CF,2,0,UD Almeria,LALIGA
 6,24/9/2013,Levante UD,1,1,Real Valladolid CF,LALIGA
 6,24/9/2013,Barcelona,4,1,Real Sociedad,LALIGA
-6,25/9/2013,Sevilla FC FC,4,1,Rayo Vallecano,LALIGA
-6,25/9/2013,Granada CF,0,1,Valencia CF CF,LALIGA
+6,25/9/2013,Sevilla FC,4,1,Rayo Vallecano,LALIGA
+6,25/9/2013,Granada CF,0,1,Valencia CF,LALIGA
 6,25/9/2013,Elche CF,1,2,Real Madrid,LALIGA
 6,26/9/2013,Getafe CF,2,0,RC Celta Vigo,LALIGA
 6,26/9/2013,Athletic Club Bilbao,2,1,Real Betis,LALIGA
 6,26/9/2013,Villarreal CF,2,1,RCD Espanyol,LALIGA
 7,27/9/2013,Real Valladolid CF,2,2,Malaga CF,LALIGA
-7,28/9/2013,Real Sociedad,1,1,Sevilla FC FC,LALIGA
-7,28/9/2013,Valencia CF CF,1,0,Rayo Vallecano,LALIGA
+7,28/9/2013,Real Sociedad,1,1,Sevilla FC,LALIGA
+7,28/9/2013,Valencia CF,1,0,Rayo Vallecano,LALIGA
 7,28/9/2013,UD Almeria,0,2,Barcelona,LALIGA
 7,28/9/2013,Real Madrid,0,1,Atletico Madrid,LALIGA
 7,29/9/2013,CA Osasuna,0,1,Levante UD,LALIGA
@@ -2477,16 +2477,16 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 8,5/10/2013,Rayo Vallecano,1,0,Real Sociedad,LALIGA
 8,6/10/2013,Getafe CF,3,1,Real Betis,LALIGA
 8,6/10/2013,Atletico Madrid,2,1,RC Celta Vigo,LALIGA
-8,6/10/2013,Sevilla FC FC,2,1,UD Almeria,LALIGA
-8,6/10/2013,Athletic Club Bilbao,1,1,Valencia CF CF,LALIGA
+8,6/10/2013,Sevilla FC,2,1,UD Almeria,LALIGA
+8,6/10/2013,Athletic Club Bilbao,1,1,Valencia CF,LALIGA
 9,19/10/2013,CA Osasuna,0,0,Barcelona,LALIGA
-9,19/10/2013,Valencia CF CF,1,2,Real Sociedad,LALIGA
+9,19/10/2013,Valencia CF,1,2,Real Sociedad,LALIGA
 9,19/10/2013,Real Madrid,2,0,Malaga CF,LALIGA
 9,19/10/2013,RCD Espanyol,1,0,Atletico Madrid,LALIGA
 9,20/10/2013,UD Almeria,0,1,Rayo Vallecano,LALIGA
 9,20/10/2013,Real Betis,1,2,Elche CF,LALIGA
 9,20/10/2013,Granada CF,0,2,Getafe CF,LALIGA
-9,20/10/2013,Real Valladolid CF,2,2,Sevilla FC FC,LALIGA
+9,20/10/2013,Real Valladolid CF,2,2,Sevilla FC,LALIGA
 9,21/10/2013,Athletic Club Bilbao,2,0,Villarreal CF,LALIGA
 9,21/10/2013,RC Celta Vigo,0,1,Levante UD,LALIGA
 10,25/10/2013,Rayo Vallecano,0,3,Real Valladolid CF,LALIGA
@@ -2495,15 +2495,15 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 10,26/10/2013,Barcelona,2,1,Real Madrid,LALIGA
 10,26/10/2013,Malaga CF,0,5,RC Celta Vigo,LALIGA
 10,27/10/2013,Real Sociedad,3,0,UD Almeria,LALIGA
-10,27/10/2013,Villarreal CF,4,1,Valencia CF CF,LALIGA
-10,27/10/2013,Sevilla FC FC,2,1,CA Osasuna,LALIGA
+10,27/10/2013,Villarreal CF,4,1,Valencia CF,LALIGA
+10,27/10/2013,Sevilla FC,2,1,CA Osasuna,LALIGA
 10,27/10/2013,Atletico Madrid,5,0,Real Betis,LALIGA
 10,28/10/2013,Getafe CF,0,1,Athletic Club Bilbao,LALIGA
 11,29/10/2013,RCD Espanyol,0,0,Malaga CF,LALIGA
 11,29/10/2013,RC Celta Vigo,0,3,Barcelona,LALIGA
 11,30/10/2013,CA Osasuna,3,1,Rayo Vallecano,LALIGA
-11,30/10/2013,Valencia CF CF,1,2,UD Almeria,LALIGA
-11,30/10/2013,Real Madrid,7,3,Sevilla FC FC,LALIGA
+11,30/10/2013,Valencia CF,1,2,UD Almeria,LALIGA
+11,30/10/2013,Real Madrid,7,3,Sevilla FC,LALIGA
 11,30/10/2013,Real Valladolid CF,2,2,Real Sociedad,LALIGA
 11,31/10/2013,Granada CF,1,2,Atletico Madrid,LALIGA
 11,31/10/2013,Villarreal CF,0,2,Getafe CF,LALIGA
@@ -2512,11 +2512,11 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 12,1/11/2013,Barcelona,1,0,RCD Espanyol,LALIGA
 12,2/11/2013,Real Sociedad,5,0,CA Osasuna,LALIGA
 12,2/11/2013,UD Almeria,1,0,Real Valladolid CF,LALIGA
-12,2/11/2013,Sevilla FC FC,0,1,RC Celta Vigo,LALIGA
+12,2/11/2013,Sevilla FC,0,1,RC Celta Vigo,LALIGA
 12,2/11/2013,Rayo Vallecano,2,3,Real Madrid,LALIGA
 12,3/11/2013,Levante UD,0,1,Granada CF,LALIGA
 12,3/11/2013,Malaga CF,3,2,Real Betis,LALIGA
-12,3/11/2013,Getafe CF,0,1,Valencia CF CF,LALIGA
+12,3/11/2013,Getafe CF,0,1,Valencia CF,LALIGA
 12,3/11/2013,Atletico Madrid,2,0,Athletic Club Bilbao,LALIGA
 12,4/11/2013,Elche CF,0,1,Villarreal CF,LALIGA
 13,8/11/2013,Granada CF,3,1,Malaga CF,LALIGA
@@ -2526,9 +2526,9 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 13,9/11/2013,RC Celta Vigo,0,2,Rayo Vallecano,LALIGA
 13,9/11/2013,Getafe CF,1,1,Elche CF,LALIGA
 13,10/11/2013,Real Betis,1,4,Barcelona,LALIGA
-13,10/11/2013,Valencia CF CF,2,2,Real Valladolid CF,LALIGA
+13,10/11/2013,Valencia CF,2,2,Real Valladolid CF,LALIGA
 13,10/11/2013,Villarreal CF,1,1,Atletico Madrid,LALIGA
-13,10/11/2013,RCD Espanyol,1,3,Sevilla FC FC,LALIGA
+13,10/11/2013,RCD Espanyol,1,3,Sevilla FC,LALIGA
 14,22/11/2013,Real Valladolid CF,0,1,CA Osasuna,LALIGA
 14,23/11/2013,Atletico Madrid,7,0,Getafe CF,LALIGA
 14,23/11/2013,UD Almeria,0,5,Real Madrid,LALIGA
@@ -2536,8 +2536,8 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 14,23/11/2013,Real Sociedad,4,3,RC Celta Vigo,LALIGA
 14,24/11/2013,Rayo Vallecano,1,4,RCD Espanyol,LALIGA
 14,24/11/2013,Levante UD,0,3,Villarreal CF,LALIGA
-14,24/11/2013,Sevilla FC FC,4,0,Real Betis,LALIGA
-14,24/11/2013,Elche CF,2,1,Valencia CF CF,LALIGA
+14,24/11/2013,Sevilla FC,4,0,Real Betis,LALIGA
+14,24/11/2013,Elche CF,2,1,Valencia CF,LALIGA
 14,25/11/2013,Malaga CF,1,2,Athletic Club Bilbao,LALIGA
 15,29/11/2013,Getafe CF,1,0,Levante UD,LALIGA
 15,29/11/2013,Villarreal CF,1,1,Malaga CF,LALIGA
@@ -2547,62 +2547,62 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 15,30/11/2013,RCD Espanyol,1,2,Real Sociedad,LALIGA
 15,1/12/2013,Real Betis,2,2,Rayo Vallecano,LALIGA
 15,1/12/2013,Athletic Club Bilbao,1,0,Barcelona,LALIGA
-15,1/12/2013,Valencia CF CF,3,0,CA Osasuna,LALIGA
-15,1/12/2013,Granada CF,1,2,Sevilla FC FC,LALIGA
+15,1/12/2013,Valencia CF,3,0,CA Osasuna,LALIGA
+15,1/12/2013,Granada CF,1,2,Sevilla FC,LALIGA
 16,13/12/2013,Levante UD,2,1,Elche CF,LALIGA
 16,14/12/2013,Rayo Vallecano,0,2,Granada CF,LALIGA
 16,14/12/2013,Barcelona,2,1,Villarreal CF,LALIGA
 16,14/12/2013,CA Osasuna,2,2,Real Madrid,LALIGA
 16,14/12/2013,Malaga CF,1,0,Getafe CF,LALIGA
-16,15/12/2013,Sevilla FC FC,1,1,Athletic Club Bilbao,LALIGA
+16,15/12/2013,Sevilla FC,1,1,Athletic Club Bilbao,LALIGA
 16,15/12/2013,UD Almeria,0,0,RCD Espanyol,LALIGA
 16,15/12/2013,Real Sociedad,5,1,Real Betis,LALIGA
-16,15/12/2013,Atletico Madrid,3,0,Valencia CF CF,LALIGA
+16,15/12/2013,Atletico Madrid,3,0,Valencia CF,LALIGA
 16,16/12/2013,Real Valladolid CF,3,0,RC Celta Vigo,LALIGA
 17,20/12/2013,Elche CF,0,1,Malaga CF,LALIGA
 17,21/12/2013,Granada CF,1,3,Real Sociedad,LALIGA
 17,21/12/2013,Real Betis,0,1,UD Almeria,LALIGA
-17,21/12/2013,Villarreal CF,1,2,Sevilla FC FC,LALIGA
+17,21/12/2013,Villarreal CF,1,2,Sevilla FC,LALIGA
 17,21/12/2013,Atletico Madrid,3,2,Levante UD,LALIGA
 17,22/12/2013,Getafe CF,2,5,Barcelona,LALIGA
-17,22/12/2013,Valencia CF CF,2,3,Real Madrid,LALIGA
+17,22/12/2013,Valencia CF,2,3,Real Madrid,LALIGA
 17,22/12/2013,Athletic Club Bilbao,2,1,Rayo Vallecano,LALIGA
 17,22/12/2013,RCD Espanyol,4,2,Real Valladolid CF,LALIGA
 17,22/12/2013,RC Celta Vigo,1,1,CA Osasuna,LALIGA
 18,4/1/2014,Malaga CF,0,1,Atletico Madrid,LALIGA
 18,4/1/2014,Real Valladolid CF,0,0,Real Betis,LALIGA
-18,4/1/2014,Valencia CF CF,2,0,Levante UD,LALIGA
+18,4/1/2014,Valencia CF,2,0,Levante UD,LALIGA
 18,4/1/2014,UD Almeria,3,0,Granada CF,LALIGA
 18,5/1/2014,Barcelona,4,0,Elche CF,LALIGA
-18,5/1/2014,Sevilla FC FC,3,0,Getafe CF,LALIGA
+18,5/1/2014,Sevilla FC,3,0,Getafe CF,LALIGA
 18,5/1/2014,CA Osasuna,1,0,RCD Espanyol,LALIGA
 18,5/1/2014,Real Sociedad,2,0,Athletic Club Bilbao,LALIGA
 18,6/1/2014,Real Madrid,3,0,RC Celta Vigo,LALIGA
 18,6/1/2014,Rayo Vallecano,2,5,Villarreal CF,LALIGA
 19,10/1/2014,Granada CF,4,0,Real Valladolid CF,LALIGA
-19,11/1/2014,Elche CF,1,1,Sevilla FC FC,LALIGA
+19,11/1/2014,Elche CF,1,1,Sevilla FC,LALIGA
 19,11/1/2014,Atletico Madrid,0,0,Barcelona,LALIGA
-19,11/1/2014,RC Celta Vigo,2,1,Valencia CF CF,LALIGA
+19,11/1/2014,RC Celta Vigo,2,1,Valencia CF,LALIGA
 19,11/1/2014,Athletic Club Bilbao,6,1,UD Almeria,LALIGA
 19,12/1/2014,RCD Espanyol,0,1,Real Madrid,LALIGA
 19,12/1/2014,Real Betis,1,2,CA Osasuna,LALIGA
 19,12/1/2014,Getafe CF,0,1,Rayo Vallecano,LALIGA
 19,12/1/2014,Levante UD,1,0,Malaga CF,LALIGA
 19,13/1/2014,Villarreal CF,5,1,Real Sociedad,LALIGA
-20,17/1/2014,Malaga CF,0,0,Valencia CF CF,LALIGA
+20,17/1/2014,Malaga CF,0,0,Valencia CF,LALIGA
 20,18/1/2014,Granada CF,0,0,CA Osasuna,LALIGA
 20,18/1/2014,Elche CF,2,0,Rayo Vallecano,LALIGA
 20,18/1/2014,Real Betis,0,5,Real Madrid,LALIGA
 20,18/1/2014,RCD Espanyol,1,0,RC Celta Vigo,LALIGA
 20,19/1/2014,Levante UD,1,1,Barcelona,LALIGA
-20,19/1/2014,Atletico Madrid,1,1,Sevilla FC FC,LALIGA
+20,19/1/2014,Atletico Madrid,1,1,Sevilla FC,LALIGA
 20,19/1/2014,Villarreal CF,2,0,UD Almeria,LALIGA
 20,19/1/2014,Getafe CF,2,2,Real Sociedad,LALIGA
 20,20/1/2014,Athletic Club Bilbao,4,2,Real Valladolid CF,LALIGA
 21,24/1/2014,RC Celta Vigo,4,2,Real Betis,LALIGA
-21,25/1/2014,Sevilla FC FC,2,3,Levante UD,LALIGA
+21,25/1/2014,Sevilla FC,2,3,Levante UD,LALIGA
 21,25/1/2014,Real Valladolid CF,1,0,Villarreal CF,LALIGA
-21,25/1/2014,Valencia CF CF,2,2,RCD Espanyol,LALIGA
+21,25/1/2014,Valencia CF,2,2,RCD Espanyol,LALIGA
 21,25/1/2014,Real Madrid,2,0,Granada CF,LALIGA
 21,26/1/2014,CA Osasuna,1,5,Athletic Club Bilbao,LALIGA
 21,26/1/2014,Barcelona,3,0,Malaga CF,LALIGA
@@ -2611,9 +2611,9 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 21,27/1/2014,Real Sociedad,4,0,Elche CF,LALIGA
 22,31/1/2014,Granada CF,1,2,RC Celta Vigo,LALIGA
 22,1/2/2014,Levante UD,0,0,Rayo Vallecano,LALIGA
-22,1/2/2014,Barcelona,2,3,Valencia CF CF,LALIGA
+22,1/2/2014,Barcelona,2,3,Valencia CF,LALIGA
 22,1/2/2014,Getafe CF,0,0,Real Valladolid CF,LALIGA
-22,1/2/2014,Malaga CF,3,2,Sevilla FC FC,LALIGA
+22,1/2/2014,Malaga CF,3,2,Sevilla FC,LALIGA
 22,2/2/2014,Elche CF,1,0,UD Almeria,LALIGA
 22,2/2/2014,Athletic Club Bilbao,1,1,Real Madrid,LALIGA
 22,2/2/2014,Atletico Madrid,4,0,Real Sociedad,LALIGA
@@ -2621,11 +2621,11 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 22,3/2/2014,Villarreal CF,3,1,CA Osasuna,LALIGA
 23,7/2/2014,RCD Espanyol,1,0,Granada CF,LALIGA
 23,8/2/2014,UD Almeria,2,0,Atletico Madrid,LALIGA
-23,8/2/2014,Valencia CF CF,5,0,Real Betis,LALIGA
+23,8/2/2014,Valencia CF,5,0,Real Betis,LALIGA
 23,8/2/2014,Rayo Vallecano,4,1,Malaga CF,LALIGA
 23,8/2/2014,Real Madrid,4,2,Villarreal CF,LALIGA
 23,9/2/2014,CA Osasuna,2,0,Getafe CF,LALIGA
-23,9/2/2014,Sevilla FC FC,1,4,Barcelona,LALIGA
+23,9/2/2014,Sevilla FC,1,4,Barcelona,LALIGA
 23,9/2/2014,Real Sociedad,0,0,Levante UD,LALIGA
 23,9/2/2014,Real Valladolid CF,2,2,Elche CF,LALIGA
 23,10/2/2014,RC Celta Vigo,0,0,Athletic Club Bilbao,LALIGA
@@ -2636,7 +2636,7 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 24,15/2/2014,Villarreal CF,0,2,RC Celta Vigo,LALIGA
 24,16/2/2014,Athletic Club Bilbao,1,2,RCD Espanyol,LALIGA
 24,16/2/2014,Getafe CF,0,3,Real Madrid,LALIGA
-24,16/2/2014,Sevilla FC FC,0,0,Valencia CF CF,LALIGA
+24,16/2/2014,Sevilla FC,0,0,Valencia CF,LALIGA
 24,16/2/2014,Granada CF,1,0,Real Betis,LALIGA
 24,17/2/2014,Malaga CF,0,1,Real Sociedad,LALIGA
 25,21/2/2014,Real Valladolid CF,1,1,Levante UD,LALIGA
@@ -2646,16 +2646,16 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 25,22/2/2014,UD Almeria,0,0,Malaga CF,LALIGA
 25,23/2/2014,CA Osasuna,3,0,Atletico Madrid,LALIGA
 25,23/2/2014,Real Betis,0,2,Athletic Club Bilbao,LALIGA
-25,23/2/2014,Valencia CF CF,2,1,Granada CF,LALIGA
-25,23/2/2014,Rayo Vallecano,0,1,Sevilla FC FC,LALIGA
+25,23/2/2014,Valencia CF,2,1,Granada CF,LALIGA
+25,23/2/2014,Rayo Vallecano,0,1,Sevilla FC,LALIGA
 25,24/2/2014,RCD Espanyol,1,2,Villarreal CF,LALIGA
 26,28/2/2014,Athletic Club Bilbao,4,0,Granada CF,LALIGA
 26,1/3/2014,Elche CF,1,0,RC Celta Vigo,LALIGA
 26,1/3/2014,Levante UD,2,0,CA Osasuna,LALIGA
 26,1/3/2014,Malaga CF,1,1,Real Valladolid CF,LALIGA
 26,1/3/2014,Getafe CF,0,0,RCD Espanyol,LALIGA
-26,2/3/2014,Rayo Vallecano,1,0,Valencia CF CF,LALIGA
-26,2/3/2014,Sevilla FC FC,1,0,Real Sociedad,LALIGA
+26,2/3/2014,Rayo Vallecano,1,0,Valencia CF,LALIGA
+26,2/3/2014,Sevilla FC,1,0,Real Sociedad,LALIGA
 26,2/3/2014,Atletico Madrid,2,2,Real Madrid,LALIGA
 26,2/3/2014,Villarreal CF,1,1,Real Betis,LALIGA
 26,2/3/2014,Barcelona,4,1,UD Almeria,LALIGA
@@ -2664,8 +2664,8 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 27,8/3/2014,Real Valladolid CF,1,0,Barcelona,LALIGA
 27,8/3/2014,Real Betis,2,0,Getafe CF,LALIGA
 27,9/3/2014,Real Madrid,3,0,Levante UD,LALIGA
-27,9/3/2014,Valencia CF CF,1,1,Athletic Club Bilbao,LALIGA
-27,9/3/2014,UD Almeria,1,3,Sevilla FC FC,LALIGA
+27,9/3/2014,Valencia CF,1,1,Athletic Club Bilbao,LALIGA
+27,9/3/2014,UD Almeria,1,3,Sevilla FC,LALIGA
 27,9/3/2014,RCD Espanyol,3,1,Elche CF,LALIGA
 27,10/3/2014,Real Sociedad,2,3,Rayo Vallecano,LALIGA
 27,10/3/2014,CA Osasuna,0,2,Malaga CF,LALIGA
@@ -2676,8 +2676,8 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 28,15/3/2014,Levante UD,0,1,RC Celta Vigo,LALIGA
 28,16/3/2014,Elche CF,0,0,Real Betis,LALIGA
 28,16/3/2014,Barcelona,7,0,CA Osasuna,LALIGA
-28,16/3/2014,Real Sociedad,1,0,Valencia CF CF,LALIGA
-28,16/3/2014,Sevilla FC FC,4,1,Real Valladolid CF,LALIGA
+28,16/3/2014,Real Sociedad,1,0,Valencia CF,LALIGA
+28,16/3/2014,Sevilla FC,4,1,Real Valladolid CF,LALIGA
 28,17/3/2014,Villarreal CF,1,1,Athletic Club Bilbao,LALIGA
 29,21/3/2014,RC Celta Vigo,0,2,Malaga CF,LALIGA
 29,22/3/2014,Granada CF,1,0,Elche CF,LALIGA
@@ -2685,26 +2685,26 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 29,22/3/2014,Real Valladolid CF,1,1,Rayo Vallecano,LALIGA
 29,22/3/2014,RCD Espanyol,0,0,Levante UD,LALIGA
 29,23/3/2014,Real Madrid,3,4,Barcelona,LALIGA
-29,23/3/2014,Valencia CF CF,2,1,Villarreal CF,LALIGA
-29,23/3/2014,CA Osasuna,1,2,Sevilla FC FC,LALIGA
+29,23/3/2014,Valencia CF,2,1,Villarreal CF,LALIGA
+29,23/3/2014,CA Osasuna,1,2,Sevilla FC,LALIGA
 29,23/3/2014,Real Betis,0,2,Atletico Madrid,LALIGA
 29,24/3/2014,UD Almeria,4,3,Real Sociedad,LALIGA
 30,25/3/2014,Malaga CF,1,2,RCD Espanyol,LALIGA
 30,25/3/2014,Elche CF,0,0,Athletic Club Bilbao,LALIGA
 30,26/3/2014,Rayo Vallecano,1,0,CA Osasuna,LALIGA
 30,26/3/2014,Barcelona,3,0,RC Celta Vigo,LALIGA
-30,26/3/2014,Sevilla FC FC,2,1,Real Madrid,LALIGA
+30,26/3/2014,Sevilla FC,2,1,Real Madrid,LALIGA
 30,26/3/2014,Atletico Madrid,1,0,Granada CF,LALIGA
-30,27/3/2014,UD Almeria,2,2,Valencia CF CF,LALIGA
+30,27/3/2014,UD Almeria,2,2,Valencia CF,LALIGA
 30,27/3/2014,Getafe CF,0,1,Villarreal CF,LALIGA
 30,27/3/2014,Real Sociedad,1,0,Real Valladolid CF,LALIGA
 30,27/3/2014,Levante UD,1,3,Real Betis,LALIGA
 31,29/3/2014,RCD Espanyol,0,1,Barcelona,LALIGA
-31,29/3/2014,RC Celta Vigo,1,0,Sevilla FC FC,LALIGA
+31,29/3/2014,RC Celta Vigo,1,0,Sevilla FC,LALIGA
 31,29/3/2014,Real Madrid,5,0,Rayo Vallecano,LALIGA
 31,29/3/2014,Athletic Club Bilbao,1,2,Atletico Madrid,LALIGA
 31,30/3/2014,Real Valladolid CF,1,0,UD Almeria,LALIGA
-31,30/3/2014,Valencia CF CF,1,3,Getafe CF,LALIGA
+31,30/3/2014,Valencia CF,1,3,Getafe CF,LALIGA
 31,30/3/2014,CA Osasuna,1,1,Real Sociedad,LALIGA
 31,30/3/2014,Villarreal CF,1,1,Elche CF,LALIGA
 31,31/3/2014,Real Betis,1,2,Malaga CF,LALIGA
@@ -2715,28 +2715,28 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 32,5/4/2014,Atletico Madrid,1,0,Villarreal CF,LALIGA
 32,5/4/2014,Rayo Vallecano,3,0,RC Celta Vigo,LALIGA
 32,6/4/2014,Elche CF,1,0,Getafe CF,LALIGA
-32,6/4/2014,Real Valladolid CF,0,0,Valencia CF CF,LALIGA
+32,6/4/2014,Real Valladolid CF,0,0,Valencia CF,LALIGA
 32,6/4/2014,Malaga CF,4,1,Granada CF,LALIGA
-32,6/4/2014,Sevilla FC FC,4,1,RCD Espanyol,LALIGA
+32,6/4/2014,Sevilla FC,4,1,RCD Espanyol,LALIGA
 32,7/4/2014,Levante UD,1,2,Athletic Club Bilbao,LALIGA
 33,11/4/2014,CA Osasuna,0,0,Real Valladolid CF,LALIGA
 33,12/4/2014,Real Madrid,4,0,UD Almeria,LALIGA
 33,12/4/2014,Granada CF,1,0,Barcelona,LALIGA
 33,12/4/2014,RC Celta Vigo,2,2,Real Sociedad,LALIGA
 33,12/4/2014,Villarreal CF,1,0,Levante UD,LALIGA
-33,13/4/2014,Real Betis,0,2,Sevilla FC FC,LALIGA
+33,13/4/2014,Real Betis,0,2,Sevilla FC,LALIGA
 33,13/4/2014,RCD Espanyol,2,2,Rayo Vallecano,LALIGA
-33,13/4/2014,Valencia CF CF,2,1,Elche CF,LALIGA
+33,13/4/2014,Valencia CF,2,1,Elche CF,LALIGA
 33,13/4/2014,Getafe CF,0,2,Atletico Madrid,LALIGA
 33,14/4/2014,Athletic Club Bilbao,3,0,Malaga CF,LALIGA
 34,18/4/2014,Atletico Madrid,2,0,Elche CF,LALIGA
-34,19/4/2014,CA Osasuna,1,1,Valencia CF CF,LALIGA
+34,19/4/2014,CA Osasuna,1,1,Valencia CF,LALIGA
 34,19/4/2014,Real Sociedad,2,1,RCD Espanyol,LALIGA
 34,19/4/2014,Levante UD,0,0,Getafe CF,LALIGA
 34,20/4/2014,UD Almeria,2,4,RC Celta Vigo,LALIGA
 34,20/4/2014,Barcelona,2,1,Athletic Club Bilbao,LALIGA
 34,20/4/2014,Rayo Vallecano,3,1,Real Betis,LALIGA
-34,20/4/2014,Sevilla FC FC,4,0,Granada CF,LALIGA
+34,20/4/2014,Sevilla FC,4,0,Granada CF,LALIGA
 34,21/4/2014,Malaga CF,2,0,Villarreal CF,LALIGA
 35,25/4/2014,Elche CF,1,1,Levante UD,LALIGA
 35,26/4/2014,Real Madrid,4,0,CA Osasuna,LALIGA
@@ -2745,8 +2745,8 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 35,26/4/2014,Getafe CF,1,0,Malaga CF,LALIGA
 35,27/4/2014,Villarreal CF,2,3,Barcelona,LALIGA
 35,27/4/2014,RCD Espanyol,1,2,UD Almeria,LALIGA
-35,27/4/2014,Athletic Club Bilbao,3,1,Sevilla FC FC,LALIGA
-35,27/4/2014,Valencia CF CF,0,1,Atletico Madrid,LALIGA
+35,27/4/2014,Athletic Club Bilbao,3,1,Sevilla FC,LALIGA
+35,27/4/2014,Valencia CF,0,1,Atletico Madrid,LALIGA
 35,28/4/2014,RC Celta Vigo,4,1,Real Valladolid CF,LALIGA
 36,2/5/2014,Rayo Vallecano,0,3,Athletic Club Bilbao,LALIGA
 36,3/5/2014,Barcelona,2,2,Getafe CF,LALIGA
@@ -2754,14 +2754,14 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 36,3/5/2014,Malaga CF,0,1,Elche CF,LALIGA
 36,3/5/2014,CA Osasuna,0,2,RC Celta Vigo,LALIGA
 36,4/5/2014,UD Almeria,3,2,Real Betis,LALIGA
-36,4/5/2014,Real Madrid,2,2,Valencia CF CF,LALIGA
+36,4/5/2014,Real Madrid,2,2,Valencia CF,LALIGA
 36,4/5/2014,Levante UD,2,0,Atletico Madrid,LALIGA
-36,4/5/2014,Sevilla FC FC,0,0,Villarreal CF,LALIGA
+36,4/5/2014,Sevilla FC,0,0,Villarreal CF,LALIGA
 36,5/5/2014,Real Sociedad,1,1,Granada CF,LALIGA
 34,7/5/2014,Real Valladolid CF,1,1,Real Madrid,LALIGA
 37,10/5/2014,Villarreal CF,4,0,Rayo Vallecano,LALIGA
-37,10/5/2014,Levante UD,2,0,Valencia CF CF,LALIGA
-37,11/5/2014,Getafe CF,1,0,Sevilla FC FC,LALIGA
+37,10/5/2014,Levante UD,2,0,Valencia CF,LALIGA
+37,11/5/2014,Getafe CF,1,0,Sevilla FC,LALIGA
 37,11/5/2014,Granada CF,0,2,UD Almeria,LALIGA
 37,11/5/2014,Atletico Madrid,1,1,Malaga CF,LALIGA
 37,11/5/2014,Elche CF,0,0,Barcelona,LALIGA
@@ -2772,12 +2772,12 @@ Final,28/5/2016,Real Madrid,1,1,Atletico Madrid,Champions League
 38,16/5/2014,Malaga CF,1,0,Levante UD,LALIGA
 38,17/5/2014,Barcelona,1,1,Atletico Madrid,LALIGA
 38,17/5/2014,Real Madrid,3,1,RCD Espanyol,LALIGA
-38,17/5/2014,Valencia CF CF,2,1,RC Celta Vigo,LALIGA
+38,17/5/2014,Valencia CF,2,1,RC Celta Vigo,LALIGA
 38,18/5/2014,Real Sociedad,1,2,Villarreal CF,LALIGA
 38,18/5/2014,UD Almeria,0,0,Athletic Club Bilbao,LALIGA
 38,18/5/2014,Real Valladolid CF,0,1,Granada CF,LALIGA
 38,18/5/2014,Rayo Vallecano,1,2,Getafe CF,LALIGA
-38,18/5/2014,Sevilla FC FC,3,1,Elche CF,LALIGA
+38,18/5/2014,Sevilla FC,3,1,Elche CF,LALIGA
 38,18/5/2014,CA Osasuna,2,1,Real Betis,LALIGA
 1,24/8/2012,Borussia Dortmund,2,1,Werder Bremen,Bundesliga
 1,25/8/2012,Bor. Monchengladbach,2,1,TSG 1899 Hoffenheim,Bundesliga
