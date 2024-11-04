@@ -5,6 +5,61 @@
 #include <fstream>
 #include <sstream>
 #include <chrono>
+#include <vector>
+#include <unordered_map>
+#include <set>
+#include <string>
+#include <memory>
+#include <map>
+#include <algorithm>
+
+using namespace std;
+using namespace std::chrono;
+
+// Variable para almacenar en caché el resultado de la competición con más goles
+std::string cacheCompeticionConMasGoles;
+
+// Función que calcula la competición con más goles y almacena el resultado en caché
+void calcularCompeticionConMasGoles() {
+    std::stringstream resultado;
+    int contador_ifs = 0; // Contador de 'if'
+
+    // Verificar si hay competiciones registradas
+    if (estadisticas.empty()) {
+        resultado << "No hay competiciones registradas.\n";
+        contador_ifs++; // Conteo del 'if'
+        cacheCompeticionConMasGoles = resultado.str();
+        return;
+    }
+
+    // Mapa para acumular goles totales por competición
+    unordered_map<string, int> golesPorCompeticion;
+
+    // Recorrer las estadísticas globales
+    for (const auto &[equipo, competiciones] : estadisticas) {
+        for (const auto &[competicion, stats] : competiciones) {
+            golesPorCompeticion[competicion] += stats.goles_a_favor;
+        }
+    }
+
+    // Encontrar la competición con más goles
+    auto max_goles_it = max_element(
+        golesPorCompeticion.begin(), golesPorCompeticion.end(),
+        [](const auto &a, const auto &b) {
+            return a.second < b.second;
+        });
+
+    // Verificar si se encontró una competición con goles
+    if (max_goles_it != golesPorCompeticion.end()) {
+        resultado << "La competición con más goles es: " << max_goles_it->first
+                  << " con " << max_goles_it->second << " goles.\n";
+        contador_ifs++; // Conteo del 'if'
+    }
+
+    // Guardar el resultado en la variable de caché
+    cacheCompeticionConMasGoles = resultado.str();
+}
+
 
 // Variable para almacenar en caché los resultados del top 5
 std::string cacheTop5Partidos;
@@ -53,4 +108,5 @@ void actualizarEstadisticas(const std::string &equipo, const std::string &compet
 
     // Llamar a la función para calcular el top 5 y actualizar el caché
     calcularTop5PartidosTodasLasCompeticiones();
+    calcularCompeticionConMasGoles();
 }

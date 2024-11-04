@@ -208,50 +208,16 @@ void mostrarFechasConMasYMenosGolesPorEquipoYCompeticion() {
     cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }   
+
+// Función para mostrar el resultado desde la caché
 void mostrarCompeticionConMasGoles() {
-    // Iniciar la medicion del tiempo de ejecucion
-    auto inicio = high_resolution_clock::now();
-    int contador_ifs = 0; // Contador de 'if'
-
-    // Verificar si hay competiciones registradas
-    if (estadisticas.empty()) {
-        cout << "No hay competiciones registradas.\n";
-        contador_ifs++; // Conteo del 'if'
-        return;
+    if (!cacheCompeticionConMasGoles.empty()) {
+        std::cout << cacheCompeticionConMasGoles;
+    } else {
+        std::cout << "No se ha calculado la competición con más goles aún.\n";
     }
-
-    // Mapa para acumular goles totales por competicion
-    unordered_map<string, int> golesPorCompeticion;
-
-    // Recorrer las estadisticas globales
-    for (const auto &[equipo, competiciones] : estadisticas) {
-        for (const auto &[competicion, stats] : competiciones) {
-            golesPorCompeticion[competicion] += stats.goles_a_favor;
-        }
-    }
-
-    // Encontrar la competicion con mas goles
-    auto max_goles_it = max_element(
-        golesPorCompeticion.begin(), golesPorCompeticion.end(),
-        [](const auto &a, const auto &b) {
-            return a.second < b.second;
-        });
-
-    // Verificar si se encontro una competicion con goles
-    if (max_goles_it != golesPorCompeticion.end()) {
-        cout << "La competicion con mas goles es: " << max_goles_it->first
-             << " con " << max_goles_it->second << " goles.\n";
-        contador_ifs++; // Conteo del 'if'
-    }
-
-    // Finalizar la medicion del tiempo de ejecucion
-    auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duracion en segundos
-
-    // Mostrar resultados de ejecucion
-    cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
-    cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
+
 
 void mostrarEquipoConMasYMenosGoles() {
     // Iniciar la medicion del tiempo de ejecucion

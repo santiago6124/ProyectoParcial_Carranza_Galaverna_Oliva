@@ -16,6 +16,7 @@ struct Estadisticas
 };
 
 extern std::string cacheTop5Partidos;
+extern std::string cacheCompeticionConMasGoles;
 
 void actualizarEstadisticas(const string &equipo, const string &competicion,
                             int goles_a_favor, int goles_en_contra, bool triunfo, bool empate);
