@@ -65,14 +65,17 @@ void cargarDatosDesdeCSV(const string &archivo) {
         bool triunfo_local = (ptr->goles_local > ptr->goles_visitante);
         contador_ifs++; // if implicito en la comparacion de triunfo local
 
-        actualizarEstadisticas(visitante, competicion, ptr->goles_visitante, ptr->goles_local,
-                               !triunfo_local && !empate, empate);
-
         // Insertar en el mapa de partidos por goles y por competicion
         goles_por_competicion[competicion].emplace(total_goles, ptr);
 
         // Actualizar el total de goles por competicion
         goles_totales_por_competicion[competicion] += total_goles;
+        
+        actualizarEstadisticas(local, competicion, ptr->goles_local, ptr->goles_visitante,
+                               triunfo_local, empate);
+        actualizarEstadisticas(visitante, competicion, ptr->goles_visitante, ptr->goles_local,
+                               !triunfo_local && !empate, empate);
+
     }
 
     // Finalizar la medicion del tiempo de ejecucion

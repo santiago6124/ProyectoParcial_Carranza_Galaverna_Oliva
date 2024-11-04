@@ -21,37 +21,13 @@
 using namespace std::chrono;
 
 
-
+// Función principal que muestra el resultado almacenado en caché
 void mostrarTop5PartidosTodasLasCompeticiones() {
-    cout << "Top 5 partidos con mas goles por competicion:\n";
-
-    // Iniciar la medicion del tiempo de ejecucion
-    auto inicio = high_resolution_clock::now();
-    int contador_ifs = 0; // Contador de 'if'
-
-    for (const auto &[competicion, partidos] : goles_por_competicion) {
-        cout << "\nCompeticion: " << competicion << "\n";
-        int contador = 0;
-
-        // Iterar en reversa para obtener los partidos con mas goles (ya estan ordenados)
-        for (auto it = partidos.rbegin(); it != partidos.rend() && contador < 5; ++it, ++contador) {
-            contador_ifs++;  // Condicion de limite de top 5
-
-            const auto *partido = it->second;
-            cout << partido->equipo_local << " vs " << partido->equipo_visitante
-                 << " - " << it->first << " goles - " << partido->fecha
-                 << " - " << competicion << " - ("
-                 << partido->goles_local << "-" << partido->goles_visitante << ")\n";
-        }
+    if (!cacheTop5Partidos.empty()) {
+        std::cout << cacheTop5Partidos;
+    } else {
+        std::cout << "No se ha calculado el top 5 aún.\n";
     }
-
-    // Finalizar la medicion del tiempo de ejecucion
-    auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio); // Duracion en segundos
-
-    // Mostrar resultados de ejecucion
-    cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
-    cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
 
 
@@ -86,6 +62,7 @@ void mostrarGolesPorEquipoYCompeticion() {
     cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
+
 void mostrarPromedioGolesPorEquipoYCompeticion() {
     // Iniciar la medicion del tiempo de ejecucion
 

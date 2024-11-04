@@ -58,6 +58,9 @@ void agregarPartido() {
     Partido *ptr = nuevo_partido.get();
     partidos.push_back(move(nuevo_partido));
 
+    goles_por_competicion[competicion].emplace(goles_local + goles_visitante, ptr);
+    goles_totales_por_competicion[competicion] += (goles_local + goles_visitante);
+
     // Actualizar estadisticas y mapas
     actualizarEstadisticas(equipo_local, competicion, goles_local, goles_visitante,
                            goles_local > goles_visitante, goles_local == goles_visitante);
@@ -66,9 +69,6 @@ void agregarPartido() {
     actualizarEstadisticas(equipo_visitante, competicion, goles_visitante, goles_local,
                            goles_visitante > goles_local, goles_local == goles_visitante);
     contador_ifs++;  // Conteo del 'if' para victoria del equipo visitante
-
-    goles_por_competicion[competicion].emplace(goles_local + goles_visitante, ptr);
-    goles_totales_por_competicion[competicion] += (goles_local + goles_visitante);
 
     cout << "Partido agregado exitosamente.\n";
 
