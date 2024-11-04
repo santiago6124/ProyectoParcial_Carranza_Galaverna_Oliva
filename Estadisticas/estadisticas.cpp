@@ -16,6 +16,80 @@
 using namespace std;
 using namespace std::chrono;
 
+std::string cacheEquipoConMasYMenosGoles;
+
+// Función que calcula y almacena el resultado en caché
+void calcularEquipoConMasYMenosGoles() {
+    std::stringstream resultado;
+    int contador_ifs = 0;
+
+    // Variables para almacenar los equipos con más y menos goles a nivel global
+    std::string equipo_max_global, equipo_min_global;
+    int max_goles_global = -1, min_goles_global = INT_MAX;
+
+    // Mapas para almacenar los equipos con más y menos goles por competición
+    std::unordered_map<std::string, std::pair<std::string, std::string>> equipos_por_competicion;
+    std::unordered_map<std::string, std::pair<int, int>> goles_por_competicion;
+
+    // Recorrer cada equipo y sus estadísticas
+    for (const auto &[equipo, competiciones] : estadisticas) {
+        int goles_total_equipo = 0;
+
+        for (const auto &[competicion, stats] : competiciones) {
+            goles_total_equipo += stats.goles_a_favor;
+
+            if (goles_por_competicion[competicion].first == 0) {
+                goles_por_competicion[competicion] = {stats.goles_a_favor, stats.goles_a_favor};
+                equipos_por_competicion[competicion] = {equipo, equipo};
+                contador_ifs++;
+            }
+
+            if (stats.goles_a_favor > goles_por_competicion[competicion].first) {
+                goles_por_competicion[competicion].first = stats.goles_a_favor;
+                equipos_por_competicion[competicion].first = equipo;
+                contador_ifs++;
+            }
+
+            if (stats.goles_a_favor < goles_por_competicion[competicion].second) {
+                goles_por_competicion[competicion].second = stats.goles_a_favor;
+                equipos_por_competicion[competicion].second = equipo;
+                contador_ifs++;
+            }
+        }
+
+        if (goles_total_equipo > max_goles_global) {
+            max_goles_global = goles_total_equipo;
+            equipo_max_global = equipo;
+            contador_ifs++;
+        }
+
+        if (goles_total_equipo < min_goles_global) {
+            min_goles_global = goles_total_equipo;
+            equipo_min_global = equipo;
+            contador_ifs++;
+        }
+    }
+
+    // Generar el resultado en el formato deseado
+    resultado << "Equipos con más y menos goles por competición:\n";
+    for (const auto &[competicion, equipos] : equipos_por_competicion) {
+        resultado << "Competición: " << competicion << "\n";
+        resultado << "Equipo con más goles: " << equipos.first
+                  << " con " << goles_por_competicion[competicion].first << " goles\n";
+        resultado << "Equipo con menos goles: " << equipos.second
+                  << " con " << goles_por_competicion[competicion].second << " goles\n";
+    }
+
+    resultado << "\nEquipos con más y menos goles en total:\n";
+    resultado << "Equipo con más goles: " << equipo_max_global
+              << " con " << max_goles_global << " goles\n";
+    resultado << "Equipo con menos goles: " << equipo_min_global
+              << " con " << min_goles_global << " goles\n";
+
+    // Guardar el resultado en la variable de caché
+    cacheEquipoConMasYMenosGoles = resultado.str();
+}
+
 // Variable para almacenar en caché el resultado de la competición con más goles
 std::string cacheCompeticionConMasGoles;
 
@@ -109,4 +183,5 @@ void actualizarEstadisticas(const std::string &equipo, const std::string &compet
     // Llamar a la función para calcular el top 5 y actualizar el caché
     calcularTop5PartidosTodasLasCompeticiones();
     calcularCompeticionConMasGoles();
+    calcularEquipoConMasYMenosGoles();
 }

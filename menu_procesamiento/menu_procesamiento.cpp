@@ -218,87 +218,10 @@ void mostrarCompeticionConMasGoles() {
     }
 }
 
-
 void mostrarEquipoConMasYMenosGoles() {
-    // Iniciar la medicion del tiempo de ejecucion
-    auto inicio = high_resolution_clock::now();
-    int contador_ifs = 0;  // Contador de 'if'
-
-    // Variables para almacenar los equipos con mas y menos goles a nivel global
-    string equipo_max_global, equipo_min_global;
-    int max_goles_global = -1, min_goles_global = INT_MAX;
-
-    // Mapas para almacenar los equipos con mas y menos goles por competicion
-    unordered_map<string, pair<string, string>> equipos_por_competicion;
-    unordered_map<string, pair<int, int>> goles_por_competicion;
-
-    // Recorrer cada equipo y sus estadisticas
-    for (const auto &[equipo, competiciones] : estadisticas) {
-        int goles_total_equipo = 0;
-
-        for (const auto &[competicion, stats] : competiciones) {
-            // Sumar los goles del equipo en esta competicion
-            goles_total_equipo += stats.goles_a_favor;
-
-            // Inicializar los valores de comparacion si es la primera vez
-            if (goles_por_competicion[competicion].first == 0) {
-                goles_por_competicion[competicion] = {stats.goles_a_favor, stats.goles_a_favor};
-                equipos_por_competicion[competicion] = {equipo, equipo};
-                contador_ifs++;  // Conteo del 'if' para la inicializacion
-            }
-
-            // Comparar para mas goles por competicion
-            if (stats.goles_a_favor > goles_por_competicion[competicion].first) {
-                goles_por_competicion[competicion].first = stats.goles_a_favor;
-                equipos_por_competicion[competicion].first = equipo;
-                contador_ifs++;  // Conteo del 'if' para mas goles
-            }
-
-            // Comparar para menos goles por competicion
-            if (stats.goles_a_favor < goles_por_competicion[competicion].second) {
-                goles_por_competicion[competicion].second = stats.goles_a_favor;
-                equipos_por_competicion[competicion].second = equipo;
-                contador_ifs++;  // Conteo del 'if' para menos goles
-            }
-        }
-
-        // Comparar para mas goles a nivel global
-        if (goles_total_equipo > max_goles_global) {
-            max_goles_global = goles_total_equipo;
-            equipo_max_global = equipo;
-            contador_ifs++;  // Conteo del 'if' para mas goles globales
-        }
-
-        // Comparar para menos goles a nivel global
-        if (goles_total_equipo < min_goles_global) {
-            min_goles_global = goles_total_equipo;
-            equipo_min_global = equipo;
-            contador_ifs++;  // Conteo del 'if' para menos goles globales
-        }
+    if (!cacheEquipoConMasYMenosGoles.empty()) {
+        std::cout << cacheEquipoConMasYMenosGoles;
+    } else {
+        std::cout << "No se ha calculado el equipo con más y menos goles aún.\n";
     }
-
-    // Mostrar los equipos con mas y menos goles por competicion
-    cout << "Equipos con mas y menos goles por competicion:\n";
-    for (const auto &[competicion, equipos] : equipos_por_competicion) {
-        cout << "Competicion: " << competicion << "\n";
-        cout << "Equipo con mas goles: " << equipos.first
-             << " con " << goles_por_competicion[competicion].first << " goles\n";
-        cout << "Equipo con menos goles: " << equipos.second
-             << " con " << goles_por_competicion[competicion].second << " goles\n";
-    }
-
-    // Mostrar los equipos con mas y menos goles en total
-    cout << "\nEquipos con mas y menos goles en total:\n";
-    cout << "Equipo con mas goles: " << equipo_max_global
-         << " con " << max_goles_global << " goles\n";
-    cout << "Equipo con menos goles: " << equipo_min_global
-         << " con " << min_goles_global << " goles\n";
-
-    // Finalizar la medicion del tiempo de ejecucion
-    auto fin = high_resolution_clock::now();
-    auto duracion = duration_cast<duration<double>>(fin - inicio);  // Duracion en segundos
-
-    // Mostrar resultados de ejecucion
-    cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
-    cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
