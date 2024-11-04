@@ -361,28 +361,32 @@ void compararRendimientoParticularEntreEquipos() {
     std::cout << "\nTiempo de ejecucion: " << duracion.count() << " segundos\n";
     std::cout << "Cantidad total de 'if': " << contador_ifs << "\n";
 }
-#include <iostream>
-#include <string>
-#include <algorithm> // Para std::toupper
-#include <chrono>     // Para medir el tiempo de ejecucion
-#include "../Globals/globals.h" // Asegurate de incluir las estadisticas
-
-using namespace std;
-using namespace std::chrono;
 
 void filtrarEquiposPorUmbralDeGoles() {
     double umbral;
     char opcion;
 
-    // Pedir el umbral y la opcion al usuario
-    cout << "Ingrese el umbral de goles promedio por partido: ";
-    cin >> umbral;
+    // Validar la entrada del umbral
+    while (true) {
+        cout << "Ingrese el umbral de goles promedio por partido: ";
+        if (cin >> umbral) {
+            break;
+        } else {
+            cout << "Entrada invalida. Por favor ingrese un numero valido.\n";
+            cin.clear(); // Limpiar el estado de error
+            cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Ignorar entrada no valida
+        }
+    }
 
     // Validar la opcion del usuario
     do {
         cout << "¿Desea filtrar por encima ('A') o por debajo ('B') del umbral? (A/B): ";
         cin >> opcion;
         opcion = toupper(opcion); // Convertir a mayusculas para comparacion
+
+        if (opcion != 'A' && opcion != 'B') {
+            cout << "Opcion invalida. Por favor, ingrese 'A' o 'B'.\n";
+        }
     } while (opcion != 'A' && opcion != 'B');
 
     cin.ignore(); // Limpiar el buffer de entrada
@@ -402,7 +406,7 @@ void filtrarEquiposPorUmbralDeGoles() {
 
     bool encontrado = false;
 
-    // Recorrer las estadisticas de todos los equipos y competiciones
+    // Recorrer las estadísticas de todos los equipos y competiciones
     for (const auto &[equipo, competiciones] : estadisticas) {
         for (const auto &[competicion, stats] : competiciones) {
             int partidos_jugados = stats.triunfos + stats.derrotas + stats.empates;
